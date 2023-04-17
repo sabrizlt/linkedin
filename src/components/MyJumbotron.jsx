@@ -16,10 +16,16 @@ const MyJumbotron = () => {
       <Card.Body>
         <Row>
           <Col xs={3}>
-            <img id="profilePicImg" className="rounded-circle" src="https://placedog.net/500/500" alt="Profile pic" />
+            <img
+              style={{ width: "100%" }}
+              id="profilePicImg"
+              className="rounded-circle"
+              src="https://placedog.net/500/500"
+              alt="Profile pic"
+            />
           </Col>
         </Row>
-        <Row>
+        <Row className="mb-2">
           <Col className="text-end me-2 fs-3 iconWithHoverEffect">
             <span className="rounded-circle p-3 ">
               <BsPencil className="m-1" />
