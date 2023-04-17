@@ -8,7 +8,7 @@ const MyJumbotron = () => {
     <Card>
       <Card.Img
         variant="top"
-        src="https://placedog.net/500"
+        src="https://placedog.net/900/400"
         id="profileCoverImg"
         alt="Profile cover"
         style={{ width: "100%" }}
@@ -20,7 +20,7 @@ const MyJumbotron = () => {
               style={{ width: "100%" }}
               id="profilePicImg"
               className="rounded-circle"
-              src="https://placedog.net/500/500"
+              src="https://placedog.net/600/600"
               alt="Profile pic"
             />
           </Col>
