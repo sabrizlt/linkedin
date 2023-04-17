@@ -8,8 +8,8 @@ import MyJumbotron from "./components/MyJumbotron";
 function App() {
   return (
     <div className="App">
-      <MyFooter />
       <MyJumbotron></MyJumbotron>
+      <MyFooter />
     </div>
   );
 }
