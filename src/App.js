@@ -1,21 +1,40 @@
+import logo from './logo.svg';
 import './App.css';
-import MyFooter from './components/MyFooter'
-import "bootstrap/dist/css/bootstrap.min.css";
-import Analisi from './components/Analisi';
-import { Col, Container, Row } from "react-bootstrap";
-import Risorse from './components/Risorse';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaBeer } from 'react-icons/fa';
+import MyFooter from "./components/MyFooter";
+import MyJumbotron from "./components/MyJumbotron";
 
+import { Row } from 'react-bootstrap';
+import LateralComponent from './components/LateralComponent';
+import { Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Analisi from './components/Analisi'
+import Risorse from './components/Risorse'
 
 function App() {
   return (
-    <div className="App">
-      <MyFooter />
+    <>
+      <Container>
+        <Row>
+          <Col md={8}>
+            <MyJumbotron />
+            <Analisi />
+            <Risorse />
+
+          </Col>
+          <Col md={4}>
+            <LateralComponent></LateralComponent>
+          </Col>
+        </Row>
+        <MyFooter />
+      </Container>
+    </>
+
+  )
 
 
-
-    </div>
-  );
 }
+
 
 export default App;
