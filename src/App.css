@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 #root {
-  background-color: #F3F2EE;
-  font-family: 'Roboto', sans-serif;}
+  background-color: #f3f2ee;
+  font-family: "Roboto", sans-serif;
+}
 
 /* MyFooter */
 
@@ -44,10 +45,6 @@
   font-size: 0.8em;
 }
 
-#root .copyright {
-  margin-left: 75px;
-}
-
 /******************************************Componente - Analisi***********************************/
 /* .para__divs {
   line-height: 80%;
@@ -86,7 +83,6 @@
   padding: 2px;
   text-decoration: none;
   text-align: center;
-
 }
 
 hr {
@@ -114,5 +110,4 @@ hr {
 
 .Linkedin {
   fill: rgba(0, 68, 255, 0.849) !important;
-  ;
 }
