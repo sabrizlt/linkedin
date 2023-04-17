@@ -8,12 +8,12 @@ import {
 
 function Footer() {
   return (
-    <Container id="footer">
+    <Container className="w-100" id="footer">
       <Row className="d-flex mt-5">
         <Col
           md={2}
           xs={6}
-          className=" text-md-start mb-3 mb-md-0 col-sm-6"
+          className="text-md-start mb-3 mb-md-0 col-sm-6"
         >
           {/* Prima colonna */}
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
@@ -51,7 +51,7 @@ function Footer() {
         >
           {/* Seconda colonna */}
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
-            <ul className="list-unstyled text-md-start  ">
+            <ul className="list-unstyled text-md-start">
               <a href="">
                 <li className="mb-3">Accessibilità</li>
               </a>
@@ -67,6 +67,7 @@ function Footer() {
             </ul>
           </div>
         </Col>
+
         <Col
           md={2}
           xs={6}
@@ -90,6 +91,7 @@ function Footer() {
             </ul>
           </div>
         </Col>
+
         <Col
           md={2}
           xs={8}
