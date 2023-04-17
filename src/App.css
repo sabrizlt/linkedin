@@ -44,3 +44,16 @@
 #root .copyright {
   margin-left: 75px;
 }
+
+/******************************************Componente - Analisi***********************************/
+/* .para__divs {
+  line-height: 80%;
+} */
+
+.to__align {
+  margin-inline: 10px !important;
+}
+
+.under__title {
+  margin-top: -10px !important;
+}
