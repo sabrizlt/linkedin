@@ -21,7 +21,9 @@ const MyJumbotron = () => {
         </Row>
         <Row>
           <Col className="text-end me-2 fs-3 iconWithHoverEffect">
-            <BsPencil className="rounded-circle p-2 m-5" />
+            <span className="rounded-circle p-3 ">
+              <BsPencil className="m-1" />
+            </span>
           </Col>
         </Row>
         <Row>
@@ -50,8 +52,10 @@ const MyJumbotron = () => {
               <br />
               <a href="#">Mostra dettagli</a>
             </Col>
-            <Col xs={2} className=" text-end me-1 rounded-circle p-2 iconWithHoverEffect">
-              <BsPencil className="rounded-circle " />
+            <Col xs={2} className=" text-end iconWithHoverEffect">
+              <span className="rounded-circle p-2 ">
+                <BsPencil className="m-1" />
+              </span>
             </Col>
           </Row>
         </div>
