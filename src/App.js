@@ -16,8 +16,9 @@ import Risorse from './components/Risorse'
 function App() {
   return (
     <>
+          <MyNav/>
+
       <Container>
-      <MyNav/>
         <Row>
           <Col md={8}>
             <MyJumbotron />

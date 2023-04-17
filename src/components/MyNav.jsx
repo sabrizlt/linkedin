@@ -10,7 +10,7 @@ function MyNav() {
     return (
         <>
 
-            <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap mt-2">
+            <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap">
                 <div className="d-flex justify-content-start align-items-center me-lg-5">
                     <img
                         src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"

@@ -8,13 +8,13 @@ const LateralComponent = () =>{
     return(
 <>
 {/*prima parte della lateral bar, */}
-<div className="border border-2 rounded-3 my-3 p-2 bg-white">
+<div className="border border-2 rounded-3 mb-3 p-2 bg-white">
     <div className="ms-2 d-flex justify-content-between me-2">
 <p>modifica il profilo pubblico e L'URL</p>
 <i><FaQuestionCircle></FaQuestionCircle></i>
     </div>
     <hr className="mx-2"></hr>
-    <div className="ms-2 d-flex justify-content-between me-2">
+    <div className="ms-2 d-flex justify-content-between me-2 mb-3">
 aggiungi il tuo profilo in un'altra lingua
 <i><FaQuestionCircle></FaQuestionCircle></i>
     </div>
@@ -25,7 +25,7 @@ aggiungi il tuo profilo in un'altra lingua
 
 {/*seconda parte della lateral bar,contenente un banner ! */}
 <div className="">
-<img src={image} alt=""  className='rounded-3 img-fluid' />
+<img src={image} alt=""  className='rounded-3 img-fluid mb-3' />
 </div>
 {/*seconda parte della lateral bar,contenente un banner ! */}
 
@@ -39,7 +39,7 @@ aggiungi il tuo profilo in un'altra lingua
 <p className='ms-4'>persone che potresti conoscere</p>
 
 <div>
-    <Container className='p-0'>
+    <Container className='p-0 mb-3'>
         <Row className='mx-2'>
 <Col md={3}>
 <img src="https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Rachel-Montan%CC%83ez.jpeg" alt="" width={55} className='rounded-5'/>
@@ -112,18 +112,6 @@ aggiungi il tuo profilo in un'altra lingua
 {/*inzio 5 parte della lateral bar,contenente la stesso banner al punto 2* */}
 <div className="my-3 sticky-top">
 <img src={image} alt=""  className='rounded-3 img-fluid' />
-</div>
-<div>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore maiores ducimus tempora quo aliquam minima nisi repellat eos facilis sunt fuga, itaque pariatur vero aperiam modi debitis iste quae nam.
-Corrupti necessitatibus laborum expedita alias quidem voluptatem esse veniam vero, natus vitae voluptate inventore. Minus, doloribus cumque. Unde placeat at aliquam, nulla debitis rem incidunt aliquid deserunt suscipit, dolor in.
-Laudantium dignissimos eos voluptas eveniet facilis sapiente voluptatem architecto beatae vero. Voluptatem soluta quidem possimus labore sed dolore porro cum voluptatibus aspernatur, deserunt debitis sapiente animi voluptatum eius, eveniet veniam!
-Deleniti explicabo perspiciatis dolorem exercitationem, laudantium rerum nam dicta architecto possimus fugit sit quia sapiente? Quae, praesentium saepe? Necessitatibus, iste quos libero nisi alias unde expedita ab asperiores obcaecati commodi.
-Sed temporibus dolor officia, cumque cupiditate doloribus, nam iure possimus ab esse et excepturi deleniti rem quos nesciunt aspernatur! Unde libero veniam neque eos laborum distinctio repellendus dicta sed architecto!
-Aspernatur optio aliquid incidunt deleniti neque vel, fugit illum natus! Quaerat dolorem quam incidunt ducimus. Aliquam adipisci sit, explicabo debitis non accusantium corrupti quae laboriosam? Facere, id? Similique, aspernatur voluptatibus!
-Esse eum deleniti ab eaque commodi nobis sapiente magni quos optio perferendis non consequuntur dolor quidem odio fuga, officia nulla impedit? Iste, non. Tenetur rerum autem, possimus facere tempore aut!
-Commodi voluptatum alias, quisquam odio debitis laborum unde modi. Alias sapiente, quae ipsum nihil tempore mollitia incidunt. Consectetur omnis officiis quaerat dolore tenetur. Obcaecati doloribus ipsum aspernatur possimus cum quibusdam?
-Tempore saepe architecto, itaque quam esse adipisci voluptate inventore nam quasi error. Perspiciatis, dolorem, sequi delectus temporibus vero ipsa sed eos libero, error ullam tenetur at corrupti odio accusamus modi.
-Ipsam fugit distinctio id ipsum quisquam quia voluptates consequatur doloribus quibusdam, optio eveniet voluptatibus sed nulla dolores natus nobis nostrum quas? Rem facilis corrupti tenetur obcaecati. Sint amet debitis maxime.
 </div>
 </>
     )

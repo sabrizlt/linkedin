@@ -8,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Risorse = () => {
   return (
-    <Container className="border border-1 my-1 rounded" fluid>
+    <Container className="border border-1 my-1 rounded bg-light mt-3 p-3" fluid>
       <Container>
         <Row>
           <Col className="d-flex flex-column ">

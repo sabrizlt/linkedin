@@ -8,7 +8,7 @@ import {
 
 function Footer() {
   return (
-    <Container className="w-100" id="footer">
+    <Container className="w-100 mb-5" id="footer">
       <Row className="d-flex mt-5">
         <Col
           md={2}
