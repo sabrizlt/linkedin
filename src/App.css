@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+.PersoneButton{
+width: 100px;
+color: grey!important;
+background-color: white !important;
+border: 2px double rgb(122, 120, 120) !important;
+padding: 2px;
+text-decoration: none;
+text-align: center;
+
+}
+
+hr{
+  color: rgba(128, 128, 128, 0.726) !important;
+}
+
+.v-altro{
+  width: 100% !important;
+  outline: none !important;
+  margin: 0px 0px 0px 0px !important;
+  font-weight: 900;
+  color: grey !important;
+}
+.v-altro:hover{
+  background-color: rgba(148, 144, 144, 0.356)!important;
+  outline: none !important;
+}
+
+.PersoneButton:hover{
+background-color: rgba(172, 166, 166, 0.479)!important;
+border: 2px solid grey !important;
+outline: none !important;
+}
+
+.Linkedin{
+  fill: rgba(0, 68, 255, 0.849) !important;;
+}
