@@ -17,7 +17,7 @@ function App() {
       <MyNav />
       <Container>
         <Row className="justify-content-center">
-          <Col md={8} xl={7}>
+          <Col md={8} lg={7}>
             <MyJumbotron />
             <Analisi />
             <Risorse />
