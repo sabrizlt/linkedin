@@ -16,16 +16,19 @@ function App() {
  <Container>
  <Row>
 <Col md={8}>
-  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, consectetur adip
+ <MyJumbotron/>
 </Col>
 <Col md={4}>
 <LateralComponent></LateralComponent>
 </Col>
- </Row>
+ </Row> 
+ <MyFooter />
  </Container>
  </>
 
   )
+  
+  
 }
 
 
