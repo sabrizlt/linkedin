@@ -17,12 +17,12 @@ function App() {
       <MyNav />
       <Container>
         <Row className="justify-content-center">
-          <Col md={8} lg={7} xl={6}>
+          <Col md={8} xl={7}>
             <MyJumbotron />
             <Analisi />
             <Risorse />
           </Col>
-          <Col md={4} lg={3}>
+          <Col md={4}>
             <LateralComponent></LateralComponent>
           </Col>
         </Row>

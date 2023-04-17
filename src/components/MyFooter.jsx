@@ -3,8 +3,13 @@ import Form from "react-bootstrap/Form";
 import { AiTwotoneSetting, AiFillQuestionCircle, AiTwotoneSafetyCertificate } from "react-icons/ai";
 
 function Footer() {
+  const date = () => {
+    let today = new Date();
+    return today.getFullYear();
+  };
+
   return (
-    <Container className="w-100 mb-5" id="footer">
+    <Container className="w-100 pb-5" id="footer">
       <Row className="d-flex mt-5">
         <Col md={2} xs={6} className="text-md-start mb-3 mb-md-0 col-sm-6">
           {/* Prima colonna */}
@@ -115,7 +120,7 @@ function Footer() {
         </Col>
       </Row>
       <Row>
-        <span className="copyright">LinkedIn Corporation &copy; 2023 </span>
+        <span className="copyright">LinkedIn Corporation &copy; {date()} </span>
       </Row>
     </Container>
   );
