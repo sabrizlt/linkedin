@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+  
+
+#ico{
+  color: #363636;
+  font-size: 25px;
+}
