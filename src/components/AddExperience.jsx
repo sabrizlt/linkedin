@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaPlus, FaPen } from "react-icons/fa";
 
-function ModalModify({ addExperience }) {
+function AddExperience({ addExperience }) {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     role: "",
@@ -37,7 +37,7 @@ function ModalModify({ addExperience }) {
     <>
       <div className="d-flex align-items-center">
         <Button variant="" onClick={handleShow}>
-          <FaPlus className="fs-4 ColorTextGrey" />
+          <FaPlus className="fs-6 ColorTextGrey" />
         </Button>
         <Button
           variant=""
@@ -45,7 +45,7 @@ function ModalModify({ addExperience }) {
             hideIcons();
           }}
         >
-          <FaPen className="fs-4 ColorTextGrey" />
+          <FaPen className="fs-6 ColorTextGrey" />
         </Button>
       </div>
 
@@ -62,9 +62,7 @@ function ModalModify({ addExperience }) {
                 placeholder="Add Role"
                 autoFocus
                 value={formData.role}
-                onChange={(e) =>
-                  setFormData({ ...formData, role: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="company">
@@ -74,9 +72,7 @@ function ModalModify({ addExperience }) {
                 placeholder="Add company"
                 autoFocus
                 value={formData.company}
-                onChange={(e) =>
-                  setFormData({ ...formData, company: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="startDate">
@@ -86,9 +82,7 @@ function ModalModify({ addExperience }) {
                 placeholder="insert start date"
                 autoFocus
                 value={formData.startDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, startDate: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
               />
               <Form.Label>End date</Form.Label>
               <Form.Control
@@ -96,9 +90,7 @@ function ModalModify({ addExperience }) {
                 placeholder="insert end date"
                 autoFocus
                 value={formData.endDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, endDate: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="description">
@@ -108,9 +100,7 @@ function ModalModify({ addExperience }) {
                 placeholder="Add a description"
                 style={{ height: "100px" }}
                 value={formData.description}
-                onChange={(e) =>
-                  setFormData({ ...formData, description: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="area">
@@ -120,19 +110,13 @@ function ModalModify({ addExperience }) {
                 placeholder="Add area"
                 autoFocus
                 value={formData.area}
-                onChange={(e) =>
-                  setFormData({ ...formData, area: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, area: e.target.value })}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="primary"
-            onClick={handleClick}
-            className="rounded-pill"
-          >
+          <Button variant="primary" onClick={handleClick} className="rounded-pill">
             Save
           </Button>
         </Modal.Footer>
@@ -140,4 +124,4 @@ function ModalModify({ addExperience }) {
     </>
   );
 }
-export default ModalModify;
+export default AddExperience;

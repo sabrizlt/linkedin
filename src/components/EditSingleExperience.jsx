@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { FaPlus, FaPen } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
 
 function EditSingleExperience(props) {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     role: props.content.role,
     company: props.content.company,
-    startDate: props.content.startDate,
-    endDate: props.content.endDate,
+    startDate: props.content.startDate.slice(0, 10),
+    endDate: props.content.endDate.slice(0, 10),
     description: props.content.description,
     area: props.content.area,
     image: "",
@@ -37,7 +37,7 @@ function EditSingleExperience(props) {
     <>
       <div className="d-flex align-items-center">
         <Button variant="" onClick={handleShow} className="edit_icon d-none">
-          <FaPen className="fs-4 ColorTextGrey " />
+          <FaPen className="fs-6 ColorTextGrey " />
         </Button>
       </div>
 
@@ -54,9 +54,7 @@ function EditSingleExperience(props) {
                 placeholder="Add Role"
                 autoFocus
                 value={formData.role}
-                onChange={(e) =>
-                  setFormData({ ...formData, role: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="company">
@@ -66,9 +64,7 @@ function EditSingleExperience(props) {
                 placeholder="Add company"
                 autoFocus
                 value={formData.company}
-                onChange={(e) =>
-                  setFormData({ ...formData, company: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="startDate">
@@ -78,9 +74,7 @@ function EditSingleExperience(props) {
                 placeholder="insert start date"
                 autoFocus
                 value={formData.startDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, startDate: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
               />
               <Form.Label>End date</Form.Label>
               <Form.Control
@@ -88,9 +82,7 @@ function EditSingleExperience(props) {
                 placeholder="insert end date"
                 autoFocus
                 value={formData.endDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, endDate: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="description">
@@ -100,9 +92,7 @@ function EditSingleExperience(props) {
                 placeholder="Add a description"
                 style={{ height: "100px" }}
                 value={formData.description}
-                onChange={(e) =>
-                  setFormData({ ...formData, description: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="area">
@@ -112,26 +102,16 @@ function EditSingleExperience(props) {
                 placeholder="Add area"
                 autoFocus
                 value={formData.area}
-                onChange={(e) =>
-                  setFormData({ ...formData, area: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, area: e.target.value })}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="outline-danger"
-            className="rounded-pill"
-            onClick={handleDelete}
-          >
+          <Button variant="outline-danger" className="rounded-pill" onClick={handleDelete}>
             Delete experience
           </Button>
-          <Button
-            variant="outline-primary"
-            onClick={handleClick}
-            className="rounded-pill"
-          >
+          <Button variant="outline-primary" onClick={handleClick} className="rounded-pill">
             Save
           </Button>
         </Modal.Footer>

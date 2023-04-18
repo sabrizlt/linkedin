@@ -1,10 +1,12 @@
-import { Col, Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { AiFillEye } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { VscGraph } from "react-icons/vsc";
 import { GoSearch } from "react-icons/go";
 
-const Analisi = () => {
+const AnalysisComponent = () => {
   return (
     <Container className="border border-1 my-1 rounded bg-light mt-3 p-4" fluid>
       <Row className="mx-auto">
@@ -55,4 +57,4 @@ const Analisi = () => {
   );
 };
 
-export default Analisi;
+export default AnalysisComponent;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { RiSendPlaneFill } from 'react-icons/ri'
+import { RiSendPlaneFill } from "react-icons/ri";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import { BsPencil } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
-const MyJumbotron = () => {
+const JumbotronComponent = () => {
   const profile = useSelector((state) => {
     return state.data.profile;
   });
@@ -68,9 +68,13 @@ const MyJumbotron = () => {
         </Row>
         <Row className="my-2 cardBtns">
           <Col>
-          <Button variant="primary" size="sm" className='messaggioButton rounded-pill px-3'> Disponibile per</Button>
-                            <Button variant="outline-dark" size="sm" className='altroButton rounded-pill px-3 ms-3'>Altro</Button>
-           
+            <Button variant="primary" size="sm" className="messaggioButton rounded-pill px-3">
+              {" "}
+              Disponibile per
+            </Button>
+            <Button variant="outline-dark" size="sm" className="altroButton rounded-pill px-3 ms-3">
+              Altro
+            </Button>
           </Col>
         </Row>
 
@@ -95,4 +99,4 @@ const MyJumbotron = () => {
   );
 };
 
-export default MyJumbotron;
+export default JumbotronComponent;
