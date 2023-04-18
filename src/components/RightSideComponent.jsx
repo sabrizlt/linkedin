@@ -28,7 +28,7 @@ const RightSideComponent = () => {
 
       {/*seconda parte della lateral bar,contenente un banner ! */}
       <div className="">
-        <img src={image} alt="" className="rounded-3 img-fluid mb-3" />
+        <img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="" className="rounded-3 img-fluid mb-3 w-100" />
       </div>
       {/*seconda parte della lateral bar,contenente un banner ! */}
 
@@ -111,12 +111,7 @@ const RightSideComponent = () => {
         </Card.Body>
       </Card>
 
-      <Card className="mt-3">
-        <Card.Img
-          src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
-          alt="Card image"
-        />
-      </Card>
+   
 
       {/*fine terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
 
@@ -151,8 +146,8 @@ const RightSideComponent = () => {
       {/*fine 4 parte della lateral bar,contenente una lista di corsi da poter seguire! */}
 
       {/*inzio 5 parte della lateral bar,contenente la stesso banner al punto 2* */}
-      <div className="my-3 sticky-top">
-        <img src={image} alt="" className="rounded-3 img-fluid" />
+      <div className="my-3 sticky-top top-50">
+        <img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="" className="rounded-3 img-fluid w-100" />
       </div>
     </>
   );
