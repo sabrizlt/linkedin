@@ -119,3 +119,10 @@ hr {
 .Linkedin {
   fill: rgba(0, 68, 255, 0.849) !important;
 }
+
+.ColorTextGrey{
+  color: grey !important;
+}
+.m-w{
+  max-width: 80% !important;
+}

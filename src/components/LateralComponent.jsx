@@ -8,13 +8,13 @@ const LateralComponent = () =>{
     return(
 <>
 {/*prima parte della lateral bar, */}
-<div className="border border-2 rounded-3 mb-3 p-2 bg-white">
+<div className="border border-2 rounded-3 mb-3 p-2 bg-white ColorTextGrey">
     <div className="ms-2 d-flex justify-content-between me-2">
 <p>modifica il profilo pubblico e L'URL</p>
 <i><FaQuestionCircle></FaQuestionCircle></i>
     </div>
     <hr className="mx-2"></hr>
-    <div className="ms-2 d-flex justify-content-between me-2 mb-3">
+    <div className="ms-2 d-flex justify-content-between me-2 mb-3 ColorTextGrey">
 aggiungi il tuo profilo in un'altra lingua
 <i><FaQuestionCircle></FaQuestionCircle></i>
     </div>
