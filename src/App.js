@@ -11,6 +11,7 @@ import LateralComponent from "./components/LateralComponent";
 import Analisi from "./components/Analisi";
 import Risorse from "./components/Risorse";
 
+import Experiences from "./components/Experiences";
 function App() {
   return (
     <>
@@ -21,9 +22,12 @@ function App() {
             <MyJumbotron />
             <Analisi />
             <Risorse />
+            <Experiences />
+           
           </Col>
           <Col md={4}>
-            <LateralComponent></LateralComponent>
+            <LateralComponent/>
+
           </Col>
         </Row>
         <MyFooter />
