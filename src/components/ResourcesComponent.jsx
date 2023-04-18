@@ -1,12 +1,14 @@
-import { Container, Row, Col } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Badge from "react-bootstrap/Badge";
 import { AiFillEye } from "react-icons/ai";
 import { FaSatelliteDish } from "react-icons/fa";
-import Badge from "react-bootstrap/Badge";
 import { BsFillPeopleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+//import { Link } from "react-router-dom";
 
-const Risorse = () => {
+const ResourcesComponent = () => {
   return (
     <Container className="border border-1 my-1 rounded bg-white mt-3 p-3" fluid>
       <Container>
@@ -21,11 +23,13 @@ const Risorse = () => {
         </Row>
         <Row className="border-bottom border-1 my-2">
           <Col className="d-flex  text-start">
-            <FaSatelliteDish ms-2 mt-1 className="fs-2 me-2 " />
+            <FaSatelliteDish className="fs-2 me-2 " />
             <p>
               <span className="fw-bold mt-2">
                 Modalità creazione dei contenuti{" "}
-                <Badge className="ms-2" bg="secondary">No</Badge>
+                <Badge className="ms-2" bg="secondary">
+                  No
+                </Badge>
               </span>
               <br />
               Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione
@@ -56,4 +60,4 @@ const Risorse = () => {
   );
 };
 
-export default Risorse;
+export default ResourcesComponent;

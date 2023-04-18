@@ -1,18 +1,11 @@
-import React, { useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import MyFooter from "./components/MyFooter";
-import MyJumbotron from "./components/MyJumbotron";
-import MyNav from "./components/MyNav";
-import LateralComponent from "./components/LateralComponent";
-import Analisi from "./components/Analisi";
-import Risorse from "./components/Risorse";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import NavbarComponent from "./components/NavbarComponent";
+import ProfileComponent from "./components/ProfileComponent";
 //import { useParams } from "react-router-dom";
-import Experiences from "./components/Experiences";
+
 export const API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
 
@@ -72,21 +65,8 @@ function App() {
 
   return (
     <>
-      <MyNav />
-      <Container>
-        <Row className="justify-content-center">
-          <Col md={8} lg={7}>
-            <MyJumbotron profile={profile} />
-            <Analisi />
-            <Risorse />
-            <Experiences />
-          </Col>
-          <Col md={4}>
-            <LateralComponent />
-          </Col>
-        </Row>
-        <MyFooter />
-      </Container>
+      <NavbarComponent />
+      <ProfileComponent />
     </>
   );
 }
