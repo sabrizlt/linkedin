@@ -1,8 +1,13 @@
+import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { BsPencil } from "react-icons/bs";
 import { useSelector } from "react-redux";
+
+const API_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
+
 
 const MyJumbotron = () => {
   const profile = useSelector((state) => {
@@ -78,4 +83,5 @@ const MyJumbotron = () => {
     </Card>
   );
 };
+
 export default MyJumbotron;
