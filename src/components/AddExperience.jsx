@@ -13,6 +13,7 @@ function AddExperience({ addExperience }) {
     endDate: "",
     description: "",
     area: "",
+    image: "",
   });
 
   const handleClose = () => setShow(false);
@@ -101,6 +102,16 @@ function AddExperience({ addExperience }) {
                 style={{ height: "100px" }}
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="imageLink">
+              <Form.Label>Image link</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Add company logo link"
+                autoFocus
+                value={formData.image}
+                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="area">

@@ -47,9 +47,11 @@ const RightSideComponent = () => {
               <br /> <span className="fw-lighter">Epicode Student</span>{" "}
             </p>
           </div>
-          <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
-            <BsFillPersonPlusFill /> Collegati
-          </Button>
+          <span className="d-flex justify-content-center w-75">
+            <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
+              <BsFillPersonPlusFill /> Collegati
+            </Button>
+          </span>
         </Card.Body>
         <hr className="m-0 mx-3" />
         <Card.Body>
@@ -63,9 +65,11 @@ const RightSideComponent = () => {
               Tiberiu Cujba <br /> <span className="fw-lighter">Epicode Student</span>{" "}
             </p>
           </div>
-          <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
-            <BsFillPersonPlusFill /> Collegati
-          </Button>
+          <span className="d-flex justify-content-center w-75">
+            <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
+              <BsFillPersonPlusFill /> Collegati
+            </Button>
+          </span>
         </Card.Body>
         <hr className="m-0 mx-3" />
         <Card.Body>
@@ -80,9 +84,11 @@ const RightSideComponent = () => {
               <br /> <span className="fw-lighter">Epicode Student</span>{" "}
             </p>
           </div>
-          <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
-            <BsFillPersonPlusFill /> Collegati
-          </Button>
+          <span className="d-flex justify-content-center w-75">
+            <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
+              <BsFillPersonPlusFill /> Collegati
+            </Button>
+          </span>
         </Card.Body>
         <hr className="m-0 mx-3" />
         <Card.Body>
@@ -97,9 +103,11 @@ const RightSideComponent = () => {
               <br /> <span className="fw-lighter">Epicode Student</span>{" "}
             </p>
           </div>
-          <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
-            <BsFillPersonPlusFill /> Collegati
-          </Button>
+          <span className="d-flex justify-content-center w-75">
+            <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3">
+              <BsFillPersonPlusFill /> Collegati
+            </Button>
+          </span>
         </Card.Body>
       </Card>
 

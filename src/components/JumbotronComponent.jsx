@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { RiSendPlaneFill } from "react-icons/ri";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -59,9 +57,7 @@ const JumbotronComponent = () => {
           <Col xs={3}>
             <img
               id="logoLastExp"
-              src={
-                experience.length > 0 ? experience[experience.length - 1].description : "https://placedog.net/500/280"
-              }
+              src={experience.length > 0 ? experience[experience.length - 1].image : "https://placedog.net/500/280"}
               alt="logo"
             />
           </Col>
