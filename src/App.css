@@ -47,9 +47,18 @@
 
 /******************************************Componente - Navbar***********************************/
 
+
+
 #icon{
+
   font-size: 1.2em;
   margin-right: 1em;
+}
+
+#search{
+  background-color: #EEF3F8;
+  border: none;
+  
 }
 
 
@@ -81,6 +90,9 @@
 
 .iconWithHoverEffect :hover {
   background-color: lightgrey;
+}
+#logoLastExp {
+  width: 80px;
 }
 
 .PersoneButton {
@@ -120,10 +132,9 @@ hr {
   fill: rgba(0, 68, 255, 0.849) !important;
 }
 
-.ColorTextGrey{
+.ColorTextGrey {
   color: grey !important;
 }
-.m-w{
+.m-w {
   max-width: 80% !important;
 }
-

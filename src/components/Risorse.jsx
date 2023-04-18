@@ -8,28 +8,27 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Risorse = () => {
   return (
-    <Container className="border border-1 my-1 rounded bg-light mt-3 p-3" fluid>
+    <Container className="border border-1 my-1 rounded bg-white mt-3 p-3" fluid>
       <Container>
         <Row>
           <Col className="d-flex flex-column ">
-            <h2 className="text-start">Risorse</h2>
+            <h2 className="text-start mt-2 mb-3">Risorse</h2>
             <div className="d-flex align-items-start under__title">
-              <AiFillEye className="fs-4" />
+              <AiFillEye className="fs-5 me-2" />
               <p>Solo per te</p>
             </div>
           </Col>
         </Row>
         <Row className="border-bottom border-1 my-2">
           <Col className="d-flex  text-start">
-            <FaSatelliteDish className="fs-2 me-2 " />
+            <FaSatelliteDish ms-2 mt-1 className="fs-2 me-2 " />
             <p>
-              <span className="fw-bold">
+              <span className="fw-bold mt-2">
                 Modalità creazione dei contenuti{" "}
-                <Badge bg="secondary">No</Badge>
+                <Badge className="ms-2" bg="secondary">No</Badge>
               </span>
               <br />
-              Fatti scoprire, metti in risalto i contenuti sul tuo profilo e
-              accedi agli strumenti di creazione
+              Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione
             </p>
           </Col>
         </Row>
@@ -48,7 +47,7 @@ const Risorse = () => {
 
       <Row>
         <Col className="text-center fw-bold my-2">
-          <a className="text-dark text-decoration-none" href="#">
+          <a className="text-dark text-decoration-none mt-2" href="#">
             Mostra tutte le risorse (5) <BsArrowRight />
           </a>
         </Col>
