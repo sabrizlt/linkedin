@@ -21,11 +21,13 @@ const Risorse = () => {
         </Row>
         <Row className="border-bottom border-1 my-2">
           <Col className="d-flex  text-start">
-            <FaSatelliteDish ms-2 mt-1 className="fs-2 me-2 " />
+            <FaSatelliteDish className="fs-2 me-2 " />
             <p>
               <span className="fw-bold mt-2">
                 Modalità creazione dei contenuti{" "}
-                <Badge className="ms-2" bg="secondary">No</Badge>
+                <Badge className="ms-2" bg="secondary">
+                  No
+                </Badge>
               </span>
               <br />
               Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione
