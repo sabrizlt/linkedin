@@ -1,20 +1,15 @@
-import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { BsPencil } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
-const API_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
-
-
 const MyJumbotron = () => {
   const profile = useSelector((state) => {
     return state.data.profile;
   });
   const experience = useSelector((state) => {
-    return state.data.experience;
+    return state.data.exp;
   });
   return (
     <Card>
@@ -32,7 +27,7 @@ const MyJumbotron = () => {
               style={{ width: "100%" }}
               id="profilePicImg"
               className="rounded-circle"
-              src="https://placedog.net/600/600"
+              src={profile.image}
               alt="Profile pic"
             />
           </Col>
@@ -49,11 +44,24 @@ const MyJumbotron = () => {
             <h2>
               {profile.name} {profile.surname}
             </h2>
-            <span>posizione lavorativa</span>
+            <span>
+              {profile.title} <br />
+              {experience.length > 0
+                ? experience[experience.length - 1].role + " - " + experience[experience.length - 1].company
+                : null}
+            </span>
             <br />
-            <small>informazioni di contatto</small>
+            <small>{profile.area}</small>
           </Col>
-          <Col xs={3}>logo posizione lavorativa</Col>
+          <Col xs={3}>
+            <img
+              id="logoLastExp"
+              src={
+                experience.length > 0 ? experience[experience.length - 1].description : "https://placedog.net/500/280"
+              }
+              alt="logo"
+            />
+          </Col>
         </Row>
         <Row className="my-2 cardBtns">
           <Col>

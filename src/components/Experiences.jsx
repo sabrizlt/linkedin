@@ -3,22 +3,24 @@ import { Container } from "react-bootstrap";
 import { FaAngleDown } from "react-icons/fa";
 import { Row } from "react-bootstrap";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import ModalModify from "./ModalModify";
+import { API_KEY } from "../App";
 
-const API_URL =
-  "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences";
-const API_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
-
+const API_URL = "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences";
 function Experiences() {
   const [experiences, setExperiences] = useState([]);
+
+  const exp = useSelector((state) => state.data.exp);
+  const reversedEpx = exp;
+  reversedEpx.reverse();
 
   const addExperience = (formData) => {
     fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: API_KEY,
       },
       body: JSON.stringify(formData),
     })
@@ -43,28 +45,61 @@ function Experiences() {
         </div>
         <div>
           <Container className="p-0 mb-3">
-            {experiences.map((experience, index) => (
+            {reversedEpx.slice(0, 5).map((experience, index) => (
               <Row className="mx-2" key={index}>
-                <Col md={3} className="align-items-center mb-1">
-                  <h4 className="mb-1 mx-2">{experience.role}</h4>
-                  <p className="mb-1 mx-2 text-primary">{experience.company}</p>
+                <Col className="align-items-center mb-1">
+                  <h5 className="mb-1 mx-2">{experience.role}</h5>
+
+                  <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
                   <span className="mb-1 mx-2 text-secondary">
-                    {new Date(experience.startDate).toLocaleDateString(
-                      "en-US",
-                      {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      }
-                    )}
+                    {new Date(experience.startDate).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}{" "}
+                    -{" "}
+                    {new Date(experience.endDate).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
                   </span>
                 </Col>
                 <hr className="mx-1 mt-1"></hr>
               </Row>
             ))}
+            <span className="d-none" id="ShowMore">
+              {reversedEpx.slice(5, -1).map((experience, index) => (
+                <Row className="mx-2" key={index}>
+                  <Col className="align-items-center mb-1">
+                    <h5 className="mb-1 mx-2">{experience.role}</h5>
+                    <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
+                    <span className="mb-1 mx-2 text-secondary">
+                      {new Date(experience.startDate).toLocaleDateString("en-US", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}{" "}
+                      -{" "}
+                      {new Date(experience.endDate).toLocaleDateString("en-US", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </Col>
+                  <hr className="mx-1 mt-1"></hr>
+                </Row>
+              ))}
+            </span>
 
             <div className="">
-              <button className="v-altro bg-white btn">
+              <button
+                className="v-altro bg-white btn"
+                onClick={() => {
+                  document.querySelector("#ShowMore").classList.remove("d-none");
+                }}
+              >
                 Visualizza altro
                 <FaAngleDown />
               </button>
