@@ -30,6 +30,7 @@ function MyNav() {
                         />
                     </Form>
                 </div>
+               <div id="icon" className="d-flex">
                 <div
                     className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4"
                 >
@@ -53,6 +54,7 @@ function MyNav() {
                 <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
                     <FaBell id="ico" className="icons-navbar" />
                     <Nav.Link className="d-none d-lg-block text-icons">Notifiche</Nav.Link>
+                </div>
                 </div>
                 <div className=" d-md-flex flex-column align-items-center justify-content-center border-end text-secondary me-4 pe-4">
                     <Image src="" className="rounded-circle" style={{ width: "25px", height: "25px" }} />
@@ -90,7 +92,7 @@ function MyNav() {
                     </NavDropdown>
                 </div>
                 <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-                    <CgMenuGridR id="ico" className="icons-navbar" />
+                    <CgMenuGridR id="icon" className="icons-navbar" />
                     <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
                 </div>
                 <p className="premium text-decoration-underline d-none d-md-flex fs-6 ms-3 mt-1">
@@ -98,7 +100,7 @@ function MyNav() {
                     Prova Premium gratis.
                 </p>
                 <Nav.Link className="d-flex d-md-none">
-                    <IoMdSettings className="icons-navbar" />
+                    <IoMdSettings id="icon" className="icons-navbar" />
                 </Nav.Link>
 
             </Navbar>
