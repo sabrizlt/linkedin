@@ -1,4 +1,4 @@
-import { Col } from "react-bootstrap";
+import { Alert, Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { FaAngleDown, FaAngleUp, FaPen } from "react-icons/fa";
 import { Row } from "react-bootstrap";
@@ -8,12 +8,15 @@ import ModalModify from "./ModalModify";
 import EditSingleExperience from "./EditSingleExperience";
 import { API_KEY } from "../App";
 
-const API_URL = "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences";
+const API_URL =
+  "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences";
 function Experiences() {
-  const API_PUT_URL = "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences/:expId";
   const [experiences, setExperiences] = useState([]);
-
-  const exp = useSelector((state) => state.data.exp);
+  const profile = useSelector((state) => state.data.profile);
+  console.log(profile);
+  const exp = useSelector((state) => state.data?.exp);
+  console.log(exp);
+  const API_PUT_URL = `https://striveschool-api.herokuapp.com/api/profile/${profile?._id}/experiences/`;
 
   const reversedEpx = exp;
   reversedEpx.reverse();
@@ -36,37 +39,43 @@ function Experiences() {
       });
   };
 
-  const editExperience = (formData) => {
-    fetch(API_URL, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: API_KEY,
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setExperiences([...experiences, data]);
-        console.log(formData);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+  const editExperience = async (formData, exp_id) => {
+    console.log(JSON.stringify(formData));
+    try {
+      let resp = await fetch(API_PUT_URL + exp_id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: API_KEY,
+        },
+        body: JSON.stringify(formData),
       });
+      if (resp.ok) {
+        alert("Esperienza modificata!");
+      } else {
+        alert("Errore nella modifica dell'esperienza!");
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
-  const deleteExperience = (formData) => {
-    fetch(API_URL, {
-      method: "DELETE",
-      headers: {
-        Authorization: API_KEY,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {})
-      .catch((error) => {
-        console.error("Error:", error);
+  const deleteExperience = async (exp_id) => {
+    try {
+      let resp = await fetch(API_PUT_URL + exp_id, {
+        method: "DELETE",
+        headers: {
+          Authorization: API_KEY,
+        },
       });
+
+      let data = await resp.json();
+      if (resp.ok) {
+        console.log(data);
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
   return (
@@ -84,11 +93,14 @@ function Experiences() {
                   <h5 className="mb-1 mx-2">{experience.role}</h5>
                   <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
                   <span className="mb-1 mx-2 text-secondary">
-                    {new Date(experience.startDate).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })}{" "}
+                    {new Date(experience.startDate).toLocaleDateString(
+                      "en-US",
+                      {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      }
+                    )}{" "}
                     -{" "}
                     {new Date(experience.endDate).toLocaleDateString("en-US", {
                       day: "numeric",
@@ -113,19 +125,27 @@ function Experiences() {
                 <Row className="mx-2" key={index}>
                   <Col xs={10} className="align-items-center mb-1">
                     <h5 className="mb-1 mx-2">{experience.role}</h5>
-                    <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
+                    <p className="mb-1 mx-2 ">
+                      {experience.company} • Full-time
+                    </p>
                     <span className="mb-1 mx-2 text-secondary">
-                      {new Date(experience.startDate).toLocaleDateString("en-US", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}{" "}
+                      {new Date(experience.startDate).toLocaleDateString(
+                        "en-US",
+                        {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        }
+                      )}{" "}
                       -{" "}
-                      {new Date(experience.endDate).toLocaleDateString("en-US", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}
+                      {new Date(experience.endDate).toLocaleDateString(
+                        "en-US",
+                        {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        }
+                      )}
                     </span>
                   </Col>
                   <Col xs={1} className="experienceEditIcon">
@@ -144,8 +164,12 @@ function Experiences() {
               <button
                 className="v-altro bg-white btn"
                 onClick={() => {
-                  document.querySelector("#ShowMore").classList.toggle("d-none");
-                  document.querySelector("#arrowDown").classList.toggle("d-none");
+                  document
+                    .querySelector("#ShowMore")
+                    .classList.toggle("d-none");
+                  document
+                    .querySelector("#arrowDown")
+                    .classList.toggle("d-none");
                   document.querySelector("#arrowUp").classList.toggle("d-none");
                   document.querySelector("#hide").classList.toggle("d-none");
                 }}

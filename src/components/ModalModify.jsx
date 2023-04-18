@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaPlus, FaPen } from "react-icons/fa";
 
-
 function ModalModify({ addExperience }) {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
@@ -18,17 +17,21 @@ function ModalModify({ addExperience }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const hideIcons = () => {
+    let icons = document.querySelectorAll(".edit_icon");
+    icons.forEach((icon) => {
+      icon.classList.toggle("d-none");
+    });
+  };
   const handleClick = () => {
     const formattedData = {
       ...formData,
       startDate: formData.startDate.slice(0, 10),
       endDate: formData.endDate.slice(0, 10),
-    }
+    };
     addExperience(formattedData);
     handleClose();
   };
-  
 
   return (
     <>
@@ -36,7 +39,12 @@ function ModalModify({ addExperience }) {
         <Button variant="" onClick={handleShow}>
           <FaPlus className="fs-4 ColorTextGrey" />
         </Button>
-        <Button variant="" onClick={handleShow}>
+        <Button
+          variant=""
+          onClick={() => {
+            hideIcons();
+          }}
+        >
           <FaPen className="fs-4 ColorTextGrey" />
         </Button>
       </div>
@@ -120,7 +128,11 @@ function ModalModify({ addExperience }) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClick} className="rounded-pill">
+          <Button
+            variant="primary"
+            onClick={handleClick}
+            className="rounded-pill"
+          >
             Save
           </Button>
         </Modal.Footer>
