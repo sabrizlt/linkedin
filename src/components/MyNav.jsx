@@ -4,7 +4,7 @@ import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
-import {BiSearchAlt2} from "react-icons/bi"
+
 import "../App.css";
 
 function MyNav() {
@@ -21,7 +21,7 @@ function MyNav() {
                         alt="logo"
                     />
                     <Form  className="d-none  search d-flex  d-lg-flex  " >
-                    <BiSearchAlt2 id="searchicon" className="icons-navbar" />
+                   
                         <Form.Control
                             type="search"
                             placeholder="Cerca"

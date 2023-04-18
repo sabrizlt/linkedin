@@ -3,12 +3,14 @@ import image from "./src/image/hiring.png"
 import { Col } from'react-bootstrap';
 import { Container } from'react-bootstrap';
 import { FaUserPlus,FaAngleDown,FaLinkedin } from 'react-icons/fa'
+import { Card, Button } from "react-bootstrap"
+import {BsFillPersonPlusFill} from "react-icons/bs"
 import { Row } from'react-bootstrap';
 const LateralComponent = () =>{
     return(
 <>
 {/*prima parte della lateral bar, */}
-<div className="border border-2 rounded-3 mb-3 p-2 bg-white ColorTextGrey">
+<div id='lateral' className="border border-2 rounded-3 mb-3 p-2 bg-white ColorTextGrey">
     <div className="ms-2 d-flex justify-content-between me-2">
 <p>modifica il profilo pubblico e L'URL</p>
 <i><FaQuestionCircle></FaQuestionCircle></i>
@@ -33,52 +35,48 @@ aggiungi il tuo profilo in un'altra lingua
 
 
 {/*terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
-<div className='border border-2 rounded-3 my-2  bg-white'>
+<Card className="fw-bold mt-3">
+            <Card.Body className="pb-0 fs-5">
+                Persone che potresti conoscere
+            </Card.Body>
+                <Card.Body>
+                    <div className="d-flex align-item-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/219/219986.png" alt="" style={{width: '50px', height: '50px'}} />
+                    <p className="ms-3">Luca Eliseo<br /> <span className="fw-lighter">Epicode Student</span> </p>
+                    </div>
+                    <Button variant="outline-secondary" size="sm" className='altroButton rounded-pill px-3'><BsFillPersonPlusFill/> Collegati</Button>
+                </Card.Body>
+                <hr className="m-0 mx-3" />
+                <Card.Body>
+                    <div className="d-flex align-item-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/219/219986.png" alt="" style={{width: '50px', height: '50px'}} />
+                    <p className="ms-3">Tiberiu Cujba <br /> <span className="fw-lighter">Epicode Student</span> </p>
+                    </div>
+                    <Button variant="outline-secondary" size="sm" className='altroButton rounded-pill px-3'><BsFillPersonPlusFill/> Collegati</Button>
+                </Card.Body>
+                <hr className="m-0 mx-3" />
+                <Card.Body>
+                    <div className="d-flex align-item-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/219/219986.png" alt="" style={{width: '50px', height: '50px'}} />
+                    <p className="ms-3">Sabri Zatnli<br /> <span className="fw-lighter">Epicode Student</span> </p>
+                    </div>
+                    <Button variant="outline-secondary" size="sm" className='altroButton rounded-pill px-3'><BsFillPersonPlusFill/> Collegati</Button>
+                </Card.Body>
+                <hr className="m-0 mx-3" />
+                <Card.Body>
+                    <div className="d-flex align-item-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/219/219986.png" alt="" style={{width: '50px', height: '50px'}} />
+                    <p className="ms-3">Emanuele<br /> <span className="fw-lighter">Epicode Student</span> </p>
+                    </div>
+                    <Button variant="outline-secondary" size="sm" className='altroButton rounded-pill px-3'><BsFillPersonPlusFill/> Collegati</Button>
+                </Card.Body>
+            </Card>
 
-<div>
-<p className='ms-4'>persone che potresti conoscere</p>
-
-<div>
-    <Container className='p-0 mb-3'>
-        <Row className='mx-2'>
-<Col md={3}>
-<img src="https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Rachel-Montan%CC%83ez.jpeg" alt="" width={55} className='rounded-5'/>
-</Col>
-
-<Col className='d-flex flex-column '>
-
-<p className='my-0'>Rachel Montanés</p>
-<p className='mb-1'>functional artist</p>
-<button className='PersoneButton  rounded-4 d-flex align-items-center mb-3'><FaUserPlus className='mx-1'/>Collegati</button>
-</Col>
-<hr className="mx-1 mt-1 mb-3"></hr>
-
-<Col md={3}>
-<img src="https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Rachel-Montan%CC%83ez.jpeg" alt="" width={55} className='rounded-5'/>
-</Col>
-
-<Col className='d-flex flex-column ms-2 '>
-
-<p className='my-0'>Rachel Montanés</p>
-<p className='mb-1'>functional artist</p>
-<button className='PersoneButton  rounded-4 d-flex align-items-center mb-3'> <FaUserPlus className='mx-1'/>Collegati</button>
-</Col>
-<hr className="mx-1 my-0 "></hr>
-        </Row>
-
-
-<div className='p-0'>
-   <button className='v-altro bg-white btn mx-0 rounded-0'>Visualizza altro<FaAngleDown/></button>
-</div>
-    </Container>
-  
-</div>
-</div>
-
+            <Card className="mt-3">
+                <Card.Img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="Card image" />
+            </Card>
 
 
-
-</div>
 {/*fine terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
 
 

@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { RiSendPlaneFill } from 'react-icons/ri'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { BsPencil } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
@@ -17,7 +19,7 @@ const MyJumbotron = () => {
     return state.data.experience;
   });
   return (
-    <Card>
+    <Card id="jumbotron">
       <Card.Img
         variant="top"
         src="https://placedog.net/900/400"
@@ -57,9 +59,9 @@ const MyJumbotron = () => {
         </Row>
         <Row className="my-2 cardBtns">
           <Col>
-            <span className="btn btn-primary rounded-pill me-1">Disponibile per:</span>
-            <span className="btn btn-outline-primary rounded-pill me-1">Aggiungi sezione del profilo</span>
-            <span className="btn btn-outline-secondary rounded-pill">Altro</span>
+          <Button variant="primary" size="sm" className='messaggioButton rounded-pill px-3'> Disponibile per</Button>
+                            <Button variant="outline-dark" size="sm" className='altroButton rounded-pill px-3 ms-3'>Altro</Button>
+           
           </Col>
         </Row>
 
