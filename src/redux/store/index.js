@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { getProfile } from "../actions";
-
+import mainReducer from "../reducers";
 
 const store = configureStore({
-    reducer: getProfile,
-})
+  reducer: mainReducer,
+});
 
-export default store
+export default store;
