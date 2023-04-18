@@ -47,9 +47,17 @@
 
 /******************************************Componente - Navbar***********************************/
 
+
+
 #icon{
   font-size: 1.2em;
   margin-right: 1em;
+}
+
+#search{
+  background-color: #EEF3F8;
+  border: none;
+  
 }
 
 

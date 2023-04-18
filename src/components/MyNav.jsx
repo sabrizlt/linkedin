@@ -1,32 +1,35 @@
-import { Navbar, Form, Nav, NavDropdown, Image } from "react-bootstrap";
+import { Navbar, Form, Nav, NavDropdown, Image, Container } from "react-bootstrap";
 import { FaHome, FaUserFriends, FaBell } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
+import {BiSearchAlt2} from "react-icons/bi"
 import "../App.css";
 
 function MyNav() {
     return (
         <>
 
-            <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap">
+            <Navbar id="nav" bg="white" expand="lg" className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top ">
                 <div className="d-flex justify-content-start align-items-center me-lg-5">
                     <img
                         src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
                         width="60"
                         height="60"
-                        className="d-inline-block align-top"
+                        className="d-inline-block align-top me-3"
                         alt="logo"
                     />
-                    <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 " >
+                    <Form  className="d-none  search d-flex  d-lg-flex  " >
+                    <BiSearchAlt2 id="searchicon" className="icons-navbar" />
                         <Form.Control
                             type="search"
                             placeholder="Cerca"
                             className="me-lg-5"
                             aria-label="Search"
-                            id="firstName"
+                            id="search"
                             name="firstName"
+                        
                         />
                     </Form>
                 </div>
@@ -53,7 +56,9 @@ function MyNav() {
                 </div>
                 <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
                     <FaBell id="ico" className="icons-navbar" />
-                    <Nav.Link className="d-none d-lg-block text-icons">Notifiche</Nav.Link>
+                    <Nav.Link className="d-none d-lg-block text-icons">Notifiche
+                 
+                    </Nav.Link>
                 </div>
                 </div>
                 <div className=" d-md-flex flex-column align-items-center justify-content-center border-end text-secondary me-4 pe-4">
@@ -92,18 +97,21 @@ function MyNav() {
                     </NavDropdown>
                 </div>
                 <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-                    <CgMenuGridR id="icon" className="icons-navbar" />
+                    <CgMenuGridR id="icon" className="icons-navbar fs-3 ms-3" />
                     <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
                 </div>
-                <p className="premium text-decoration-underline d-none d-md-flex fs-6 ms-3 mt-1">
+                <p className="premium text-decoration-underline d-none d-md-flex fs-6 ms-3 mt-2">
                     Fatti assumere più velocemente. <br />
                     Prova Premium gratis.
                 </p>
                 <Nav.Link className="d-flex d-md-none">
-                    <IoMdSettings id="icon" className="icons-navbar" />
+                    <IoMdSettings  className="icons-navbar fs-5 ms-1" />
                 </Nav.Link>
-
             </Navbar>
+           
+     
+   
+           
         </>
 
     );
