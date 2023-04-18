@@ -11,7 +11,7 @@ function Footer() {
   return (
     <Container className="w-100 " id="footer">
       <Row className="d-flex mt-5 ms-4">
-        <Col md={2} xs={6} className="text-md-start mb-3 mb-md-0 col-sm-6 ms-2">
+        <Col md={2} xs={6} className="text-md-start mb-3 mb-md-0 col-sm-6 ms-2 mt-4">
           {/* Prima colonna */}
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
             <div className="me-md-3 mb-3 mb-md-0">
@@ -36,7 +36,7 @@ function Footer() {
             </div>
           </div>
         </Col>
-        <Col md={2} xs={6} className=" text-md-start mb-3 mb-md-0 col-sm-6 ms-4">
+        <Col md={2} xs={6} className=" text-md-start mb-3 mb-md-0 col-sm-6 ms-4 mt-4">
           {/* Seconda colonna */}
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
             <ul className="list-unstyled text-md-start">
@@ -56,7 +56,7 @@ function Footer() {
           </div>
         </Col>
 
-        <Col md={2} xs={6} className=" text-md-start mb-3 mb-md-0 col-sm-6 ">
+        <Col  md={3} xs={6} className=" text-md-start mb-3 mb-md-0 col-sm-6 mt-4 ">
           {/* Terza colonna */}
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
             <ul className="list-unstyled text-md-start">
@@ -76,7 +76,7 @@ function Footer() {
           </div>
         </Col>
 
-        <Col id="footericon" md={2} xs={8} className="text-md-start  mb-md-0 mx-2 ms-5 domande">
+        <Col id="footericon" md={2} xs={8} className="text-md-start  mb-md-0 mx-2 ms-2 domande me-2">
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
             <ul className="list-unstyled text-xs-start helpList">
               <li className="mt-3">
@@ -105,7 +105,7 @@ function Footer() {
           </div>
         </Col>
 
-        <Col md={3} className="text-md-start mb-3 mb-md-0">
+        <Col md={2} className="text-md-start mb-3 mb-md-0 mt-3 ms-3 ">
           <div className="d-flex flex-column justify-content-center justify-content-md-start">
             <span>Seleziona lingua</span>
             <Form.Select aria-label="Default select example" className="formLanguage mt-3">
@@ -118,7 +118,7 @@ function Footer() {
         </Col>
       </Row>
       <Row>
-        <span className="copyright mt-2">LinkedIn Corporation &copy; {date()}</span>
+        <span className="copyright mt-2 text-center">LinkedIn Corporation &copy; {date()}</span>
       </Row>
     </Container>
   );
