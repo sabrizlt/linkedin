@@ -2,48 +2,48 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { FaPlus, FaPen } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
 
-
-function ModalModify({ addExperience }) {
+function EditSingleExperience(props) {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
-    role: "",
-    company: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-    area: "",
+    role: props.content.role,
+    company: props.content.company,
+    startDate: props.content.startDate.slice(0, 10),
+    endDate: props.content.endDate.slice(0, 10),
+    description: props.content.description,
+    area: props.content.area,
+    image: props.content.image,
   });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleDelete = () => {
+    props.deleteExperience(props.content._id);
+    handleClose();
+  };
 
   const handleClick = () => {
     const formattedData = {
       ...formData,
       startDate: formData.startDate.slice(0, 10),
       endDate: formData.endDate.slice(0, 10),
-    }
-    addExperience(formattedData);
+    };
+    props.editExperience(formattedData, props.content._id);
     handleClose();
   };
-  
 
   return (
     <>
       <div className="d-flex align-items-center">
-        <Button variant="" onClick={handleShow}>
-          <FaPlus className="fs-4 ColorTextGrey" />
-        </Button>
-        <Button variant="" onClick={handleShow}>
-          <FaPen className="fs-4 ColorTextGrey" />
+        <Button variant="" onClick={handleShow} className="edit_icon d-none">
+          <FaPen className="fs-6 ColorTextGrey " />
         </Button>
       </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add experience</Modal.Title>
+          <Modal.Title>Edit experience</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -54,9 +54,7 @@ function ModalModify({ addExperience }) {
                 placeholder="Add Role"
                 autoFocus
                 value={formData.role}
-                onChange={(e) =>
-                  setFormData({ ...formData, role: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="company">
@@ -66,9 +64,7 @@ function ModalModify({ addExperience }) {
                 placeholder="Add company"
                 autoFocus
                 value={formData.company}
-                onChange={(e) =>
-                  setFormData({ ...formData, company: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="startDate">
@@ -78,9 +74,7 @@ function ModalModify({ addExperience }) {
                 placeholder="insert start date"
                 autoFocus
                 value={formData.startDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, startDate: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
               />
               <Form.Label>End date</Form.Label>
               <Form.Control
@@ -88,9 +82,7 @@ function ModalModify({ addExperience }) {
                 placeholder="insert end date"
                 autoFocus
                 value={formData.endDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, endDate: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="description">
@@ -100,9 +92,17 @@ function ModalModify({ addExperience }) {
                 placeholder="Add a description"
                 style={{ height: "100px" }}
                 value={formData.description}
-                onChange={(e) =>
-                  setFormData({ ...formData, description: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="imageLink">
+              <Form.Label>Image link</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Add company logo link"
+                autoFocus
+                value={formData.image}
+                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="area">
@@ -112,15 +112,16 @@ function ModalModify({ addExperience }) {
                 placeholder="Add area"
                 autoFocus
                 value={formData.area}
-                onChange={(e) =>
-                  setFormData({ ...formData, area: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, area: e.target.value })}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClick} className="rounded-pill">
+          <Button variant="outline-danger" className="rounded-pill" onClick={handleDelete}>
+            Delete experience
+          </Button>
+          <Button variant="outline-primary" onClick={handleClick} className="rounded-pill">
             Save
           </Button>
         </Modal.Footer>
@@ -128,4 +129,4 @@ function ModalModify({ addExperience }) {
     </>
   );
 }
-export default ModalModify;
+export default EditSingleExperience;

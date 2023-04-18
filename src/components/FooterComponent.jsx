@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { AiTwotoneSetting, AiFillQuestionCircle, AiTwotoneSafetyCertificate } from "react-icons/ai";
 
-function Footer() {
+function FooterComponent() {
   const date = () => {
     let today = new Date();
     return today.getFullYear();
@@ -56,7 +56,7 @@ function Footer() {
           </div>
         </Col>
 
-        <Col  md={3} xs={6} className=" text-md-start mb-3 mb-md-0 col-sm-6 mt-4 ">
+        <Col md={3} xs={6} className=" text-md-start mb-3 mb-md-0 col-sm-6 mt-4 ">
           {/* Terza colonna */}
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
             <ul className="list-unstyled text-md-start">
@@ -87,14 +87,14 @@ function Footer() {
               </li>
               <span style={{ whiteSpace: "nowrap" }}>Visita il nostro Centro assistenza.</span>
               <li className="mt-3">
-                <AiTwotoneSetting  className="me-2" />
+                <AiTwotoneSetting className="me-2" />
                 <a href="" className="fs-6">
                   Gestisci il tuo account e la tua privacy
                 </a>{" "}
               </li>
-              <span  style={{ whiteSpace: "nowrap" }}>Vai alle impostazioni</span>
+              <span style={{ whiteSpace: "nowrap" }}>Vai alle impostazioni</span>
               <li className="mt-3">
-                <AiTwotoneSafetyCertificate  className="me-2" />
+                <AiTwotoneSafetyCertificate className="me-2" />
                 <a href="" className="fs-6 mt-2">
                   {" "}
                   Trasparenza sui contenuti consigliati
@@ -124,4 +124,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterComponent;

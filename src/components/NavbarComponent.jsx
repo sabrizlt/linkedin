@@ -7,7 +7,7 @@ import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import "../App.css";
 
-function MyNav() {
+function NavbarComponent() {
   const profile = useSelector((state) => state.data.profile);
   return (
     <>
@@ -102,4 +102,4 @@ function MyNav() {
   );
 }
 
-export default MyNav;
+export default NavbarComponent;
