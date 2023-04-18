@@ -1,9 +1,37 @@
+import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { BsPencil } from "react-icons/bs";
 
+const API_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
+
+
 const MyJumbotron = () => {
+  const [fullName, setFullName] = useState("");
+
+  useEffect(() => {
+    const fetchFullName = async () => {
+      try {
+        const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setFullName(`${data.name} ${data.surname}`);
+        } else {
+          console.log("An error occurred while fetching the data");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchFullName();
+  }, []);
+
   return (
     <Card>
       <Card.Img
@@ -34,7 +62,7 @@ const MyJumbotron = () => {
         </Row>
         <Row>
           <Col xs={9} className="justify-content-start">
-            <h2>NOME E COGNOME</h2>
+            <h2>{fullName}</h2>
             <span>posizione lavorativa</span>
             <br />
             <small>informazioni di contatto</small>
@@ -69,4 +97,5 @@ const MyJumbotron = () => {
     </Card>
   );
 };
+
 export default MyJumbotron;

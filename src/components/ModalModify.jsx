@@ -20,7 +20,12 @@ function ModalModify({ addExperience }) {
   const handleShow = () => setShow(true);
 
   const handleClick = () => {
-    addExperience(formData);
+    const formattedData = {
+      ...formData,
+      startDate: formData.startDate.slice(0, 10),
+      endDate: formData.endDate.slice(0, 10),
+    }
+    addExperience(formattedData);
     handleClose();
   };
   
