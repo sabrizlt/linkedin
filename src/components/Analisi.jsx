@@ -6,7 +6,7 @@ import { GoSearch } from "react-icons/go";
 
 const Analisi = () => {
   return (
-    <Container className="border border-1 my-1 rounded bg-light mt-3 p-3" fluid>
+    <Container className="border border-1 my-1 rounded bg-white mt-3 p-3" fluid>
       <Row className="mx-auto">
         <Col className="d-flex flex-column ms-2">
           <h2 className="text-start ">Analisi</h2>

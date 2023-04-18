@@ -8,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Risorse = () => {
   return (
-    <Container className="border border-1 my-1 rounded bg-light mt-3 p-3" fluid>
+    <Container className="border border-1 my-1 rounded bg-white mt-3 p-3" fluid>
       <Container>
         <Row>
           <Col className="d-flex flex-column ">
@@ -24,12 +24,10 @@ const Risorse = () => {
             <FaSatelliteDish className="fs-2 me-2 " />
             <p>
               <span className="fw-bold">
-                Modalità creazione dei contenuti{" "}
-                <Badge bg="secondary">No</Badge>
+                Modalità creazione dei contenuti <Badge bg="secondary">No</Badge>
               </span>
               <br />
-              Fatti scoprire, metti in risalto i contenuti sul tuo profilo e
-              accedi agli strumenti di creazione
+              Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione
             </p>
           </Col>
         </Row>

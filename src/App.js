@@ -12,12 +12,14 @@ import Analisi from "./components/Analisi";
 import Risorse from "./components/Risorse";
 import { useDispatch, useSelector } from "react-redux";
 //import { useParams } from "react-router-dom";
-
 import Experiences from "./components/Experiences";
+export const API_KEY =
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
+
 function App() {
   //const params = useParams();
-  const profile = useSelector((state) => state.profile);
-  const exp = useSelector((state) => state.exp);
+  const profile = useSelector((state) => state.data.profile);
+  const exp = useSelector((state) => state.data.exp);
   const dispatch = useDispatch();
 
   const fetchMyProfile = async () => {
@@ -25,8 +27,7 @@ function App() {
       let resp = await fetch(`https://striveschool-api.herokuapp.com/api/profile/me`, {
         method: "GET",
         headers: {
-          Authorization:
-            "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ5NzE4NmE4NzAwMTQzODY3YmEiLCJpYXQiOjE2ODE3MTYzNzYsImV4cCI6MTY4MjkyNTk3Nn0.SdhIh7dribLHrf1riCtsWZwyVeNfC8nypDfm-4ZnVo8",
+          Authorization: API_KEY,
         },
       });
       if (resp.ok) {
@@ -47,8 +48,7 @@ function App() {
       let response = await fetch(`http://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
         method: "GET",
         headers: {
-          Authorization:
-            "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ5NzE4NmE4NzAwMTQzODY3YmEiLCJpYXQiOjE2ODE3MTYzNzYsImV4cCI6MTY4MjkyNTk3Nn0.SdhIh7dribLHrf1riCtsWZwyVeNfC8nypDfm-4ZnVo8",
+          Authorization: API_KEY,
         },
       });
       if (response.ok) {
@@ -80,11 +80,9 @@ function App() {
             <Analisi />
             <Risorse />
             <Experiences />
-           
           </Col>
           <Col md={4}>
-            <LateralComponent/>
-
+            <LateralComponent />
           </Col>
         </Row>
         <MyFooter />
