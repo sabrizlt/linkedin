@@ -2,8 +2,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { BsPencil } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const MyJumbotron = () => {
+  const profile = useSelector((state) => {
+    return state.data.profile;
+  });
+  const experience = useSelector((state) => {
+    return state.data.experience;
+  });
   return (
     <Card>
       <Card.Img
@@ -34,7 +41,9 @@ const MyJumbotron = () => {
         </Row>
         <Row>
           <Col xs={9} className="justify-content-start">
-            <h2>NOME E COGNOME</h2>
+            <h2>
+              {profile.name} {profile.surname}
+            </h2>
             <span>posizione lavorativa</span>
             <br />
             <small>informazioni di contatto</small>
