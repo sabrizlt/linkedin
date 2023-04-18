@@ -47,9 +47,17 @@
 
 /******************************************Componente - Navbar***********************************/
 
+
+
 #icon{
   font-size: 1.2em;
   margin-right: 1em;
+}
+
+#search{
+  background-color: #EEF3F8;
+  border: none;
+  
 }
 
 
@@ -118,4 +126,10 @@ hr {
 
 .Linkedin {
   fill: rgba(0, 68, 255, 0.849) !important;
+}
+
+/*********************************** Footer ************************************************/
+
+#footericon{
+  margin-top: -20px;
 }
