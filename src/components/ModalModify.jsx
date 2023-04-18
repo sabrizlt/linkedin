@@ -4,24 +4,36 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaPlus, FaPen } from "react-icons/fa";
 
-function ModalModify() {
+
+function ModalModify({ addExperience }) {
   const [show, setShow] = useState(false);
+  const [formData, setFormData] = useState({
+    role: "",
+    company: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    area: "",
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleClick = () => {
+    addExperience(formData);
+    handleClose();
+  };
+  
+
   return (
     <>
-      <div className="d-flex align-items-center" >
-      
-
+      <div className="d-flex align-items-center">
         <Button variant="" onClick={handleShow}>
-          <FaPlus className="fs-4 ColorTextGrey"/>
+          <FaPlus className="fs-4 ColorTextGrey" />
         </Button>
-  <Button variant="" onClick={handleShow}>
-          <FaPen className="fs-4 ColorTextGrey"/>
+        <Button variant="" onClick={handleShow}>
+          <FaPen className="fs-4 ColorTextGrey" />
         </Button>
-
       </div>
 
       <Modal show={show} onHide={handleClose}>
@@ -30,49 +42,80 @@ function ModalModify() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="role">
               <Form.Label>Role</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Add Role"
                 autoFocus
+                value={formData.role}
+                onChange={(e) =>
+                  setFormData({ ...formData, role: e.target.value })
+                }
               />
-                <Form.Label>Company</Form.Label>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="company">
+              <Form.Label>Company</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Add company"
                 autoFocus
+                value={formData.company}
+                onChange={(e) =>
+                  setFormData({ ...formData, company: e.target.value })
+                }
               />
-                <Form.Label>Start date</Form.Label>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="startDate">
+              <Form.Label>Start date</Form.Label>
               <Form.Control
                 type="date"
                 placeholder="insert start date"
                 autoFocus
+                value={formData.startDate}
+                onChange={(e) =>
+                  setFormData({ ...formData, startDate: e.target.value })
+                }
               />
-                <Form.Label>End date</Form.Label>
+              <Form.Label>End date</Form.Label>
               <Form.Control
                 type="date"
                 placeholder="insert end date"
                 autoFocus
+                value={formData.endDate}
+                onChange={(e) =>
+                  setFormData({ ...formData, endDate: e.target.value })
+                }
               />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
+            <Form.Group className="mb-3" controlId="description">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control
+                as="textarea"
+                placeholder="Add a description"
+                style={{ height: "100px" }}
+                value={formData.description}
+                onChange={(e) =>
+                  setFormData({ ...formData, description: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="area">
               <Form.Label>Area</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Example Area: Roma"
+                placeholder="Add area"
                 autoFocus
+                value={formData.area}
+                onChange={(e) =>
+                  setFormData({ ...formData, area: e.target.value })
+                }
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="btn btn-primary rounded-pill" onClick={handleClose}>
+          <Button variant="primary" onClick={handleClick} className="rounded-pill">
             Save
           </Button>
         </Modal.Footer>
