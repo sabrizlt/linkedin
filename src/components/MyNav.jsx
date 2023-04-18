@@ -11,7 +11,7 @@ function MyNav() {
   const profile = useSelector((state) => state.data.profile);
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap">
+      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap ">
         <div className="d-flex justify-content-start align-items-center me-lg-5">
           <img
             src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
