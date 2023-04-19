@@ -7,6 +7,7 @@ import ResourcesComponent from "./ResourcesComponent";
 import ExperiencesComponent from "./ExperiencesComponent";
 import RightSideComponent from "./RightSideComponent";
 import FooterComponent from "./FooterComponent";
+import NavbarMobile from "./NavbarMobile";
 import { useSelector } from "react-redux";
 
 const ProfileComponent = () => {
@@ -25,6 +26,8 @@ const ProfileComponent = () => {
           <RightSideComponent />
         </Col>
       </Row>
+      <NavbarMobile />
+
       <FooterComponent />
     </Container>
   );

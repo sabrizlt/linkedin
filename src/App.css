@@ -336,6 +336,10 @@ p.NoticeText {
     margin-top: -50px;
   }
 
+  #footer {
+    display: none;
+  }
+
   
 }
 @media screen and (min-width: 791px) {
