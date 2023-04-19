@@ -13,6 +13,8 @@ import NavbarMobile from "./NavbarMobile";
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
+  const reversedPost = post;
+  reversedPost.reverse();
   const getPosts = async () => {
     try {
       let response = await fetch(
@@ -45,10 +47,10 @@ const HomeComponent = () => {
         </Col>
 
         <Col xs={12} md={5}>
-          <MyPost />
+          <MyPost getPost={getPosts} />
           <hr className="text-black" />
-          {post.map((p) => {
-            return <PostComponent post={p} key={p._id} />;
+          {reversedPost.slice(0, 50).map((p) => {
+            return <PostComponent post={p} key={p._id} getPost={getPosts} />;
           })}
         </Col>
         <Col md={3}>

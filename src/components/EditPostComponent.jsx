@@ -1,8 +1,7 @@
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { FaRegClock } from "react-icons/fa";
+import { FaPen, FaRegClock } from "react-icons/fa";
 import {
   FaPhotoVideo,
   FaYoutube,
@@ -10,48 +9,25 @@ import {
   FaCommentDots,
 } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
-import { API_KEY } from "../App";
-export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
+import { useState } from "react";
 
-function ModalPost(props) {
+const EditPostComponent = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [formData, setFormData] = useState({
-    text: "",
+    text: props.post.text,
   });
-
-  const addPost = async (formData) => {
-    try {
-      let resp = await fetch(API_POST_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: API_KEY,
-        },
-        body: JSON.stringify(formData),
-      });
-      if (resp.ok) {
-        props.getPosts();
-        alert("Post inviato con successo!");
-      } else {
-        return new Error("Errore durante la pubblicazione!");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
 
   return (
     <>
-      <Button
-        variant="light"
-        className="rounded-pill w-100 border-secondary fw-bolder text-secondary"
+      <span
+        className="rounded-pill border-secondary fw-bolder text-secondary me-2"
         onClick={handleShow}
       >
-        Avvia un post
-      </Button>
+        <FaPen />
+      </span>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -88,14 +64,24 @@ function ModalPost(props) {
             <div className="d-flex align-items-center">
               <FaRegClock className="text-secondary fs-4" />
               <Button
-                variant="primary"
+                variant="outline-primary"
                 className="rounded-pill fw-bolder mx-2"
                 onClick={() => {
-                  addPost(formData);
+                  props.editPost(formData, props.post._id);
                   handleClose();
                 }}
               >
-                Pubblica
+                Modifica post
+              </Button>
+              <Button
+                variant="outline-danger"
+                className="rounded-pill fw-bolder mx-2"
+                onClick={() => {
+                  props.deletePost(props.post._id);
+                  handleClose();
+                }}
+              >
+                Elimina post
               </Button>
             </div>
           </div>
@@ -103,6 +89,6 @@ function ModalPost(props) {
       </Modal>
     </>
   );
-}
+};
 
-export default ModalPost;
+export default EditPostComponent;

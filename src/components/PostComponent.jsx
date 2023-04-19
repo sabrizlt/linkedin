@@ -3,18 +3,71 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { BiLike, BiCommentDots, BiShare } from "react-icons/bi";
 import { BsSend } from "react-icons/bs";
-import {
-  InputGroup,
-  SplitButton,
-  Dropdown,
-  Form,
-  Container,
-} from "react-bootstrap";
+import { InputGroup, Form } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import EditPostComponent from "./EditPostComponent";
+import { API_KEY } from "../App";
+import { API_POST_URL } from "./ModalPost";
 
 const PostComponent = (props) => {
+  const editPost = async (formData, post_id) => {
+    console.log(JSON.stringify(formData));
+    try {
+      let resp = await fetch(API_POST_URL + post_id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: API_KEY,
+        },
+        body: JSON.stringify(formData),
+      });
+      if (resp.ok) {
+        props.getPost();
+        alert("Esperienza modificata!");
+      } else {
+        alert("Errore nella modifica dell'esperienza!");
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
+
+  const deletePost = async (post_id) => {
+    try {
+      let resp = await fetch(API_POST_URL + post_id, {
+        method: "DELETE",
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
+
+      let data = await resp.json();
+      if (resp.ok) {
+        console.log(data);
+        props.getPost();
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
+
+  const profile = useSelector((state) => state.data.profile);
   return (
     <Card className="mb-2">
       <Row className="mt-2 align-items-center">
+        <span
+          className={
+            props.post.username === profile.username
+              ? "d-flex justify-content-end"
+              : "d-none"
+          }
+        >
+          <EditPostComponent
+            editPost={editPost}
+            post={props.post}
+            deletePost={deletePost}
+          />
+        </span>
         <Col xs={2} className=" d-flex flex-row justify-content-end">
           <Card.Img
             variant="top"
@@ -27,6 +80,7 @@ const PostComponent = (props) => {
             alt="Profile image"
             style={{ aspectRatio: "1/1" }}
             className="rounded-circle ms-0 w-50"
+            onError={(e) => (e.currentTarget.src = "https://placedog.net/500")}
           />
         </Col>
         <Col xs={8} className="justify-content-start ps-0 ms-0 ">
