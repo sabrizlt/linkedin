@@ -138,3 +138,15 @@ hr {
 .m-w {
   max-width: 80% !important;
 }
+.ColorbackGrey {
+  background-color: rgb(238, 243, 248)
+  !important;
+  border: none !important;
+}
+
+#firstName:focus{
+  border: 1px solid black !important;
+}
+.premium{
+  font-size: 14px !important;
+}

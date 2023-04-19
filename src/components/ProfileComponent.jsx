@@ -15,13 +15,13 @@ const ProfileComponent = () => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col md={8} lg={7}>
+        <Col md={9} lg={7}>
           <JumbotronComponent profile={profile} />
           <AnalysisComponent />
           <ResourcesComponent />
           <ExperiencesComponent />
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <RightSideComponent />
         </Col>
       </Row>
