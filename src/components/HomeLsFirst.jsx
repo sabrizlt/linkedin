@@ -30,7 +30,7 @@ const HomeLsFirst = () => {
                   md={8}
                   lg={6}
                   xl={6}
-                  xxl={5}
+                  xxl={4}
                   className="mx-auto"
                 >
                   <img
