@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavbarComponent from "./components/NavbarComponent";
 import ProfileComponent from "./components/ProfileComponent";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import HomeComponent from "./components/HomeComponent";
 //import { useParams } from "react-router-dom";
 
 export const API_KEY =
@@ -65,8 +67,15 @@ function App() {
 
   return (
     <>
-      <NavbarComponent />
-      <ProfileComponent />
+    <BrowserRouter>
+   <NavbarComponent />
+    <Routes>
+<Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
+<Route path="/" element={<HomeComponent></HomeComponent>}></Route>
+    </Routes>
+    </BrowserRouter>
+   
+   
     </>
   );
 }
