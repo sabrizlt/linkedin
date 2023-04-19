@@ -1,7 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import LinkedinNotice from "./RightSide/LinedinNotice";
+import LinkedinNotice from "./RightSide/LinkedinNotice";
+import PosterProfileComponent from "./RightSide/PosterProfileComponent";
+import ColFooter from "./RightSide/ColFooter";
 import HomeLeftSide from "./HomeLeftSide";
 import { API_KEY } from "../App";
 import { useEffect, useState } from "react";
@@ -49,7 +51,9 @@ const HomeComponent = () => {
           })}
         </Col>
         <Col md={3}>
-          <LinkedinNotice />
+<LinkedinNotice/>
+<PosterProfileComponent/>
+<ColFooter/>
         </Col>
       </Row>
     </Container>
