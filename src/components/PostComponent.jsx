@@ -22,6 +22,7 @@ const PostComponent = (props) => {
         body: JSON.stringify(formData),
       });
       if (resp.ok) {
+        props.getPost();
         alert("Esperienza modificata!");
       } else {
         alert("Errore nella modifica dell'esperienza!");
@@ -43,6 +44,7 @@ const PostComponent = (props) => {
       let data = await resp.json();
       if (resp.ok) {
         console.log(data);
+        props.getPost();
       }
     } catch (error) {
       console.log("Error:", error);

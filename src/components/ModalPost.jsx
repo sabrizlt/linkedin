@@ -13,7 +13,7 @@ import { BsThreeDots } from "react-icons/bs";
 import { API_KEY } from "../App";
 export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
 
-function Example() {
+function ModalPost(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -33,6 +33,7 @@ function Example() {
         body: JSON.stringify(formData),
       });
       if (resp.ok) {
+        props.getPosts();
         alert("Post inviato con successo!");
       } else {
         return new Error("Errore durante la pubblicazione!");
@@ -104,4 +105,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default ModalPost;
