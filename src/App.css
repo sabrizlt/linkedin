@@ -280,3 +280,55 @@ p.NoticeText {
   position: sticky;
   top: 340px ;
 }
+
+.postImage {
+  padding: 0px;
+}
+
+.imageRandom {
+  width: 100%;
+}
+
+.bodyCard {
+  padding-left: 0px;
+}
+
+
+
+/* mediaquery */
+
+@media screen and (max-width: 790px) {
+  .premium {
+    display: none;
+  }
+
+  .leftSidebar {
+    display: none;
+  }
+
+  .myPost {
+    display: none;
+  }
+
+  .iconDesktop {
+    display: none !important;
+  }
+
+  .linkedinImage {
+    display: none !important;
+  }
+
+  .formSearch {
+    display: flex !important;
+    width: 220px !important;
+    
+  }
+  
+  
+}
+@media screen and (min-width: 791px) {
+ #navbarMobile {
+  display: none;
+ }
+ 
+}

@@ -10,7 +10,7 @@ import {
 
 function WithHeaderExample({ getPosts }) {
   return (
-    <Card className="mb-3">
+    <Card className='mb-3'>
       <Card.Body>
         <ModalPost getPosts={getPosts} />
         <div className="d-flex justify-content-center mt-3">

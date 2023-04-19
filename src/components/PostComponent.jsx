@@ -92,16 +92,17 @@ const PostComponent = (props) => {
           <small>Last update: {props.post.updatedAt.slice(0, 10)}</small>
         </Col>
       </Row>
-      <Card.Body>
+      <Card.Body className="bodyCard">
         <Row className="postContent ms-1">
-          <Col className="justify-content-start">
+          <Col className="justify-content-start postImage">
             <p className="postContentText mx-2">{props.post.text}</p>
             <img
-              className="img-fluid"
+              className="img-fluid m-0 p-0 imageRandom"
               src={`https://picsum.photos/seed/${Math.floor(
                 Math.random() * 20
-              )}/465`}
+              )}/500`}
               alt=""
+             
             />
             <hr />
             <div className="d-flex justify-content-end justify-content-md-center">

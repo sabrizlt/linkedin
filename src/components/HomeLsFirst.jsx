@@ -8,7 +8,7 @@ const HomeLsFirst = () => {
   const exp = useSelector((state) => state.data.exp);
 
   return (
-    <Container className="card__container">
+    <Container className="card__container leftSidebar">
       <Row>
         <Col>
           <Card style={{ width: "100%" }}>
