@@ -7,7 +7,7 @@ import { InputGroup, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import EditPostComponent from "./EditPostComponent";
 import { API_KEY } from "../App";
-import { API_POST_URL } from "./ModalPost";
+import { API_POST_URL } from "./AddPostComponent";
 
 const PostComponent = (props) => {
   const editPost = async (formData, post_id) => {
@@ -23,9 +23,9 @@ const PostComponent = (props) => {
       });
       if (resp.ok) {
         props.getPost();
-        alert("Esperienza modificata!");
+        alert("Post modificato!");
       } else {
-        alert("Errore nella modifica dell'esperienza!");
+        alert("Errore nella modifica del post!");
       }
     } catch (error) {
       console.log("Error:", error);
@@ -40,11 +40,10 @@ const PostComponent = (props) => {
           Authorization: API_KEY,
         },
       });
-
       let data = await resp.json();
+      props.getPost();
       if (resp.ok) {
         console.log(data);
-        props.getPost();
       }
     } catch (error) {
       console.log("Error:", error);
@@ -55,27 +54,13 @@ const PostComponent = (props) => {
   return (
     <Card className="mb-2">
       <Row className="mt-2 align-items-center">
-        <span
-          className={
-            props.post.username === profile.username
-              ? "d-flex justify-content-end"
-              : "d-none"
-          }
-        >
-          <EditPostComponent
-            editPost={editPost}
-            post={props.post}
-            deletePost={deletePost}
-          />
+        <span className={props.post.username === profile.username ? "d-flex justify-content-end" : "d-none"}>
+          <EditPostComponent editPost={editPost} post={props.post} deletePost={deletePost} />
         </span>
         <Col xs={2} className=" d-flex flex-row justify-content-end">
           <Card.Img
             variant="top"
-            src={
-              props.post.user
-                ? props.post.user.image
-                : "https://placedog.net/500"
-            }
+            src={props.post.user ? props.post.user.image : "https://placedog.net/500"}
             id="postUserImage"
             alt="Profile image"
             style={{ aspectRatio: "1/1" }}
@@ -85,9 +70,7 @@ const PostComponent = (props) => {
         </Col>
         <Col xs={8} className="justify-content-start ps-0 ms-0 ">
           <h5 className="postUserName mx-2 mb-0 ms-0 fw-bold">
-            {props.post.user
-              ? props.post.user.name + " " + props.post.user.surname
-              : props.post.username}
+            {props.post.user ? props.post.user.name + " " + props.post.user.surname : props.post.username}
           </h5>
           <small>Last update: {props.post.updatedAt.slice(0, 10)}</small>
         </Col>
@@ -98,11 +81,8 @@ const PostComponent = (props) => {
             <p className="postContentText mx-2">{props.post.text}</p>
             <img
               className="img-fluid m-0 p-0 imageRandom"
-              src={`https://picsum.photos/seed/${Math.floor(
-                Math.random() * 20
-              )}/500`}
+              src={`https://picsum.photos/seed/${Math.floor(Math.random() * 20)}/500`}
               alt=""
-             
             />
             <hr />
             <div className="d-flex justify-content-end justify-content-md-center">

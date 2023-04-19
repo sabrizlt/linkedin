@@ -19,15 +19,12 @@ function App() {
 
   const fetchMyProfile = async () => {
     try {
-      let resp = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/me`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: API_KEY,
-          },
-        }
-      );
+      let resp = await fetch(`https://striveschool-api.herokuapp.com/api/profile/me`, {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
       if (resp.ok) {
         let profile = await resp.json();
         dispatch({ type: "GET_PROFILE", payload: profile });
@@ -43,15 +40,12 @@ function App() {
 
   const fetchExp = async (id) => {
     try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: API_KEY,
-          },
-        }
-      );
+      let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
       if (response.ok) {
         let exp = await response.json();
         console.log(exp);
@@ -66,8 +60,8 @@ function App() {
 
   useEffect(() => {
     fetchMyProfile();
-    console.log(profile);
-    console.log(exp);
+    //console.log(profile);
+    //console.log(exp);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -76,10 +70,7 @@ function App() {
       <BrowserRouter>
         <NavbarComponent />
         <Routes>
-          <Route
-            path="/Profile"
-            element={<ProfileComponent></ProfileComponent>}
-          ></Route>
+          <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
         </Routes>
       </BrowserRouter>
