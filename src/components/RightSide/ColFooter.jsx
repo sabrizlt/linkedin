@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form"
 const ColFooter =()=>{
     return(
        
-            <Container fluid className="justify-content-center  w-100 stickynav2">
+            <Container fluid className="justify-content-center  w-100 stickynav2 leftSidebar">
   <div className="d-flex my-0">
  <ul className=" list-unstyled d-flex flex-column align-items-end">
     <li className="me-2">informazioni</li>

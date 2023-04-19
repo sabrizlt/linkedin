@@ -39,32 +39,41 @@ function NavbarComponent() {
           </Form>
         </div>
         
-        <div id="icon" className="d-flex">
-          <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
-            <FaHome id="ico" className="icons-navbar " />
-            <Nav.Link className="d-none d-lg-block text-icons">Home</Nav.Link>
+        <div id="icon" className="d-flex align-items-center mt-2 mb-2">
+          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary ms-5 mx-4">
+            <FaHome id="ico" className="icons-navbar fs-1" />
+            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+            <p className="iconValue">home</p>
+
           </div>
-          <div className="d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
-            <FaUserFriends id="ico" className="icons-navbar" />
-            <Nav.Link className="d-none d-lg-block text-icons">Rete</Nav.Link>
+          <div className="d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+            <FaUserFriends id="ico" className="icons-navbar fs-1" />
+            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+            <p className="iconValue">Rete</p>
+
           </div>
-          <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-            <MdWork id="ico" className="icons-navbar" />
-            <Nav.Link className="d-none d-lg-block text-icons">Lavoro</Nav.Link>
+          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+            <MdWork id="ico" className="icons-navbar fs-1" />
+            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+            <p className="iconValue">pubblica</p>
           </div>
-          <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-            <RiMessage3Fill id="ico" className="icons-navbar" />
-            <Nav.Link className="d-none d-lg-block text-icons">Messaggistica</Nav.Link>
+          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+            <RiMessage3Fill id="ico" className="icons-navbar fs-1" />
+            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+            <p className="iconValue" >Messaggistica</p>
+
           </div>
-          <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-            <FaBell id="ico" className="icons-navbar" />
-            <Nav.Link className="d-none d-lg-block text-icons">Notifiche</Nav.Link>
+          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+            <FaBell id="ico" className="icons-navbar fs-1" />
+            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+            <p className="iconValue">Notifiche</p>
+
           </div>
         </div>
-        <div className=" d-md-flex flex-column align-items-center justify-content-center border-end text-secondary me-4 pe-4">
+        <div className=" d-md-flex flex-column align-items-center justify-content-center border-end text-secondary me-4 pe-4 leftSidebar">
           <Image src={profile.image} className="rounded-circle" style={{ width: "25px", height: "25px" }} />
           <NavDropdown title="Tu" id="navbarScrollingDropdown" className="text-icons m-0 p-0">
-            <div className="d-flex ms-3 mt-1 align-items-center">
+            <div className="d-flex ms-3 mt-1 align-items-center leftSidebar">
               <Image src={profile.image} className="rounded-circle" style={{ width: "50px", height: "50px" }} />
               <div>
                 <NavDropdown.Item className="text-decoration-none bg-transparent">
@@ -77,7 +86,7 @@ function NavbarComponent() {
                 </NavDropdown.Item>
               </div>
             </div>
-            <NavDropdown.Item className="text-decoration-none bg-transparent">Visualizza profilo</NavDropdown.Item>
+            <NavDropdown.Item className="text-decoration-none bg-transparent ">Visualizza profilo</NavDropdown.Item>
             <NavDropdown.Divider />
             <p className="fw-bold text-black ms-3 mb-0 titolo-nav">Account</p>
             <NavDropdown.Item className="text-decoration-none link3 fw-bold  bg-transparent">
@@ -96,14 +105,14 @@ function NavbarComponent() {
         </div>
         <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
           <CgMenuGridR id="icon" className="icons-navbar fs-4" />
-          <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
+          <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown leftSidebar" className="text-icons m-0 p-0"></NavDropdown>
         </div>
         <p className="premium text-decoration-underline ms-3 mt-1 premium">
           Fatti assumere più velocemente. <br />
           Prova Premium gratis.
         </p>
         <Nav.Link className="d-flex d-md-none">
-          <IoMdSettings id="icon" className="icons-navbar" />
+          <IoMdSettings id="icon" className="icons-navbar leftSidebar" />
         </Nav.Link>
       </Navbar>
       </Container>

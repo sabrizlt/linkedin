@@ -303,7 +303,7 @@ p.NoticeText {
   }
 
   .leftSidebar {
-    display: none;
+    display: none !important;
   }
 
   .myPost {
@@ -323,7 +323,22 @@ p.NoticeText {
     width: 220px !important;
     
   }
+
+  .iconValue {
+    font-size: 0.6em;
+  }
+
+  .youNav {
+    display: none ;
+  }
   
+  .navImage {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: 50px;
+
+  }
+
   
 }
 @media screen and (min-width: 791px) {
