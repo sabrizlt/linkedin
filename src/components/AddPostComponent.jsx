@@ -3,17 +3,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaRegClock } from "react-icons/fa";
-import {
-  FaPhotoVideo,
-  FaYoutube,
-  FaNewspaper,
-  FaCommentDots,
-} from "react-icons/fa";
+import { FaPhotoVideo, FaYoutube, FaNewspaper, FaCommentDots } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import { API_KEY } from "../App";
 export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
 
-function ModalPost(props) {
+function AddPostComponent(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -60,19 +55,14 @@ function ModalPost(props) {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Control
                 as="textarea"
                 rows={3}
                 className="border-light modalArea"
                 placeholder="Di cosa vorresti parlare?"
                 value={formData.text}
-                onChange={(e) =>
-                  setFormData({ ...formData, text: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, text: e.target.value })}
               />
             </Form.Group>
           </Form>
@@ -106,4 +96,4 @@ function ModalPost(props) {
   );
 }
 
-export default ModalPost;
+export default AddPostComponent;

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-#root {
+#root,
+html {
   background-color: #f3f2ee;
   font-family: "Roboto", sans-serif;
 }
@@ -51,10 +52,7 @@ li {
 
 /******************************************Componente - Navbar***********************************/
 
-
-
 #icon {
-
   font-size: 1.2em;
   margin-right: 1em;
 }
@@ -206,7 +204,6 @@ button:hover {
 
 .Iconsmall {
   width: 10px;
-
 }
 
 p.NoticeText {
@@ -217,7 +214,6 @@ p.NoticeText {
 .Iconsmall {
   font-size: 10px !important;
   fill: grey;
-
 }
 
 .NoticeText {
@@ -238,7 +234,7 @@ p.NoticeText {
 }
 
 .neg {
-  margin-left: -10px
+  margin-left: -10px;
 }
 
 /********************************** Home left-side components*********************************************/
@@ -271,14 +267,14 @@ p.NoticeText {
   margin-bottom: -10px;
 }
 
-.stickynav{
+.stickynav {
   position: sticky;
   top: 60px;
 }
 
-.stickynav2{
+.stickynav2 {
   position: sticky;
-  top: 340px ;
+  top: 340px;
 }
 
 .postImage {
@@ -292,8 +288,6 @@ p.NoticeText {
 .bodyCard {
   padding-left: 0px;
 }
-
-
 
 /* mediaquery */
 
@@ -321,14 +315,10 @@ p.NoticeText {
   .formSearch {
     display: flex !important;
     width: 220px !important;
-    
   }
-  
-  
 }
 @media screen and (min-width: 791px) {
- #navbarMobile {
-  display: none;
- }
- 
+  #navbarMobile {
+    display: none;
+  }
 }
