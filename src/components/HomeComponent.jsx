@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import LinkedinNotice from "./RightSide/LinedinNotice";
+import LinkedinNotice from "./RightSide/LinkedinNotice";
 import PosterProfileComponent from "./RightSide/PosterProfileComponent";
 import ColFooter from "./RightSide/ColFooter";
 import HomeLeftSide from "./HomeLeftSide";
@@ -41,7 +41,7 @@ const HomeComponent = () => {
           <HomeLeftSide />
         </Col>
 
-        <Col md={7}>
+        <Col md={6}>
           {post.map((p) => {
             return <PostComponent post={p} key={p._id} />;
           })}
