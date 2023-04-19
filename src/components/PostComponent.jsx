@@ -1,6 +1,10 @@
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { BiLike, BiCommentDots, BiShare } from "react-icons/bi";
+import { BsSend } from "react-icons/bs";
+import { InputGroup, SplitButton, Dropdown, Form } from "react-bootstrap";
+
 
 const PostComponent = (props) => {
   return (
@@ -28,6 +32,18 @@ const PostComponent = (props) => {
           <Col className="justify-content-start">
             <p className="postContentText mx-2">{props.post.text}</p>
             <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 20)}/465`} alt="" />
+            <hr />
+            <div className="d-flex justify-content-center">
+            <BiLike className="fs-4"/><span className="mx-1">Consiglia</span>
+            <BiCommentDots className="fs-4 mx-2"/><span className="mx-0">Commenta</span>
+            <BiShare className="fs-4 mx-2"/><span className="mx-0">Diffondi il post</span>
+            <BsSend className="fs-4 mx-2"/><span className="mx-0">Invia</span>
+            </div>
+
+      <InputGroup className="mb-3">
+        <Form.Control aria-label="Text input with dropdown button"  className="rounded-pill mt-3" placeholder="Aggiungi un Commento..." />
+       
+      </InputGroup>
           </Col>
         </Row>
       </Card.Body>
