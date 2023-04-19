@@ -1,5 +1,5 @@
-import { Navbar, Form, Nav, NavDropdown, Image, Container } from "react-bootstrap";
-import { FaHome, FaUserFriends, FaBell, FaSearch } from "react-icons/fa";
+import { Navbar, Form, Nav, NavDropdown, Image } from "react-bootstrap";
+import { FaHome, FaUserFriends, FaBell } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
@@ -46,7 +46,6 @@ function NavbarComponent() {
             <Link to="/">
               <FaHome id="ico" className="icons-navbar " />
             </Link>
-
             <Nav.Link className="d-none d-lg-block text-icons">Home</Nav.Link>
           </div>
 

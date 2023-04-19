@@ -6,6 +6,7 @@ import NavbarComponent from "./components/NavbarComponent";
 import ProfileComponent from "./components/ProfileComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent";
+import NotFoundComponent from "./components/NotFoundComponent";
 //import { useParams } from "react-router-dom";
 
 export const API_KEY =
@@ -13,8 +14,8 @@ export const API_KEY =
 
 function App() {
   //const params = useParams();
-  const profile = useSelector((state) => state.data.profile);
-  const exp = useSelector((state) => state.data.exp);
+  //const profile = useSelector((state) => state.data.profile);
+  // const exp = useSelector((state) => state.data.exp);
   const dispatch = useDispatch();
 
   const fetchMyProfile = async () => {
@@ -72,6 +73,7 @@ function App() {
         <Routes>
           <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
+          <Route path="/*" element={<NotFoundComponent />}></Route>
         </Routes>
       </BrowserRouter>
     </>

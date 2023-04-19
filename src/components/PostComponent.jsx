@@ -41,13 +41,14 @@ const PostComponent = (props) => {
         },
       });
       let data = await resp.json();
-      props.getPost();
+
       if (resp.ok) {
         console.log(data);
       }
     } catch (error) {
       console.log("Error:", error);
     }
+    props.getPost();
   };
 
   const profile = useSelector((state) => state.data.profile);
