@@ -12,7 +12,9 @@ function NavbarComponent() {
   
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap">
+      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap fixed-top" style={{
+          boxShadow: '1px 1px 5px grey',
+        }}>
         <div className="d-flex justify-content-start align-items-center me-lg-5">
           <img
             src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
@@ -95,7 +97,7 @@ function NavbarComponent() {
           <CgMenuGridR id="icon" className="icons-navbar fs-4" />
           <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
         </div>
-        <p className="premium text-decoration-underline d-none d-md-flex fs-6 ms-3 mt-1">
+        <p className="premium text-decoration-underline ms-3 mt-1 premium">
           Fatti assumere più velocemente. <br />
           Prova Premium gratis.
         </p>
