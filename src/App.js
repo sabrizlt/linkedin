@@ -71,8 +71,9 @@ function App() {
       <BrowserRouter>
         <NavbarComponent />
         <Routes>
-          <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
+          <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
+          <Route path="/Profile/:id" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/*" element={<NotFoundComponent />}></Route>
         </Routes>
       </BrowserRouter>
