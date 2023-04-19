@@ -45,7 +45,9 @@
   font-size: 0.8em;
 }
 
-li{  color: gray;}
+li {
+  color: gray;
+}
 
 /******************************************Componente - Navbar***********************************/
 
@@ -122,10 +124,12 @@ hr {
   font-weight: 900;
   color: grey !important;
 }
-button:hover{
+
+button:hover {
   background-color: rgba(148, 144, 144, 0.356) !important;
   outline: none !important;
 }
+
 .v-altro:hover {
   background-color: rgba(148, 144, 144, 0.356) !important;
   outline: none !important;
@@ -200,37 +204,40 @@ button:hover{
   font-size: 14px !important;
 }
 
-.Iconsmall{
-width: 10px;
- 
+.Iconsmall {
+  width: 10px;
+
 }
 
-p.NoticeText{
+p.NoticeText {
   font-weight: 800px !important;
   color: rgb(24, 91, 100) !important;
 }
+
 .Iconsmall {
   font-size: 10px !important;
   fill: grey;
 
 }
 
-.NoticeText{
+.NoticeText {
   color: rgb(0, 0, 0);
   font-size: 14px;
 }
-.NoticeTextsec{
+
+.NoticeTextsec {
   font-size: 10px;
 }
 
-.Neg{
+.Neg {
   margin-top: -15px !important;
 }
-.Negg{
+
+.Negg {
   margin-top: -5px !important;
 }
 
-.neg{
+.neg {
   margin-left: -10px
 }
 
@@ -252,6 +259,7 @@ p.NoticeText{
 /********************************** Home left-side components*********************************************/
 
 .card__container {
+  margin-top: -1px;
   font-size: 0.8rem !important;
 }
 

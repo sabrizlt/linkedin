@@ -37,23 +37,23 @@ const HomeComponent = () => {
     getPosts();
   }, []);
   return (
-    <Container id="home">
+    <Container id="home" fluid>
       <Row className="justify-content-center pt-4">
         <Col md={3}>
           <HomeLeftSide />
         </Col>
 
-        <Col md={5}>
+        <Col xs={12} md={5}>
           <MyPost />
-          <hr className="text-black"/>
+          <hr className="text-black" />
           {post.map((p) => {
             return <PostComponent post={p} key={p._id} />;
           })}
         </Col>
         <Col md={3}>
-<LinkedinNotice/>
-<PosterProfileComponent/>
-<ColFooter/>
+          <LinkedinNotice />
+          <PosterProfileComponent />
+          <ColFooter />
         </Col>
       </Row>
     </Container>
