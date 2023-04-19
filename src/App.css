@@ -77,7 +77,11 @@
 
 /*********************************** Jumbotron ************************************************/
 #profilePicImg {
-  margin-top: -50%;
+  margin-top: -80%;
+  border: 5px solid white;
+}
+#profileCoverImg {
+  height: 200px;
 }
 
 .card .cardBtns span {
@@ -138,6 +142,44 @@ hr {
 .m-w {
   max-width: 80% !important;
 }
+
+/* nuovo CSS profilo*/
+
+.navbar{
+height: 55px;
+}
+
+.premium {
+  color: rgb(165, 83, 42);
+  font-size: 0.8em;
+  width: 210px;
+  text-align: center;
+}
+
+.profileName {
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+.profileTitle {
+  font-weight: 900;
+  font-size: 0.9em;
+}
+
+.Profile {
+  font-weight: bold !important;
+  font-size: 1em !important;
+}
+
+.footerSpan {
+  color: rgb(196, 133, 207);
+}
+
+#jumbotron, #lateral {
+  margin-top: 75px;
+}
+
+
+
 .ColorbackGrey {
   background-color: rgb(238, 243, 248)
   !important;
@@ -149,4 +191,8 @@ hr {
 }
 .premium{
   font-size: 14px !important;
+}
+
+.Iconsmall{
+  font-size: 10px !important;
 }

@@ -27,7 +27,7 @@ function FooterComponent() {
                   <option value="1">Condizioni e termini</option>
                 </Form.Select>
                 <a href="">
-                  <li className="mb-3 mt-4">Sales Solutions</li>
+                  <li className="mb-3 mt-4 footerSpan">Sales Solutions</li>
                 </a>{" "}
                 <a href="">
                   <li className="mb-md-5">Centro sicurezza</li>
@@ -41,7 +41,7 @@ function FooterComponent() {
           <div className="d-flex flex-column align-items-center justify-content-center justify-content-md-start">
             <ul className="list-unstyled text-md-start">
               <a href="">
-                <li className="mb-3">Accessibilità</li>
+                <li className="mb-3 footerSpan">Accessibilità</li>
               </a>
               <a href="">
                 <li className="mb-3">Carriera</li>
@@ -118,7 +118,7 @@ function FooterComponent() {
         </Col>
       </Row>
       <Row>
-        <span className="copyright mt-2 text-center">LinkedIn Corporation &copy; {date()}</span>
+        <span className="copyright mt-2 text-center mb-5">LinkedIn Corporation &copy; {date()}</span>
       </Row>
     </Container>
   );
