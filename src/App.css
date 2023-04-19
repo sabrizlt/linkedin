@@ -56,11 +56,9 @@
 }
 
 #search {
-  background-color: #EEF3F8;
+  background-color: #eef3f8;
   border: none;
-
 }
-
 
 /******************************************Componente - Analisi***********************************/
 /* .para__divs {
@@ -179,11 +177,10 @@ hr {
 }
 
 #jumbotron,
-#lateral {
+#lateral,
+#home {
   margin-top: 75px;
 }
-
-
 
 .ColorbackGrey {
   background-color: rgb(238, 243, 248) !important;
