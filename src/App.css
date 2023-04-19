@@ -45,6 +45,8 @@
   font-size: 0.8em;
 }
 
+li{  color: gray;}
+
 /******************************************Componente - Navbar***********************************/
 
 
@@ -116,7 +118,10 @@ hr {
   font-weight: 900;
   color: grey !important;
 }
-
+button:hover{
+  background-color: rgba(148, 144, 144, 0.356) !important;
+  outline: none !important;
+}
 .v-altro:hover {
   background-color: rgba(148, 144, 144, 0.356) !important;
   outline: none !important;
@@ -153,4 +158,21 @@ hr {
 
 .Iconsmall{
   font-size: 10px !important;
+  fill: grey;
+
+}
+
+.NoticeText{
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
+.NoticeTextsec{
+  font-size: 10px;
+}
+
+.Neg{
+  margin-top: -15px !important;
+}
+.Negg{
+  margin-top: -5px !important;
 }

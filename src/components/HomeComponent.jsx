@@ -2,6 +2,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import LinkedinNotice from "./RightSide/LinedinNotice";
+import PosterProfileComponent from "./RightSide/PosterProfileComponent";
+import ColFooter from "./RightSide/ColFooter";
 const HomeComponent = () => {
   return (
     <Container>
@@ -15,6 +17,8 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quis officiis ea
         </Col>
         <Col md={3}>
 <LinkedinNotice/>
+<PosterProfileComponent/>
+<ColFooter/>
         </Col>
 
       </Row>
