@@ -25,7 +25,7 @@ const ColFooter =()=>{
  </ul>
         </div>
 
-       <ul className="list-unstyled Neg ">
+       <ul className="list-unstyled Neg">
         <li className="my-0">Opzioni per gli annunci pubblicitari</li>
        </ul>
 

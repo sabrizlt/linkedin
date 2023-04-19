@@ -16,13 +16,9 @@ const LinkedinNotice = () =>{
 
 
 <Row>
-    <Col md={2} className="mx-0">
-    <FaRegCircle className="Iconsmall d-flex my-2"></FaRegCircle>
-    </Col>
-
-    <Col md={10} className="mx-0">
-        <p className="NoticeText my-0">Le top Companies del 2023 in italia</p>
-        <p className="my-0 NoticeTextsec text-secondary">Notizie principali * 130 lettori</p>
+    <Col  className="mx-0" >
+        <p className="NoticeText my-0 "><FaRegCircle className="me-3"/>Le top Companies del 2023 in italia</p>
+        <p className="my-0 NoticeTextsec text-secondary ms-4">Notizie principali * 130 lettori</p>
     </Col>
     <button className="v-altro bg-white btn mx-0 rounded-0 NoticeText text-start">
         Visualizza altro 
