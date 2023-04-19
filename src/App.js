@@ -38,7 +38,7 @@ function App() {
 
   const fetchExp = async (id) => {
     try {
-      let response = await fetch(`http://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
+      let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
         method: "GET",
         headers: {
           Authorization: API_KEY,

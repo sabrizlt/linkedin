@@ -1,5 +1,5 @@
 import { Navbar, Form, Nav, NavDropdown, Image, Container } from "react-bootstrap";
-import { FaHome, FaUserFriends, FaBell } from "react-icons/fa";
+import { FaHome, FaUserFriends, FaBell,FaSearch } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
@@ -12,9 +12,7 @@ function NavbarComponent() {
   
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap fixed-top" style={{
-          boxShadow: '1px 1px 5px grey',
-        }}>
+      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap">
         <div className="d-flex justify-content-start align-items-center me-lg-5">
           <img
             src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
@@ -23,15 +21,18 @@ function NavbarComponent() {
             className="d-inline-block align-top"
             alt="logo"
           />
-          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 ">
+          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 ">
+            
             <Form.Control
               type="search"
               placeholder="Cerca"
-              className="me-lg-5"
+              className="me-lg-5 ColorbackGrey"
               aria-label="Search"
               id="firstName"
               name="firstName"
+              
             />
+            
           </Form>
         </div>
         
@@ -94,7 +95,7 @@ function NavbarComponent() {
           <CgMenuGridR id="icon" className="icons-navbar fs-4" />
           <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
         </div>
-        <p className="premium text-decoration-underline ms-3 mt-1 premium">
+        <p className="premium text-decoration-underline d-none d-md-flex fs-6 ms-3 mt-1">
           Fatti assumere più velocemente. <br />
           Prova Premium gratis.
         </p>
