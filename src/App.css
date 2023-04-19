@@ -332,6 +332,10 @@ p.NoticeText {
 
   }
 
+  .postContainer {
+    margin-top: -50px;
+  }
+
   
 }
 @media screen and (min-width: 791px) {
