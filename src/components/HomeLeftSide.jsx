@@ -5,7 +5,9 @@ const HomeLeftSide = () => {
   return (
     <>
       <HomeLsFirst />
-      <HomeLsSecond />
+      <div className="my-2">
+        <HomeLsSecond />
+      </div>
     </>
   );
 };
