@@ -24,7 +24,15 @@ const HomeRsFirst = () => {
             </Row>
             <Card.Body>
               <Row>
-                <Col xs={4} sm={3} md={6} className="mx-auto">
+                <Col
+                  xs={4}
+                  sm={3}
+                  md={8}
+                  lg={6}
+                  xl={6}
+                  xxl={5}
+                  className="mx-auto"
+                >
                   <img
                     style={{ width: "100%" }}
                     id="profilePicImg"
