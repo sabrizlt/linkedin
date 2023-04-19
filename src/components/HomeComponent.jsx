@@ -9,6 +9,7 @@ import { API_KEY } from "../App";
 import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
 import MyPost from "./MyPost";
+import NavbarMobile from "./NavbarMobile";
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
@@ -54,6 +55,7 @@ const HomeComponent = () => {
           <LinkedinNotice />
           <PosterProfileComponent />
           <ColFooter />
+          <NavbarMobile />
         </Col>
       </Row>
     </Container>

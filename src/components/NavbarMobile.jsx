@@ -12,7 +12,8 @@ function NavbarComponent() {
   
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top" style={{
+    <Container id="navbarMobile">
+      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-bottom" style={{
           boxShadow: '1px 1px 5px grey',
         }}>
         <div className="d-flex justify-content-start align-items-center me-lg-5">
@@ -23,7 +24,7 @@ function NavbarComponent() {
             className="d-inline-block align-top linkedinImage"
             alt="logo"
           />
-          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 formSearch">
+          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 ">
             
             <Form.Control
               type="search"
@@ -38,7 +39,7 @@ function NavbarComponent() {
           </Form>
         </div>
         
-        <div id="icon" className="d-flex iconNavbar iconDesktop">
+        <div id="icon" className="d-flex">
           <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
             <FaHome id="ico" className="icons-navbar " />
             <Nav.Link className="d-none d-lg-block text-icons">Home</Nav.Link>
@@ -102,9 +103,10 @@ function NavbarComponent() {
           Prova Premium gratis.
         </p>
         <Nav.Link className="d-flex d-md-none">
-          <IoMdSettings id="icon" className="icons-navbar iconDesktop" />
+          <IoMdSettings id="icon" className="icons-navbar" />
         </Nav.Link>
       </Navbar>
+      </Container>
     </>
   );
 }

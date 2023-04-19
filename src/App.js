@@ -1,11 +1,10 @@
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavbarComponent from "./components/NavbarComponent";
 import ProfileComponent from "./components/ProfileComponent";
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent";
 //import { useParams } from "react-router-dom";
 
@@ -20,12 +19,15 @@ function App() {
 
   const fetchMyProfile = async () => {
     try {
-      let resp = await fetch(`https://striveschool-api.herokuapp.com/api/profile/me`, {
-        method: "GET",
-        headers: {
-          Authorization: API_KEY,
-        },
-      });
+      let resp = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/me`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: API_KEY,
+          },
+        }
+      );
       if (resp.ok) {
         let profile = await resp.json();
         dispatch({ type: "GET_PROFILE", payload: profile });
@@ -41,12 +43,15 @@ function App() {
 
   const fetchExp = async (id) => {
     try {
-      let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
-        method: "GET",
-        headers: {
-          Authorization: API_KEY,
-        },
-      });
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: API_KEY,
+          },
+        }
+      );
       if (response.ok) {
         let exp = await response.json();
         console.log(exp);
@@ -68,15 +73,16 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-   <NavbarComponent />
-    <Routes>
-<Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
-<Route path="/" element={<HomeComponent></HomeComponent>}></Route>
-    </Routes>
-    </BrowserRouter>
-   
-   
+      <BrowserRouter>
+        <NavbarComponent />
+        <Routes>
+          <Route
+            path="/Profile"
+            element={<ProfileComponent></ProfileComponent>}
+          ></Route>
+          <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -6,7 +6,7 @@ import { FaPhotoVideo, FaYoutube, FaCalendarAlt, FaNewspaper } from "react-icons
 
 function WithHeaderExample() {
   return (
-    <Card className='mb-3'>
+    <Card className='mb-3 myPost'>
       <Card.Body>
         <ModalPost />
         <div className="d-flex justify-content-center mt-3">
