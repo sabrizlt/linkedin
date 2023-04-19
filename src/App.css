@@ -194,5 +194,11 @@ height: 55px;
 }
 
 .Iconsmall{
-  font-size: 10px !important;
+width: 10px;
+ 
+}
+
+p.NoticeText{
+  font-weight: 800px !important;
+  color: rgb(24, 91, 100) !important;
 }
