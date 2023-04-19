@@ -9,9 +9,12 @@ import "../App.css";
 
 function NavbarComponent() {
   const profile = useSelector((state) => state.data.profile);
+  
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap">
+      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap fixed-top" style={{
+          boxShadow: '1px 1px 5px grey',
+        }}>
         <div className="d-flex justify-content-start align-items-center me-lg-5">
           <img
             src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
@@ -31,12 +34,13 @@ function NavbarComponent() {
             />
           </Form>
         </div>
+        
         <div id="icon" className="d-flex">
-          <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
+          <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
             <FaHome id="ico" className="icons-navbar " />
             <Nav.Link className="d-none d-lg-block text-icons">Home</Nav.Link>
           </div>
-          <div className="d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
+          <div className="d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
             <FaUserFriends id="ico" className="icons-navbar" />
             <Nav.Link className="d-none d-lg-block text-icons">Rete</Nav.Link>
           </div>
@@ -87,10 +91,10 @@ function NavbarComponent() {
           </NavDropdown>
         </div>
         <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-          <CgMenuGridR id="icon" className="icons-navbar" />
+          <CgMenuGridR id="icon" className="icons-navbar fs-4" />
           <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
         </div>
-        <p className="premium text-decoration-underline d-none d-md-flex fs-6 ms-3 mt-1">
+        <p className="premium text-decoration-underline ms-3 mt-1 premium">
           Fatti assumere più velocemente. <br />
           Prova Premium gratis.
         </p>
