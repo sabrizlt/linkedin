@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { BsSquareHalf, BsFillBookmarkFill } from "react-icons/bs";
 
-const HomeRsFirst = () => {
+const HomeLsFirst = () => {
   const profile = useSelector((state) => state.data.profile);
   const exp = useSelector((state) => state.data.exp);
 
@@ -95,4 +95,4 @@ const HomeRsFirst = () => {
   );
 };
 
-export default HomeRsFirst;
+export default HomeLsFirst;

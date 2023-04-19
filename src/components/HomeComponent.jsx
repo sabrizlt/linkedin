@@ -2,13 +2,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import LinkedinNotice from "./RightSide/LinedinNotice";
-import HomeRightSide from "./HomeRightSide";
+import HomeLeftSide from "./HomeLeftSide";
 const HomeComponent = () => {
   return (
     <Container>
       <Row className="justify-content-center">
         <Col md={3}>
-          <HomeRightSide />
+          <HomeLeftSide />
         </Col>
 
         <Col md={6}>

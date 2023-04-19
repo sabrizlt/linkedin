@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { GoPlus } from "react-icons/go";
 
-const HomeRsSecond = () => {
+const HomeLsSecond = () => {
   return (
     <Container className="card__container">
       <Row>
@@ -55,4 +55,4 @@ const HomeRsSecond = () => {
   );
 };
 
-export default HomeRsSecond;
+export default HomeLsSecond;
