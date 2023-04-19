@@ -12,7 +12,7 @@ function NavbarComponent() {
   
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0 mb-4 flex-sm-nowrap fixed-top" style={{
+      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top" style={{
           boxShadow: '1px 1px 5px grey',
         }}>
         <div className="d-flex justify-content-start align-items-center me-lg-5">

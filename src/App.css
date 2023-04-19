@@ -262,3 +262,13 @@ p.NoticeText{
 .m__bottom {
   margin-bottom: -10px;
 }
+
+.stickynav{
+  position: sticky;
+  top: 60px;
+}
+
+.stickynav2{
+  position: sticky;
+  top: 340px ;
+}
