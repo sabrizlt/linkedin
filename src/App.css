@@ -190,3 +190,7 @@ hr {
 .Iconsmall {
   font-size: 10px !important;
 }
+
+.modalArea {
+  height: 200px;
+}

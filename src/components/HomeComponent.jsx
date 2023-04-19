@@ -5,6 +5,8 @@ import LinkedinNotice from "./RightSide/LinedinNotice";
 import { API_KEY } from "../App";
 import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
+import MyPost from "./MyPost";
+
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
   const getPosts = async () => {
@@ -37,7 +39,9 @@ const HomeComponent = () => {
           magni?
         </Col>
 
-        <Col md={7}>
+        <Col md={5}>
+          <MyPost />
+          <hr className="text-black"/>
           {post.map((p) => {
             return <PostComponent post={p} key={p._id} />;
           })}
