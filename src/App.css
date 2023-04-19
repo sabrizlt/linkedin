@@ -47,20 +47,15 @@
 
 /******************************************Componente - Navbar***********************************/
 
-
-
-#icon{
-
+#icon {
   font-size: 1.2em;
   margin-right: 1em;
 }
 
-#search{
-  background-color: #EEF3F8;
+#search {
+  background-color: #eef3f8;
   border: none;
-  
 }
-
 
 /******************************************Componente - Analisi***********************************/
 /* .para__divs {
@@ -145,8 +140,8 @@ hr {
 
 /* nuovo CSS profilo*/
 
-.navbar{
-height: 55px;
+.navbar {
+  height: 55px;
 }
 
 .premium {
@@ -174,25 +169,24 @@ height: 55px;
   color: rgb(196, 133, 207);
 }
 
-#jumbotron, #lateral {
+#jumbotron,
+#lateral,
+#home {
   margin-top: 75px;
 }
 
-
-
 .ColorbackGrey {
-  background-color: rgb(238, 243, 248)
-  !important;
+  background-color: rgb(238, 243, 248) !important;
   border: none !important;
 }
 
-#firstName:focus{
+#firstName:focus {
   border: 1px solid black !important;
 }
-.premium{
+.premium {
   font-size: 14px !important;
 }
 
-.Iconsmall{
+.Iconsmall {
   font-size: 10px !important;
 }
