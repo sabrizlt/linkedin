@@ -34,6 +34,7 @@ function ModalPost(props) {
       });
       if (resp.ok) {
         props.getPosts();
+        setFormData("");
         alert("Post inviato con successo!");
       } else {
         return new Error("Errore durante la pubblicazione!");

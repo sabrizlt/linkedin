@@ -46,7 +46,7 @@ const HomeComponent = () => {
         </Col>
 
         <Col xs={12} md={5}>
-          <MyPost getPost={getPosts} />
+          <MyPost getPosts={getPosts} />
           <hr className="text-black" />
           {reversedPost.slice(0, 50).map((p) => {
             return <PostComponent post={p} key={p._id} getPost={getPosts} />;

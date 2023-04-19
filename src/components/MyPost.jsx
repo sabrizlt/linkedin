@@ -8,11 +8,11 @@ import {
   FaNewspaper,
 } from "react-icons/fa";
 
-function WithHeaderExample(prop) {
+function WithHeaderExample({ getPosts }) {
   return (
     <Card className="mb-3">
       <Card.Body>
-        <ModalPost getPosts={prop.getPosts} />
+        <ModalPost getPosts={getPosts} />
         <div className="d-flex justify-content-center mt-3">
           <FaPhotoVideo className="fs-4 text-primary" />{" "}
           <span className="mx-2">Foto</span>
