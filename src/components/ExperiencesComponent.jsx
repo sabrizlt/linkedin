@@ -7,13 +7,15 @@ import { useSelector } from "react-redux";
 import AddExperience from "./AddExperience";
 import EditSingleExperience from "./EditSingleExperience";
 import { API_KEY } from "../App";
+import { useParams } from "react-router-dom";
 
 const API_URL = "https://striveschool-api.herokuapp.com/api/profile/:userId/experiences";
-function ExperiencesComponent() {
+function ExperiencesComponent({ exp }) {
   const [experiences, setExperiences] = useState([]);
   const profile = useSelector((state) => state.data.profile);
-  console.log(profile);
-  const exp = useSelector((state) => state.data?.exp);
+  const params = useParams();
+  //console.log(profile);
+
   console.log(exp);
   const API_PUT_URL = `https://striveschool-api.herokuapp.com/api/profile/${profile?._id}/experiences/`;
 
@@ -82,7 +84,9 @@ function ExperiencesComponent() {
       <div>
         <div className="d-flex justify-content-between">
           <h2 className="mt-2 mx-3">Esperienze</h2>
-          <AddExperience addExperience={addExperience} />
+          <span className={params.id ? "d-none" : ""}>
+            <AddExperience addExperience={addExperience} />
+          </span>
         </div>
         <div>
           <Container className="p-0 mb-3">
