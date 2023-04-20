@@ -39,7 +39,7 @@ const NewProfileImageComponent = ({ profile }) => {
   };
 
   return (
-    <>
+    <span style={{ maxWidth: "80%" }}>
       <FaPen className="fs-5 ColorTextGrey" onClick={handleShow} />
 
       <Modal show={show} onHide={handleClose}>
@@ -47,6 +47,10 @@ const NewProfileImageComponent = ({ profile }) => {
           <Modal.Title>Change profile image!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <span className="d-flex justify-content-center mb-3">
+            <img className="rounded-circle w-50" src={profile.image} alt="immagine del profilo" />
+          </span>
+          <hr />
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -54,17 +58,27 @@ const NewProfileImageComponent = ({ profile }) => {
               handleClose();
             }}
           >
-            <input type="file" onChange={handleFile} />
-            <button className="btn btn-success">SEND</button>
+            <input type="file" onChange={handleFile} id="inputFile" style={{ display: "none" }} />
+            <Button
+              className="me-3"
+              variant="outline-primary"
+              type="button"
+              onClick={() => {
+                return document.getElementById("inputFile").click();
+              }}
+            >
+              Choose file
+            </Button>
+            <Button variant="outline-success" type="submit" className="me-3 ">
+              Change
+            </Button>
+            <Button variant="outline-danger" onClick={handleClose}>
+              Close
+            </Button>
           </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
-    </>
+    </span>
   );
 };
 export default NewProfileImageComponent;
