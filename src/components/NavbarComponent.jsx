@@ -7,17 +7,22 @@ import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../App.css";
-import { useState } from "react";
 
 function NavbarComponent() {
   const profile = useSelector((state) => state.data.profile);
 
   return (
     <>
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top " id="nav" style={{
-          boxShadow: '1px 1px 5px grey',
-        }}>
-        <div className="d-flex justify-content-center align-items-center me-lg-5">
+      <Navbar
+        id="myNav"
+        bg="white"
+        expand="lg"
+        className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top"
+        style={{
+          boxShadow: "1px 1px 5px grey",
+        }}
+      >
+        <div className="d-flex justify-content-start align-items-center me-lg-5">
           <img
             src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
             width="60"
@@ -113,12 +118,8 @@ function NavbarComponent() {
           <CgMenuGridR id="icon" className="icons-navbar fs-4" />
           <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
         </div>
-       
-        <p className="premium text-decoration-underline ms-3 mt-1 premium">
-          Prova Premium gratis.
-        </p>
-      
 
+        <p className="premium text-decoration-underline ms-3 mt-1 premium">Prova Premium gratis.</p>
         <Nav.Link className="d-flex d-md-none">
           <IoMdSettings id="icon" className="icons-navbar iconDesktop" />
         </Nav.Link>

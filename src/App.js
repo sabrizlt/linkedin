@@ -71,6 +71,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavbarComponent />
+
         <Routes>
           <Route path="/log" element={<Welcome/>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
