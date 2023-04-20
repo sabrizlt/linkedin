@@ -32,6 +32,7 @@ function NavbarComponent() {
           />
           <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 formSearch">
             <Form.Control
+            value="Sabri"
               type="search"
               placeholder="Cerca"
               className="me-lg-5 ColorbackGrey"
