@@ -1,11 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import NavbarComponent from "./components/NavbarComponent";
 import ProfileComponent from "./components/ProfileComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent";
+import NotFoundComponent from "./components/NotFoundComponent";
 //import { useParams } from "react-router-dom";
 
 export const API_KEY =
@@ -13,8 +14,8 @@ export const API_KEY =
 
 function App() {
   //const params = useParams();
-  const profile = useSelector((state) => state.data.profile);
-  const exp = useSelector((state) => state.data.exp);
+  //const profile = useSelector((state) => state.data.profile);
+  // const exp = useSelector((state) => state.data.exp);
   const dispatch = useDispatch();
 
   const fetchMyProfile = async () => {
@@ -70,8 +71,10 @@ function App() {
       <BrowserRouter>
         <NavbarComponent />
         <Routes>
-          <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
+          <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
+          <Route path="/Profile/:id" element={<ProfileComponent></ProfileComponent>}></Route>
+          <Route path="/*" element={<NotFoundComponent />}></Route>
         </Routes>
       </BrowserRouter>
     </>
