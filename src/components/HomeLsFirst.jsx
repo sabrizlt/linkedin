@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { BsSquareHalf, BsFillBookmarkFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const HomeLsFirst = () => {
   const profile = useSelector((state) => state.data.profile);
@@ -35,9 +36,11 @@ const HomeLsFirst = () => {
               </Row>
               <Row>
                 <Col className="text-center">
-                  <p className="fs-4">
-                    {profile.name} {profile.surname}
-                  </p>
+                  <Link to="/profile">
+                    <p className="fs-4">
+                      {profile.name} {profile.surname}
+                    </p>
+                  </Link>
                 </Col>
               </Row>
               <Row>
