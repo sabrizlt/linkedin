@@ -8,7 +8,7 @@ const HomeLsFirst = () => {
   const exp = useSelector((state) => state.data.exp);
 
   return (
-    <Container className="card__container">
+    <Container className="card__container leftSidebar">
       <Row>
         <Col>
           <Card style={{ width: "100%" }}>
@@ -30,7 +30,7 @@ const HomeLsFirst = () => {
                   md={8}
                   lg={6}
                   xl={6}
-                  xxl={5}
+                  xxl={4}
                   className="mx-auto"
                 >
                   <img

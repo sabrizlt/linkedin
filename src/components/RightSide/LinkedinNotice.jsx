@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 const LinkedinNotice = () =>{
     return(
   <div>
-    <Container className="border border-2 rounded-3  p-2 bg-white">
+    <Container className="border border-2 rounded-3  p-2 bg-white leftSidebar">
 <div className="d-flex justify-content-between">
     <p className="">Linkedin Notizie</p>
     <FaInfoCircle/>

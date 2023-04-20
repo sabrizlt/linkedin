@@ -8,21 +8,21 @@ import HomeLeftSide from "./HomeLeftSide";
 import { API_KEY } from "../App";
 import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
-import MyPost from "./MyPost";
+import NewPostContainer from "./NewPostContainer";
+import NavbarMobile from "./NavbarMobile";
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
+  const reversedPost = post;
+  reversedPost.reverse();
   const getPosts = async () => {
     try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/",
-        {
-          method: "GET",
-          headers: {
-            Authorization: API_KEY,
-          },
-        }
-      );
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/", {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
       if (response.ok) {
         let data = await response.json();
         setPost(data);
@@ -44,16 +44,17 @@ const HomeComponent = () => {
         </Col>
 
         <Col xs={12} md={5}>
-          <MyPost />
+          <NewPostContainer getPosts={getPosts} />
           <hr className="text-black" />
-          {/* {{post.map((p) => {
-            return <PostComponent post={p} key={p._id} />;
-          })}} */}
+          {reversedPost.slice(0, 50).map((p) => {
+            return <PostComponent post={p} key={p._id} getPost={getPosts} />;
+          })}
         </Col>
         <Col md={3}>
           <LinkedinNotice />
           <PosterProfileComponent />
           <ColFooter />
+          <NavbarMobile />
         </Col>
       </Row>
     </Container>
