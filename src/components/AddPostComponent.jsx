@@ -17,7 +17,7 @@ function AddPostComponent(props) {
   const [showPostModal, setShowPostModal] = useState(false);
   const [showPhotoModal, setShowPhotoModal] = useState(false);
   const [id, setId] = useState("");
-  const newData = new FormData();
+  const [newData] = useState(new FormData());
 
   const handleShowPostModal = (value) => {
     setShowPostModal(value);
@@ -56,10 +56,10 @@ function AddPostComponent(props) {
         console.log(postData);
         setId(postData);
         console.log(id);
-        //if (newData.get("post")) {
-        addPostPhoto();
+        if (newData.get("post")) {
+          addPostPhoto(postData._id);
+        }
 
-        props.getPosts();
         setFormData("");
         alert("Post inviato con successo!");
       } else {
@@ -70,11 +70,8 @@ function AddPostComponent(props) {
     }
   };
 
-  const API_POST_PHOTO_URL = `https://striveschool-api.herokuapp.com/api/posts/${
-    id?._id || ""
-  } `;
-
-  const addPostPhoto = async () => {
+  const addPostPhoto = async (id) => {
+    const API_POST_PHOTO_URL = `https://striveschool-api.herokuapp.com/api/posts/${id} `;
     try {
       let resp = await fetch(API_POST_PHOTO_URL, {
         method: "POST",
@@ -85,6 +82,7 @@ function AddPostComponent(props) {
       });
       if (resp.ok) {
         alert("Post inviato con successo!");
+        props.getPosts();
       } else {
         return new Error("Errore durante la pubblicazione!");
       }
