@@ -49,24 +49,24 @@ function NavbarComponent() {
 
           </div>
           <div className="d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <FaUserFriends id="ico" className="icons-navbar fs-1" />
+          <Link to="/gianni"><FaUserFriends id="ico" className="icons-navbar fs-1" /></Link> 
             <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
             <p className="iconValue">Rete</p>
 
           </div>
           <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <MdWork id="ico" className="icons-navbar fs-1" />
+          <Link to="/gianni"><MdWork id="ico" className="icons-navbar fs-1" /></Link> 
             <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
             <p className="iconValue">pubblica</p>
           </div>
           <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <RiMessage3Fill id="ico" className="icons-navbar fs-1" />
+          <Link to="/gianni"> <RiMessage3Fill id="ico" className="icons-navbar fs-1" /></Link> 
             <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
             <p className="iconValue" >Messaggistica</p>
 
           </div>
           <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <FaBell id="ico" className="icons-navbar fs-1" />
+          <Link to="/gianni"> <FaBell id="ico" className="icons-navbar fs-1" /></Link> 
             <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
             <p className="iconValue">Notifiche</p>
 
