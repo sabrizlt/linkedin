@@ -5,8 +5,6 @@ import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-
 import "../App.css";
 import { Link } from "react-router-dom";
 
@@ -15,62 +13,63 @@ function NavbarComponent() {
 
   return (
     <>
-    <Container id="navbarMobile">
-      <Navbar bg="white" expand="lg" className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-bottom" style={{
-          boxShadow: '1px 1px 5px grey',
-        }}>
-        <div className="d-flex justify-content-start align-items-center me-lg-5">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
-            width="60"
-            height="60"
-            className="d-inline-block align-top linkedinImage"
-            alt="logo"
-          />
-          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 ">
-            
-            <Form.Control
-              type="search"
-              placeholder="Cerca"
-              className="me-lg-5 ColorbackGrey"
-              aria-label="Search"
-              id="firstName"
-              name="firstName"
-              
+      <Container id="navbarMobile">
+        <Navbar
+          bg="white"
+          expand="lg"
+          className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-bottom"
+          style={{
+            boxShadow: "1px 1px 5px grey",
+          }}
+        >
+          <div className="d-flex justify-content-start align-items-center me-lg-5">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/018/930/587/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png"
+              width="60"
+              height="60"
+              className="d-inline-block align-top linkedinImage"
+              alt="logo"
             />
-            
-          </Form>
-        </div>
-        
-        <div id="icon" className="d-flex align-items-center mt-2 mb-2">
-          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary ms-5 mx-4">
-            <FaHome id="ico" className="icons-navbar fs-1" />
-            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
-            <p className="iconValue">home</p>
-
+            <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 ">
+              <Form.Control
+                type="search"
+                placeholder="Cerca"
+                className="me-lg-5 ColorbackGrey"
+                aria-label="Search"
+                id="firstName"
+                name="firstName"
+              />
+            </Form>
           </div>
-          <div className="d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <FaUserFriends id="ico" className="icons-navbar fs-1" />
-            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
-            <p className="iconValue">Rete</p>
 
-          </div>
-          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <MdWork id="ico" className="icons-navbar fs-1" />
-            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
-            <p className="iconValue">pubblica</p>
-          </div>
-          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <RiMessage3Fill id="ico" className="icons-navbar fs-1" />
-            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
-            <p className="iconValue" >Messaggistica</p>
-
-          </div>
-          <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
-            <FaBell id="ico" className="icons-navbar fs-1" />
-            <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
-            <p className="iconValue">Notifiche</p>
-
+          <div id="icon" className="d-flex align-items-center mt-2 mb-2">
+            <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary ms-5 mx-4">
+              <Link to="/" className="fs-5">
+                <FaHome id="ico" className="icons-navbar fs-1" />
+              </Link>
+              <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+              <p className="iconValue">home</p>
+            </div>
+            <div className="d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+              <FaUserFriends id="ico" className="icons-navbar fs-1" />
+              <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+              <p className="iconValue">Rete</p>
+            </div>
+            <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+              <MdWork id="ico" className="icons-navbar fs-1" />
+              <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+              <p className="iconValue">pubblica</p>
+            </div>
+            <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+              <RiMessage3Fill id="ico" className="icons-navbar fs-1" />
+              <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+              <p className="iconValue">Messaggistica</p>
+            </div>
+            <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary mx-3 ">
+              <FaBell id="ico" className="icons-navbar fs-1" />
+              <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
+              <p className="iconValue">Notifiche</p>
+            </div>
           </div>
           <div className=" d-md-flex flex-column align-items-center justify-content-center border-end text-secondary me-4 pe-4 leftSidebar">
             <Image src={profile.image} className="rounded-circle" style={{ width: "25px", height: "25px" }} />
