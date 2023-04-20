@@ -83,11 +83,7 @@ const PostComponent = (props) => {
         <Row className="postContent ms-1">
           <Col className="justify-content-start postImage">
             <p className="postContentText mx-2">{props.post.text}</p>
-            <img
-              className="img-fluid m-0 p-0 imageRandom"
-              src={`https://picsum.photos/seed/${Math.floor(Math.random() * 20)}/500`}
-              alt=""
-            />
+            {props.post.image && <img className="img-fluid m-0 p-0 imageRandom" src={props.post.image} alt="" />}
             <hr />
             <div className="d-flex justify-content-around justify-content-md-center">
               <BiLike className="fs-3" />
