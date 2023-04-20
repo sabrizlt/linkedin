@@ -16,7 +16,9 @@ const RightSideComponent = () => {
       {/*fine prima parte della lateral bar, */}
 
       {/*seconda parte della lateral bar,contenente un banner ! */}
-   <PosterProfileComponent/>
+      <div className="">
+        <img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="" className="rounded-3 img-fluid mb-3 w-100" />
+      </div>
       {/*seconda parte della lateral bar,contenente un banner ! */}
 
       {/*terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
