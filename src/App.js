@@ -8,11 +8,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent";
 import NotFoundComponent from "./components/NotFoundComponent";
 import Welcome from "./components/welcome";
+import { useState } from "react";
 //import { useParams } from "react-router-dom";
 
-export const API_KEY =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjc2ZTE4NmE4NzAwMTQzODY3YzIiLCJpYXQiOjE2ODE3MTcxMDMsImV4cCI6MTY4MjkyNjcwM30.WhoGuX5E4a9cAnSoZgHW7QkdyUl7K5ySRV2ZNAZoUzY ";
-
+export const API_KEY = localStorage.getItem("APY_KEY");
+ 
 function App() {
   //const params = useParams();
   //const profile = useSelector((state) => state.data.profile);
