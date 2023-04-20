@@ -7,6 +7,7 @@ import ProfileComponent from "./components/ProfileComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent";
 import NotFoundComponent from "./components/NotFoundComponent";
+import Welcome from "./components/welcome";
 //import { useParams } from "react-router-dom";
 
 export const API_KEY =
@@ -71,6 +72,7 @@ function App() {
       <BrowserRouter>
         <NavbarComponent />
         <Routes>
+          <Route path="/log" element={<Welcome/>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
           <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/Profile/:id" element={<ProfileComponent></ProfileComponent>}></Route>

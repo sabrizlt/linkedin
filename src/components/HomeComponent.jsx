@@ -37,7 +37,7 @@ const HomeComponent = () => {
     getPosts();
   }, []);
   return (
-    <Container id="home" fluid>
+    <Container id="home" >
       <Row className="justify-content-center pt-4">
         <Col md={3}>
           <HomeLeftSide />
