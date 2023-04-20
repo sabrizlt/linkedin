@@ -1,5 +1,5 @@
-import { Navbar, Form, Nav, NavDropdown, Image, Container } from "react-bootstrap";
-import { FaHome, FaUserFriends, FaBell, FaSearch } from "react-icons/fa";
+import { Navbar, Form, Nav, NavDropdown, Image } from "react-bootstrap";
+import { FaHome, FaUserFriends, FaBell } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
@@ -43,27 +43,34 @@ function NavbarComponent() {
 
         <div id="icon" className="d-flex iconNavbar iconDesktop">
           <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
-            <Link to="/">
+            <Link to="/" className="fs-5">
               <FaHome id="ico" className="icons-navbar " />
             </Link>
-
             <Nav.Link className="d-none d-lg-block text-icons">Home</Nav.Link>
           </div>
 
           <div className="d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
-            <FaUserFriends id="ico" className="icons-navbar" />
+            <Link to="/gianni" className="fs-5">
+              <FaUserFriends id="ico" className="icons-navbar" />
+            </Link>
             <Nav.Link className="d-none d-lg-block text-icons">Rete</Nav.Link>
           </div>
           <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-            <MdWork id="ico" className="icons-navbar" />
+            <Link to="/gianni" className="fs-5">
+              <MdWork id="ico" className="icons-navbar" />
+            </Link>
             <Nav.Link className="d-none d-lg-block text-icons">Lavoro</Nav.Link>
           </div>
           <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-            <RiMessage3Fill id="ico" className="icons-navbar" />
+            <Link to="/gianni" className="fs-5">
+              <RiMessage3Fill id="ico" className="icons-navbar" />
+            </Link>
             <Nav.Link className="d-none d-lg-block text-icons">Messaggistica</Nav.Link>
           </div>
           <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
-            <FaBell id="ico" className="icons-navbar" />
+            <Link to="/gianni" className="fs-5">
+              <FaBell id="ico" className="icons-navbar" />
+            </Link>
             <Nav.Link className="d-none d-lg-block text-icons">Notifiche</Nav.Link>
           </div>
         </div>
@@ -85,7 +92,9 @@ function NavbarComponent() {
             </div>
 
             <NavDropdown.Item className="text-decoration-none bg-transparent">
-              <Link to="/Profile">Visualizza profilo </Link>
+              <Link to="/Profile" className="fs-6">
+                Visualizza profilo{" "}
+              </Link>
             </NavDropdown.Item>
 
             <NavDropdown.Divider />

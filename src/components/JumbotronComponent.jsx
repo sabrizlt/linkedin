@@ -3,15 +3,10 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { FaPen } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
-const JumbotronComponent = () => {
-  const profile = useSelector((state) => {
-    return state.data.profile;
-  });
-  const experience = useSelector((state) => {
-    return state.data.exp;
-  });
+const JumbotronComponent = ({ profile, exp }) => {
+  const params = useParams();
   return (
     <Card id="jumbotron">
       <Card.Img
@@ -22,41 +17,35 @@ const JumbotronComponent = () => {
         style={{ width: "100%" }}
       />
       <Card.Body>
-      <div className="d-flex">
-        <Row>
-          
-          <Col xs={3}>
-            <img
-              style={{ width: "100%" }}
-              id="profilePicImg"
-              className="rounded-circle mx-2"
-              src={profile.image}
-              alt="Profile pic"
-            />
-          </Col>
-        </Row>
-        <Row className="">
-          <Col className="text-end fs-3 iconWithHoverEffect">
-            <span className="rounded-circle p-3 ">
-            <FaPen className="fs-5 ColorTextGrey " />
-            </span>
-          </Col>
-          
-        </Row>
+        <div className="d-flex">
+          <Row>
+            <Col xs={3}>
+              <img
+                style={{ width: "100%" }}
+                id="profilePicImg"
+                className="rounded-circle mx-2"
+                src={profile.image ? profile.image : profile.user.image}
+                alt="Profile pic"
+              />
+            </Col>
+          </Row>
+          <Row className="">
+            <Col className="text-end fs-3 iconWithHoverEffect">
+              <span className={params.id ? "d-none" : "rounded-circle p-3 "}>
+                <FaPen className="fs-5 ColorTextGrey " />
+              </span>
+            </Col>
+          </Row>
         </div>
         <Row>
           <Col xs={9} className="justify-content-start">
             <h2 className="profileName mx-2 mb-0">
               {profile.name} {profile.surname}
             </h2>
-            <span className="profileTitle mx-2">
-              {profile.title} 
-              </span>
-              <br />
-              <span className="mx-2">
-              {experience.length > 0
-                ? experience[experience.length - 1].role + " - " + experience[experience.length - 1].company
-                : null}
+            <span className="profileTitle mx-2">{profile.title}</span>
+            <br />
+            <span className="mx-2">
+              {exp.length > 0 ? exp[exp.length - 1].role + " - " + exp[exp.length - 1].company : null}
             </span>
             <br />
             <small className="text-secondary mx-2">{profile.area}</small>
@@ -64,7 +53,7 @@ const JumbotronComponent = () => {
           <Col xs={3}>
             <img
               id="logoLastExp"
-              src={experience.length > 0 ? experience[experience.length - 1].image : "https://placedog.net/500/280"}
+              src={exp.length > 0 ? exp[exp.length - 1].image : "https://placedog.net/500/280"}
               alt="logo"
             />
           </Col>
@@ -78,7 +67,6 @@ const JumbotronComponent = () => {
             <Button variant="outline-primary" size="sm" className="messaggioButton rounded-pill px-3 mx-1 Profile mb-3">
               {" "}
               Aggiungi sezione del profilo
-
             </Button>
             <Button variant="outline-secondary" size="sm" className="altroButton rounded-pill px-3 mx-1 Profile mb-3">
               Altro
@@ -93,11 +81,13 @@ const JumbotronComponent = () => {
               <br />
               Ruoli di Sviluppatore Web, Sviluppatore front-end, Sviluppatore back-end e Sviluppatore Javascript
               <br />
-              <a href="#" className="text-primary">Mostra dettagli</a>
+              <a href="#" className="text-primary">
+                Mostra dettagli
+              </a>
             </Col>
             <Col xs={2} className=" text-end iconWithHoverEffect">
-              <span className="rounded-circle p-2 ">
-              <FaPen className="fs-6 ColorTextGrey " />
+              <span className={params.id ? "d-none" : "rounded-circle p-2 "}>
+                <FaPen className="fs-6 ColorTextGrey " />
               </span>
             </Col>
           </Row>

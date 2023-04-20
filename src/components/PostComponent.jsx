@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import EditPostComponent from "./EditPostComponent";
 import { API_KEY } from "../App";
 import { API_POST_URL } from "./AddPostComponent";
+import { Link } from "react-router-dom";
 
 const PostComponent = (props) => {
   const editPost = async (formData, post_id) => {
@@ -41,18 +42,19 @@ const PostComponent = (props) => {
         },
       });
       let data = await resp.json();
-      props.getPost();
+
       if (resp.ok) {
         console.log(data);
       }
     } catch (error) {
       console.log("Error:", error);
     }
+    props.getPost();
   };
 
   const profile = useSelector((state) => state.data.profile);
   return (
-    <Card className="mb-2">
+    <Card className="mb-2 pt-2">
       <Row className="mt-2 align-items-center">
         <span className={props.post.username === profile.username ? "d-flex justify-content-end" : "d-none"}>
           <EditPostComponent editPost={editPost} post={props.post} deletePost={deletePost} />
@@ -69,13 +71,15 @@ const PostComponent = (props) => {
           />
         </Col>
         <Col xs={8} className="justify-content-start ps-0 ms-0 ">
-          <h5 className="postUserName mx-2 mb-0 ms-0 fw-bold">
-            {props.post.user ? props.post.user.name + " " + props.post.user.surname : props.post.username}
-          </h5>
+          <Link to={"/Profile/" + props.post.user._id}>
+            <h5 className="postUserName mx-2 mb-0 ms-0 fw-bold">
+              {props.post.user ? props.post.user.name + " " + props.post.user.surname : props.post.username}
+            </h5>
+          </Link>
           <small>Last update: {props.post.updatedAt.slice(0, 10)}</small>
         </Col>
       </Row>
-      <Card.Body className="bodyCard">
+      <Card.Body className="bodyCard pb-0">
         <Row className="postContent ms-1">
           <Col className="justify-content-start postImage">
             <p className="postContentText mx-2">{props.post.text}</p>
