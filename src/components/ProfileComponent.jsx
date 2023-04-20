@@ -70,6 +70,7 @@ const ProfileComponent = () => {
 
   useEffect(() => {
     params.id && fetchProfile(params.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
