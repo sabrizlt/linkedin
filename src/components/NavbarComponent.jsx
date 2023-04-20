@@ -14,6 +14,7 @@ function NavbarComponent() {
   return (
     <>
       <Navbar
+        id="myNav"
         bg="white"
         expand="lg"
         className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top"
