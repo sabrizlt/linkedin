@@ -60,8 +60,30 @@ function App() {
     }
   };
 
+  const fetchAllProfiles= async () => {
+    try {
+      let resp = await fetch(`https://striveschool-api.herokuapp.com/api/profile`, {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
+      if (resp.ok) {
+        let profile = await resp.json();
+        dispatch({ type: "GET_ALL_PROFILE", payload: profile });
+        console.log(profile);
+      } else {
+        alert("errore nella chiamata (recupero TUTTIprofilI)");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   useEffect(() => {
     fetchMyProfile();
+    fetchAllProfiles();
     //console.log(profile);
     //console.log(exp);
     // eslint-disable-next-line react-hooks/exhaustive-deps

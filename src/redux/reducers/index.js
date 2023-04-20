@@ -11,6 +11,7 @@ const initialState = {
       username: "",
     },
     exp: [], // esperienze lavorative
+    allProfiles:[]//tutti i profili 
   },
 };
 
@@ -32,10 +33,18 @@ const mainReducer = (state = initialState, action) => {
           exp: action.payload,
         },
       };
-
+      case "GET_ALL_PROFILE":
+        return {
+          ...state,
+          data: {
+            ...state.data,
+            allProfiles: action.payload,
+          },
+        };
     default:
       return state;
   }
+
 };
 
 export default mainReducer;
