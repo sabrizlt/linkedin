@@ -79,6 +79,9 @@ li {
 }
 
 /*********************************** Jumbotron ************************************************/
+.modal-content {
+  width: 110% !important;
+}
 
 #profilePicImg {
   margin-top: -80%;
