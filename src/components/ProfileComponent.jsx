@@ -77,7 +77,7 @@ const ProfileComponent = () => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col md={9} lg={7}>
+        <Col md={9} lg={7} id="profile">
           <JumbotronComponent profile={params.id ? thisProfile : profile} exp={params.id ? thisProfileExps : exp} />
           <AnalysisComponent />
           <ResourcesComponent />

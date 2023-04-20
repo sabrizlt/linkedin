@@ -325,11 +325,16 @@ p.NoticeText {
     display: none ;
   }
   
-  .navImage {
+  /*.navImage {
     width: 30px !important;
     height: 30px !important;
     margin-left: 50px;
 
+  }*/
+
+  #profile {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .postContainer {
@@ -340,7 +345,9 @@ p.NoticeText {
     display: none;
   }
 
-
+  #lateral {
+    margin-top: 10px;
+  }
 
   .cardPost {
     border-radius: 0% !important;

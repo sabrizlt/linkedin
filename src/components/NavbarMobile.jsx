@@ -5,6 +5,8 @@ import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 import "../App.css";
 
 function NavbarComponent() {
@@ -41,7 +43,7 @@ function NavbarComponent() {
         
         <div id="icon" className="d-flex align-items-center mt-2 mb-2">
           <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary ms-5 mx-4">
-            <FaHome id="ico" className="icons-navbar fs-1" />
+          <Link to="/"> <FaHome id="ico" className="icons-navbar fs-1" /></Link>
             <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>
             <p className="iconValue">home</p>
 
