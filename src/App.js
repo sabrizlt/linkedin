@@ -60,7 +60,7 @@ function App() {
     }
   };
 
-  const fetchAllProfiles= async () => {
+  const fetchAllProfiles = async () => {
     try {
       let resp = await fetch(`https://striveschool-api.herokuapp.com/api/profile`, {
         method: "GET",
@@ -69,9 +69,9 @@ function App() {
         },
       });
       if (resp.ok) {
-        let profile = await resp.json();
-        dispatch({ type: "GET_ALL_PROFILE", payload: profile });
-        console.log(profile);
+        let profiles = await resp.json();
+        dispatch({ type: "GET_ALL_PROFILE", payload: profiles });
+        console.log("Tutti i profili: ", profiles);
       } else {
         alert("errore nella chiamata (recupero TUTTIprofilI)");
       }
@@ -79,7 +79,6 @@ function App() {
       console.log(error);
     }
   };
-
 
   useEffect(() => {
     fetchMyProfile();
@@ -95,7 +94,7 @@ function App() {
         <NavbarComponent />
 
         <Routes>
-          <Route path="/log" element={<Welcome/>}></Route>
+          <Route path="/log" element={<Welcome />}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
           <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/Profile/:id" element={<ProfileComponent></ProfileComponent>}></Route>

@@ -6,11 +6,26 @@ import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "../App.css";
-
+export let queryResult = [];
 function NavbarComponent() {
   const profile = useSelector((state) => state.data.profile);
+  const allProfile = useSelector((state) => state.data.allProfiles);
+  const [query, setQuery] = useState("");
 
+  const SearchFunction = () => {
+    queryResult = [];
+    console.log("Query: ", query);
+    allProfile &&
+      allProfile.filter((p) => {
+        if (p.username.includes(query)) {
+          queryResult.push(p);
+        }
+        return queryResult;
+      });
+    console.log("Risultati: ", queryResult);
+  };
   return (
     <>
       <Navbar
@@ -30,15 +45,23 @@ function NavbarComponent() {
             className="d-inline-block align-top linkedinImage"
             alt="logo"
           />
-          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 formSearch">
-            <Form.Control
-            value="Sabri"
-              type="search"
+          <Form
+            className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 formSearch"
+            onSubmit={(e) => {
+              e.preventDefault();
+              SearchFunction();
+            }}
+          >
+            <input
+              value={query}
+              type="text"
               placeholder="Cerca"
               className="me-lg-5 ColorbackGrey"
-              aria-label="Search"
-              id="firstName"
-              name="firstName"
+              id="query"
+              name="query"
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
             />
           </Form>
         </div>
