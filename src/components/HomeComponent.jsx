@@ -46,9 +46,9 @@ const HomeComponent = () => {
         <Col xs={12} md={5}>
           <MyPost />
           <hr className="text-black" />
-          {post.map((p) => {
+          {/* {{post.map((p) => {
             return <PostComponent post={p} key={p._id} />;
-          })}
+          })}} */}
         </Col>
         <Col md={3}>
           <LinkedinNotice />
