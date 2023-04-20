@@ -52,7 +52,7 @@ const PostComponent = (props) => {
 
   const profile = useSelector((state) => state.data.profile);
   return (
-    <Card className="mb-2">
+    <Card className="mb-2 cardPost">
       <Row className="mt-2 align-items-center">
         <span className={props.post.username === profile.username ? "d-flex justify-content-end" : "d-none"}>
           <EditPostComponent editPost={editPost} post={props.post} deletePost={deletePost} />
@@ -85,14 +85,14 @@ const PostComponent = (props) => {
               alt=""
             />
             <hr />
-            <div className="d-flex justify-content-end justify-content-md-center">
-              <BiLike className="fs-4" />
+            <div className="d-flex justify-content-around justify-content-md-center">
+              <BiLike className="fs-3" />
               <span className="mx-1 d-none d-md-flex">Consiglia</span>
-              <BiCommentDots className="fs-4 mx-2" />
+              <BiCommentDots className="fs-3 mx-4" />
               <span className="mx-0 d-none d-md-flex">Commenta</span>
-              <BiShare className="fs-4 mx-2" />
+              <BiShare className="fs-3 mx-4" />
               <span className="mx-0 d-none d-md-flex">Diffondi il post</span>
-              <BsSend className="fs-4 mx-2" />
+              <BsSend className="fs-3 mx-4" />
               <span className="mx-0 d-none d-md-flex">Invia</span>
             </div>
 

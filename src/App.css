@@ -340,7 +340,13 @@ p.NoticeText {
     display: none;
   }
 
-  
+
+
+  .cardPost {
+    border-radius: 0% !important;
+    border: none;
+  }
+
 }
 @media screen and (min-width: 791px) {
   #navbarMobile {

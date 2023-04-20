@@ -53,7 +53,7 @@ const MeetProfileComponent = ()=>{
               style={{ width: "50px", height: "50px" }}
             />
             <p className="ms-3">
-              Sabri Zatnli
+              Sabri Zaltni
               <br /> <span className="fw-lighter">Epicode Student</span>{" "}
             </p>
           </div>
