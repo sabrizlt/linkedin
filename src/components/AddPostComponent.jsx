@@ -3,16 +3,40 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaRegClock } from "react-icons/fa";
-import { FaPhotoVideo, FaYoutube, FaNewspaper, FaCommentDots } from "react-icons/fa";
+import {
+  FaPhotoVideo,
+  FaYoutube,
+  FaNewspaper,
+  FaCommentDots,
+} from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import { API_KEY } from "../App";
 export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
 
 function AddPostComponent(props) {
-  const [show, setShow] = useState(false);
+  const [showPostModal, setShowPostModal] = useState(false);
+  const [showPhotoModal, setShowPhotoModal] = useState(false);
+  const [id, setId] = useState("");
+  const [newData] = useState(new FormData());
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShowPostModal = (value) => {
+    setShowPostModal(value);
+  };
+
+  const handleShowPhotoModal = (value) => {
+    setShowPhotoModal(value);
+  };
+
+  const handleSaveChanges = () => {
+    setShowPhotoModal(false);
+  };
+
+  const onChange = (e) => {
+    const file = e.target.files[0];
+    newData.append("post", file);
+    console.log(newData.get("post"));
+  };
+
   const [formData, setFormData] = useState({
     text: "",
   });
@@ -28,9 +52,37 @@ function AddPostComponent(props) {
         body: JSON.stringify(formData),
       });
       if (resp.ok) {
-        props.getPosts();
+        const postData = await resp.json();
+        console.log(postData);
+        setId(postData);
+        console.log(id);
+        if (newData.get("post")) {
+          addPostPhoto(postData._id);
+        }
+
         setFormData("");
         alert("Post inviato con successo!");
+      } else {
+        return new Error("Errore durante la pubblicazione!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const addPostPhoto = async (id) => {
+    const API_POST_PHOTO_URL = `https://striveschool-api.herokuapp.com/api/posts/${id} `;
+    try {
+      let resp = await fetch(API_POST_PHOTO_URL, {
+        method: "POST",
+        headers: {
+          Authorization: API_KEY,
+        },
+        body: newData,
+      });
+      if (resp.ok) {
+        alert("Post inviato con successo!");
+        props.getPosts();
       } else {
         return new Error("Errore durante la pubblicazione!");
       }
@@ -44,31 +96,85 @@ function AddPostComponent(props) {
       <Button
         variant="light"
         className="rounded-pill w-100 border-secondary fw-bolder text-secondary"
-        onClick={handleShow}
+        onClick={handleShowPostModal}
       >
         Avvia un post
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showPostModal} onHide={() => handleShowPostModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Crea un post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
               <Form.Control
                 as="textarea"
                 rows={3}
                 className="border-light modalArea"
                 placeholder="Di cosa vorresti parlare?"
                 value={formData.text}
-                onChange={(e) => setFormData({ ...formData, text: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, text: e.target.value })
+                }
               />
             </Form.Group>
           </Form>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <FaPhotoVideo className="fs-4 mx-2 text-secondary" />
+              <>
+                <FaPhotoVideo
+                  className="fs-4 text-primary"
+                  onClick={() => handleShowPhotoModal(true)}
+                />
+
+                <Modal
+                  show={showPhotoModal}
+                  onHide={() => handleShowPhotoModal(false)}
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>Carica una foto</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        addPostPhoto(e.currentTarget);
+                      }}
+                    >
+                      <Form.Group className="mb-3">
+                        <Form.Label>Default file input example</Form.Label>
+                        <Form.Control
+                          type="file"
+                          id="formElem"
+                          onChange={onChange}
+                        />
+                      </Form.Group>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button
+                      variant="secondary"
+                      onClick={() => handleShowPhotoModal(false)}
+                    >
+                      Close
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        handleSaveChanges();
+                        const formElem = document.getElementById("formElem");
+                        formElem.dispatchEvent(new Event("submit"));
+                      }}
+                    >
+                      Save Changes
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </>
               <FaYoutube className="fs-4 mx-2 text-secondary" />
               <FaNewspaper className="fs-4 mx-2 text-secondary" />
               <BsThreeDots className="fs-4 mx-2 text-secondary" />
@@ -83,7 +189,8 @@ function AddPostComponent(props) {
                 className="rounded-pill fw-bolder mx-2"
                 onClick={() => {
                   addPost(formData);
-                  handleClose();
+                  handleShowPostModal(false);
+                  handleShowPhotoModal(false);
                 }}
               >
                 Pubblica
