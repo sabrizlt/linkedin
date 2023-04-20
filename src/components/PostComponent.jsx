@@ -55,10 +55,7 @@ const PostComponent = (props) => {
   const profile = useSelector((state) => state.data.profile);
   return (
     <Card className="mb-2 pt-2">
-      <Row className="mt-2 align-items-center">
-        <span className={props.post.username === profile.username ? "d-flex justify-content-end" : "d-none"}>
-          <EditPostComponent editPost={editPost} post={props.post} deletePost={deletePost} />
-        </span>
+      <Row className=" align-items-center">
         <Col xs={2} className=" d-flex flex-row justify-content-end">
           <Card.Img
             variant="top"
@@ -77,6 +74,11 @@ const PostComponent = (props) => {
             </h5>
           </Link>
           <small>Last update: {props.post.updatedAt.slice(0, 10)}</small>
+        </Col>
+        <Col xs={1}>
+          <span className={props.post.username === profile.username ? "d-flex justify-content-end" : "d-none"}>
+            <EditPostComponent editPost={editPost} post={props.post} deletePost={deletePost} />
+          </span>
         </Col>
       </Row>
       <Card.Body className="bodyCard pb-0">

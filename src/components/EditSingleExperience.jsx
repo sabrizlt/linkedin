@@ -10,7 +10,7 @@ function EditSingleExperience(props) {
     role: props.content.role,
     company: props.content.company,
     startDate: props.content.startDate.slice(0, 10),
-    endDate: props.content.endDate.slice(0, 10),
+    endDate: props.content.endDate ? props.content.endDate.slice(0, 10) : "",
     description: props.content.description,
     area: props.content.area,
     image: props.content.image,
