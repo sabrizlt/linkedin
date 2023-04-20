@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import { FaAngleDown, FaAngleUp, FaPen } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { Row } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector } from "react-redux";
