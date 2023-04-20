@@ -11,14 +11,32 @@ import {
 } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import { API_KEY } from "../App";
-import AddPhotoModalComponent from "./AddPhotoModalComponent";
 export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
 
 function AddPostComponent(props) {
-  const [show, setShow] = useState(false);
+  const [showPostModal, setShowPostModal] = useState(false);
+  const [showPhotoModal, setShowPhotoModal] = useState(false);
+  const [id, setId] = useState("");
+  const newData = new FormData();
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShowPostModal = (value) => {
+    setShowPostModal(value);
+  };
+
+  const handleShowPhotoModal = (value) => {
+    setShowPhotoModal(value);
+  };
+
+  const handleSaveChanges = () => {
+    setShowPhotoModal(false);
+  };
+
+  const onChange = (e) => {
+    const file = e.target.files[0];
+    newData.append("post", file);
+    console.log(newData.get("post"));
+  };
+
   const [formData, setFormData] = useState({
     text: "",
   });
@@ -35,9 +53,37 @@ function AddPostComponent(props) {
       });
       if (resp.ok) {
         const postData = await resp.json();
-        setFormData({ ...formData, _id: postData._id });
+        console.log(postData);
+        setId(postData);
+        console.log(id);
+        //if (newData.get("post")) {
+        addPostPhoto();
+
         props.getPosts();
-        //setFormData("");
+        setFormData("");
+        alert("Post inviato con successo!");
+      } else {
+        return new Error("Errore durante la pubblicazione!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const API_POST_PHOTO_URL = `https://striveschool-api.herokuapp.com/api/posts/${
+    id?._id || ""
+  } `;
+
+  const addPostPhoto = async () => {
+    try {
+      let resp = await fetch(API_POST_PHOTO_URL, {
+        method: "POST",
+        headers: {
+          Authorization: API_KEY,
+        },
+        body: newData,
+      });
+      if (resp.ok) {
         alert("Post inviato con successo!");
       } else {
         return new Error("Errore durante la pubblicazione!");
@@ -52,12 +98,12 @@ function AddPostComponent(props) {
       <Button
         variant="light"
         className="rounded-pill w-100 border-secondary fw-bolder text-secondary"
-        onClick={handleShow}
+        onClick={handleShowPostModal}
       >
         Avvia un post
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showPostModal} onHide={() => handleShowPostModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Crea un post</Modal.Title>
         </Modal.Header>
@@ -81,11 +127,56 @@ function AddPostComponent(props) {
           </Form>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <AddPhotoModalComponent
-                id={formData._id}
-                getPosts={props.getPosts}
-                addPost={addPost}
-              />
+              <>
+                <FaPhotoVideo
+                  className="fs-4 text-primary"
+                  onClick={() => handleShowPhotoModal(true)}
+                />
+
+                <Modal
+                  show={showPhotoModal}
+                  onHide={() => handleShowPhotoModal(false)}
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>Carica una foto</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        addPostPhoto(e.currentTarget);
+                      }}
+                    >
+                      <Form.Group className="mb-3">
+                        <Form.Label>Default file input example</Form.Label>
+                        <Form.Control
+                          type="file"
+                          id="formElem"
+                          onChange={onChange}
+                        />
+                      </Form.Group>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button
+                      variant="secondary"
+                      onClick={() => handleShowPhotoModal(false)}
+                    >
+                      Close
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        handleSaveChanges();
+                        const formElem = document.getElementById("formElem");
+                        formElem.dispatchEvent(new Event("submit"));
+                      }}
+                    >
+                      Save Changes
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </>
               <FaYoutube className="fs-4 mx-2 text-secondary" />
               <FaNewspaper className="fs-4 mx-2 text-secondary" />
               <BsThreeDots className="fs-4 mx-2 text-secondary" />
@@ -100,7 +191,8 @@ function AddPostComponent(props) {
                 className="rounded-pill fw-bolder mx-2"
                 onClick={() => {
                   addPost(formData);
-                  handleClose();
+                  handleShowPostModal(false);
+                  handleShowPhotoModal(false);
                 }}
               >
                 Pubblica
