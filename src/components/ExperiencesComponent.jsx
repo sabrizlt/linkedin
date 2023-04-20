@@ -90,66 +90,70 @@ function ExperiencesComponent({ exp }) {
         </div>
         <div>
           <Container className="p-0 mb-3">
-            {reversedEpx.slice(0, 5).map((experience, index) => (
-              <Row className="mx-2" key={index}>
-                <Col xs={10} className="align-items-center mb-1">
-                  <h5 className="mb-1 mx-2">{experience.role}</h5>
-                  <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
-                  <span className="mb-1 mx-2 text-secondary">
-                    {new Date(experience.startDate).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })}{" "}
-                    -{" "}
-                    {new Date(experience.endDate).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </span>
-                  <br />
-                </Col>
-                <Col xs={1} className="experienceEditIcon">
-                  <EditSingleExperience
-                    editExperience={editExperience}
-                    deleteExperience={deleteExperience}
-                    content={experience}
-                  ></EditSingleExperience>
-                </Col>
-                <hr className="mx-1 mt-1"></hr>
-              </Row>
-            ))}
+            {reversedEpx.length > 0
+              ? reversedEpx.slice(0, 5).map((experience, index) => (
+                  <Row className="mx-2" key={index}>
+                    <Col xs={10} className="align-items-center mb-1">
+                      <h5 className="mb-1 mx-2">{experience.role}</h5>
+                      <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
+                      <span className="mb-1 mx-2 text-secondary">
+                        {new Date(experience.startDate).toLocaleDateString("en-US", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                        -
+                        {new Date(experience.endDate).toLocaleDateString("en-US", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </span>
+                      <br />
+                    </Col>
+                    <Col xs={1} className="experienceEditIcon">
+                      <EditSingleExperience
+                        editExperience={editExperience}
+                        deleteExperience={deleteExperience}
+                        content={experience}
+                      ></EditSingleExperience>
+                    </Col>
+                    <hr className="mx-1 mt-1"></hr>
+                  </Row>
+                ))
+              : "Nessuna esperienza lavorativa..."}
             <span className="d-none" id="ShowMore">
-              {reversedEpx.slice(5, -1).map((experience, index) => (
-                <Row className="mx-2" key={index}>
-                  <Col xs={10} className="align-items-center mb-1">
-                    <h5 className="mb-1 mx-2">{experience.role}</h5>
-                    <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
-                    <span className="mb-1 mx-2 text-secondary">
-                      {new Date(experience.startDate).toLocaleDateString("en-US", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}{" "}
-                      -{" "}
-                      {new Date(experience.endDate).toLocaleDateString("en-US", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}
-                    </span>
-                  </Col>
-                  <Col xs={1} className="experienceEditIcon">
-                    <EditSingleExperience
-                      editExperience={editExperience}
-                      deleteExperience={deleteExperience}
-                      content={experience}
-                    ></EditSingleExperience>
-                  </Col>
-                  <hr className="mx-1 mt-1"></hr>
-                </Row>
-              ))}
+              {reversedEpx.length > 0
+                ? reversedEpx.slice(5, -1).map((experience, index) => (
+                    <Row className="mx-2" key={index}>
+                      <Col xs={10} className="align-items-center mb-1">
+                        <h5 className="mb-1 mx-2">{experience.role}</h5>
+                        <p className="mb-1 mx-2 ">{experience.company} • Full-time</p>
+                        <span className="mb-1 mx-2 text-secondary">
+                          {new Date(experience.startDate).toLocaleDateString("en-US", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}{" "}
+                          -{" "}
+                          {new Date(experience.endDate).toLocaleDateString("en-US", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
+                        </span>
+                      </Col>
+                      <Col xs={1} className="experienceEditIcon">
+                        <EditSingleExperience
+                          editExperience={editExperience}
+                          deleteExperience={deleteExperience}
+                          content={experience}
+                        ></EditSingleExperience>
+                      </Col>
+                      <hr className="mx-1 mt-1"></hr>
+                    </Row>
+                  ))
+                : ""}
             </span>
 
             <div className="">
