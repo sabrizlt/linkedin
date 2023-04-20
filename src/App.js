@@ -7,7 +7,7 @@ import ProfileComponent from "./components/ProfileComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent";
 import NotFoundComponent from "./components/NotFoundComponent";
-
+import Welcome from "./components/welcome";
 //import { useParams } from "react-router-dom";
 
 export const API_KEY =
@@ -60,8 +60,30 @@ function App() {
     }
   };
 
+  const fetchAllProfiles= async () => {
+    try {
+      let resp = await fetch(`https://striveschool-api.herokuapp.com/api/profile`, {
+        method: "GET",
+        headers: {
+          Authorization: API_KEY,
+        },
+      });
+      if (resp.ok) {
+        let profile = await resp.json();
+        dispatch({ type: "GET_ALL_PROFILE", payload: profile });
+        console.log(profile);
+      } else {
+        alert("errore nella chiamata (recupero TUTTIprofilI)");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   useEffect(() => {
     fetchMyProfile();
+    fetchAllProfiles();
     //console.log(profile);
     //console.log(exp);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -73,6 +95,7 @@ function App() {
         <NavbarComponent />
 
         <Routes>
+          <Route path="/log" element={<Welcome/>}></Route>
           <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
           <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
           <Route path="/Profile/:id" element={<ProfileComponent></ProfileComponent>}></Route>
