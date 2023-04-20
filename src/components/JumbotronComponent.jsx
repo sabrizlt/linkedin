@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { FaPen } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import NewProfileImageComponent from "./NewProfileImageComponent";
 
 const JumbotronComponent = ({ profile, exp }) => {
   const params = useParams();
@@ -16,7 +17,7 @@ const JumbotronComponent = ({ profile, exp }) => {
         alt="Profile cover"
         style={{ width: "100%" }}
       />
-      <Card.Body>
+      <Card.Body className="position-relative">
         <div className="d-flex">
           <Row>
             <Col xs={3}>
@@ -29,10 +30,11 @@ const JumbotronComponent = ({ profile, exp }) => {
               />
             </Col>
           </Row>
-          <Row className="">
-            <Col className="text-end fs-3 iconWithHoverEffect">
-              <span className={params.id ? "d-none" : "rounded-circle p-3 "}>
-                <FaPen className="fs-5 ColorTextGrey " />
+
+          <Row className="justify-content-end">
+            <Col className="text-end fs-3 iconWithHoverEffect ">
+              <span className={params.id ? "d-none" : "rounded-circle p-3 position-absolute end-0 top-2"}>
+                <NewProfileImageComponent profile={profile}></NewProfileImageComponent>
               </span>
             </Col>
           </Row>
@@ -86,8 +88,8 @@ const JumbotronComponent = ({ profile, exp }) => {
               </a>
             </Col>
             <Col xs={2} className=" text-end iconWithHoverEffect">
-              <span className={params.id ? "d-none" : "rounded-circle p-2 "}>
-                <FaPen className="fs-6 ColorTextGrey " />
+              <span className={params.id ? "d-none" : "rounded-circle p-2 fs-6"}>
+                <FaPen className=" ColorTextGrey " />
               </span>
             </Col>
           </Row>

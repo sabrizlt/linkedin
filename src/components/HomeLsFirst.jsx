@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const HomeLsFirst = () => {
   const profile = useSelector((state) => state.data.profile);
-  const exp = useSelector((state) => state.data.exp);
 
   return (
     <Container className="card__container leftSidebar">
@@ -25,15 +24,7 @@ const HomeLsFirst = () => {
             </Row>
             <Card.Body>
               <Row>
-                <Col
-                  xs={4}
-                  sm={3}
-                  md={8}
-                  lg={6}
-                  xl={6}
-                  xxl={4}
-                  className="mx-auto"
-                >
+                <Col xs={4} sm={3} md={8} lg={6} xl={6} xxl={4} className="mx-auto">
                   <img
                     style={{ width: "100%" }}
                     id="profilePicImg"
@@ -70,14 +61,11 @@ const HomeLsFirst = () => {
               <Row className="border-top">
                 <Col className="mt-2">
                   <p>
-                    <span className="text-secondary">
-                      Accedi a strumenti e informazioni in esclusiva
-                    </span>
+                    <span className="text-secondary">Accedi a strumenti e informazioni in esclusiva</span>
                     <br />
                     <a href="#" target="_blank">
                       <span className="text-dark text-decoration-underline">
-                        <BsSquareHalf className="text-warning" /> Prova Premium
-                        gratis
+                        <BsSquareHalf className="text-warning" /> Prova Premium gratis
                       </span>
                     </a>
                   </p>
