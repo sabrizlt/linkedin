@@ -11,6 +11,8 @@ import PostComponent from "./PostComponent";
 import NewPostContainer from "./NewPostContainer";
 import NavbarMobile from "./NavbarMobile";
 import SearchProfileComponent from "./SearchProfileComponent";
+import Messaggistica from "./Messaggistica";
+import SideLeftMobile from "./SideLeftMobile";
 import { queryResult } from "./NavbarComponent";
 
 const HomeComponent = () => {
@@ -42,11 +44,12 @@ const HomeComponent = () => {
     <Container id="home">
       <Row className="justify-content-center pt-4">
         <Col md={3}>
+        <SearchProfileComponent queryResult={queryResult} />
+
           <HomeLeftSide />
         </Col>
 
         <Col xs={12} md={5}>
-          <SearchProfileComponent queryResult={queryResult} />
           <NewPostContainer getPosts={getPosts} />
           <hr className="text-black" />
           {reversedPost.slice(0, 50).map((p) => {
@@ -55,9 +58,11 @@ const HomeComponent = () => {
         </Col>
         <Col md={3}>
           <LinkedinNotice />
+          <SideLeftMobile />
           <PosterProfileComponent />
           <ColFooter />
           <NavbarMobile />
+          <Messaggistica />
         </Col>
       </Row>
     </Container>

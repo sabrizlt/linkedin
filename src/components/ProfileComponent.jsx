@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { API_KEY } from "../App";
 import { useEffect, useState } from "react";
+import Messaggistica from "./Messaggistica";
+
 
 const ProfileComponent = () => {
   const profile = useSelector((state) => state.data.profile);
@@ -87,8 +89,8 @@ const ProfileComponent = () => {
           <RightSideComponent />
         </Col>
       </Row>
+      <Messaggistica />
       <NavbarMobile />
-
       <FooterComponent />
     </Container>
   );

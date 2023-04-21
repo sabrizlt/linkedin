@@ -87,7 +87,7 @@ const PostComponent = (props) => {
             <p className="postContentText mx-2">{props.post.text}</p>
             {props.post.image && <img className="img-fluid m-0 p-0 imageRandom" src={props.post.image} alt="" />}
             <hr />
-            <div className="d-flex justify-content-around justify-content-md-center">
+            <div className="d-flex justify-content-around justify-content-md-center iconPost">
               <BiLike className="fs-3" />
               <span className="mx-1 d-none d-md-flex">Consiglia</span>
               <BiCommentDots className="fs-3 mx-4" />
