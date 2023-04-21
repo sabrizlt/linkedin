@@ -5,7 +5,7 @@ import { FaPhotoVideo, FaYoutube, FaCalendarAlt, FaNewspaper } from "react-icons
 function NewPostContainer({ getPosts }) {
   return (
     <Card className="mb-3 postContainer">
-      <Card.Body>
+      <Card.Body id="myNav">
         <AddPostComponent getPosts={getPosts} />
         <div className="d-flex justify-content-center mt-3 iconAddPost">
           <FaPhotoVideo className="fs-4 text-primary iconAddPost" /> <span className="mx-2 spanPost">Foto</span>

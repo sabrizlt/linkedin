@@ -8,11 +8,11 @@ const HomeLsFirst = () => {
   const profile = useSelector((state) => state.data.profile);
 
   return (
-    <Container className="card__container leftSidebar">
+    <Container className="card__container leftSidebar" id="">
       <Row>
         <Col>
-          <Card style={{ width: "100%" }}>
-            <Row>
+          <Card style={{ width: "100%" }} id="myNav">
+            <Row >
               <Col>
                 <Card.Img
                   variant="top"

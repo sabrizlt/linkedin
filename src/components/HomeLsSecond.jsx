@@ -5,11 +5,11 @@ import { GoPlus } from "react-icons/go";
 
 const HomeLsSecond = () => {
   return (
-    <Container className="card__container leftSidebar">
-      <Row>
-        <Col>
-          <Card>
-            <Card.Body>
+    <Container className="card__container leftSidebar sticky-top stickynav" id="myNav">
+      <Row >
+        <Col >
+          <Card >
+            <Card.Body id="myNav">
               <Row>
                 <Col>
                   <p>Recenti</p>

@@ -51,7 +51,10 @@ const PostComponent = (props) => {
     }
     props.getPost();
   };
-
+  document.addEventListener('swiped', function(e) {
+    console.log(e.target); // the element that was swiped
+    console.log(e.detail.dir); // swiped direction
+});
   const profile = useSelector((state) => state.data.profile);
   return (
     <Card className="mb-3 pt-2">
@@ -67,7 +70,7 @@ const PostComponent = (props) => {
             onError={(e) => (e.currentTarget.src = "https://placedog.net/500")}
           />
         </Col>
-        <Col xs={8} className="justify-content-start ps-0 ms-0 ">
+        <Col xs={8} className="justify-content-start ps-0 ms-0 " >
           <Link to={"/Profile/" + props.post.user._id}>
             <h5 className="postUserName mx-2 mb-0 ms-0 fw-bold">
               {props.post.user ? props.post.user.name + " " + props.post.user.surname : props.post.username}
