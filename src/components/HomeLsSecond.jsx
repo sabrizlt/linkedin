@@ -5,7 +5,7 @@ import { GoPlus } from "react-icons/go";
 
 const HomeLsSecond = () => {
   return (
-    <Container className="card__container leftSidebar">
+    <Container className="card__container leftSidebar sticky-top stickynav">
       <Row>
         <Col>
           <Card>

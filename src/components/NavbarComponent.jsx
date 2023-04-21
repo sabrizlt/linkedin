@@ -140,12 +140,12 @@ function NavbarComponent() {
           </div>
         </div>
         <div className=" d-md-flex flex-column align-items-center justify-content-center border-end text-secondary me-4 pe-4">
-          <Image src={profile.image} className="rounded-circle navImage" style={{ width: "25px", height: "25px" }} />
+        <Link to="/profile"><Image src={profile.image} className="rounded-circle navImage" style={{ width: "25px", height: "25px" }} /></Link>
           <NavDropdown title="Tu" id="navbarScrollingDropdown" className="text-icons m-0 p-0 youNav">
             <div className="d-flex ms-3 mt-1 align-items-center">
-              <Image src={profile.image} className="rounded-circle" style={{ width: "50px", height: "50px" }} />
+            <Link to="/gianni"><Image src={profile.image} className="rounded-circle" style={{ width: "50px", height: "50px" }} /></Link>
               <div>
-                <NavDropdown.Item className="text-decoration-none bg-transparent ">
+              <NavDropdown.Item className="text-decoration-none bg-transparent ">
                   {profile.name} {profile.surname}
                 </NavDropdown.Item>
                 <NavDropdown.Item className="text-decoration-none bg-transparent">

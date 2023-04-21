@@ -7,10 +7,13 @@ import ResourcesComponent from "./ResourcesComponent";
 import ExperiencesComponent from "./ExperiencesComponent";
 import RightSideComponent from "./RightSideComponent";
 import FooterComponent from "./FooterComponent";
+import NavbarMobile from "./NavbarMobile";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { API_KEY } from "../App";
 import { useEffect, useState } from "react";
+import Messaggistica from "./Messaggistica";
+
 
 const ProfileComponent = () => {
   const profile = useSelector((state) => state.data.profile);
@@ -76,7 +79,7 @@ const ProfileComponent = () => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col md={9} lg={7}>
+        <Col md={9} lg={7} id="profile">
           <JumbotronComponent profile={params.id ? thisProfile : profile} exp={params.id ? thisProfileExps : exp} />
           <AnalysisComponent />
           <ResourcesComponent />
@@ -86,6 +89,8 @@ const ProfileComponent = () => {
           <RightSideComponent />
         </Col>
       </Row>
+      <Messaggistica />
+      <NavbarMobile />
       <FooterComponent />
     </Container>
   );
