@@ -91,13 +91,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavbarComponent />
-
         <Routes>
-          <Route path="/log" element={<Welcome />}></Route>
-          <Route path="/" element={<HomeComponent></HomeComponent>}></Route>
-          <Route path="/Profile" element={<ProfileComponent></ProfileComponent>}></Route>
-          <Route path="/Profile/:id" element={<ProfileComponent></ProfileComponent>}></Route>
+          <Route path="/" element={<Welcome/>}></Route>
+          <Route path="/home" element={<><NavbarComponent/><HomeComponent/></>}></Route>
+          <Route path="/Profile" element={<><NavbarComponent></NavbarComponent><ProfileComponent/></>}></Route>
+          <Route path="/Profile/:id" element={<><NavbarComponent/><ProfileComponent/></>}></Route>
           <Route path="/*" element={<NotFoundComponent />}></Route>
         </Routes>
       </BrowserRouter>
