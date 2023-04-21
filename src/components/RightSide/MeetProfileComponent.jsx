@@ -6,10 +6,10 @@ import { BsFillPersonPlusFill } from "react-icons/bs";
 import { Card, Button } from "react-bootstrap";
 const MeetProfileComponent = ()=>{
     return(
-        <Card className="fw-bold mt-3 ">
-        <Card.Body className="pb-0 fs-5">Persone che potresti conoscere</Card.Body>
+        <Card className="fw-bold mt-3 "id="myNav">
+        <Card.Body className="pb-0 fs-5" id="myNav">Persone che potresti conoscere</Card.Body>
         <Card.Body>
-          <div className="d-flex align-item-center">
+          <div className="d-flex align-item-center" id="myNav">
             <img
               src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
               alt=""

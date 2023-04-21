@@ -80,7 +80,7 @@ function ExperiencesComponent({ exp }) {
   };
 
   return (
-    <div className="border border-2 rounded-3 my-2  p-2 bg-white">
+    <div className="border border-2 rounded-3 my-2  p-2 bg-white" id="myNav">
       <div>
         <div className="d-flex justify-content-between">
           <h2 className="mt-2 mx-3">Esperienze</h2>

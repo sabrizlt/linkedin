@@ -34,6 +34,7 @@ return(
       onError={(e) => (e.currentTarget.src = "https://placedog.net/500")}
     />
     <Card.Body className="bodyCard pb-0">{p.username}</Card.Body>
+    
   </Card>
 )
     })}

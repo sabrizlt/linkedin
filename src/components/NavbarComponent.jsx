@@ -6,6 +6,7 @@ import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import DarkMode from "./DarkModeButton";
 import "../App.css";
 
 function NavbarComponent() {
@@ -116,6 +117,7 @@ function NavbarComponent() {
             
           </NavDropdown>
         </div>
+        <DarkMode></DarkMode>
         <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
           <CgMenuGridR id="icon" className="icons-navbar fs-4" />
           <NavDropdown title="Per le Aziende" id="navbarScrollingDropdown" className="text-icons m-0 p-0"></NavDropdown>
