@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
   background-color: #f3f2ee;
 }
@@ -343,6 +344,7 @@ p.NoticeText {
     margin-top: -50px;
   }
 }
+
 @media screen and (min-width: 791px) {
   #navbarMobile {
     display: none;
@@ -353,6 +355,7 @@ p.NoticeText {
 div.wheel-and-hamster {
   margin: 0 auto;
 }
+
 .wheel-and-hamster {
   --dur: 1s;
   position: relative;
@@ -510,12 +513,12 @@ div.wheel-and-hamster {
 .spoke {
   animation: spoke var(--dur) linear infinite;
   background: radial-gradient(100% 100% at center, hsl(0, 0%, 60%) 4.8%, hsla(0, 0%, 60%, 0) 5%),
-    linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99%
-      no-repeat;
+    linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
 }
 
 /* Animations */
 @keyframes hamster {
+
   from,
   to {
     transform: rotate(4deg) translate(-0.8em, 1.85em);
@@ -527,6 +530,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterHead {
+
   from,
   25%,
   50%,
@@ -544,6 +548,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterEye {
+
   from,
   90%,
   to {
@@ -556,6 +561,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterEar {
+
   from,
   25%,
   50%,
@@ -573,6 +579,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBody {
+
   from,
   25%,
   50%,
@@ -590,6 +597,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterFRLimb {
+
   from,
   25%,
   50%,
@@ -607,6 +615,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterFLLimb {
+
   from,
   25%,
   50%,
@@ -624,6 +633,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBRLimb {
+
   from,
   25%,
   50%,
@@ -641,6 +651,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBLLimb {
+
   from,
   25%,
   50%,
@@ -658,6 +669,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterTail {
+
   from,
   25%,
   50%,
@@ -727,18 +739,35 @@ div.wheel-and-hamster {
   transition: 0.5s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #737275;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(100%);
   box-shadow: inset 15px -4px 0px 15px #ffffff;
 }
 
 
-.login{
+.login {
   height: 500px !important;
   background-color: #28096b;
   margin-top: 10px;
+}
+
+/****************** home modal icons **********************/
+.prof__icon {
+  width: 40px;
+}
+
+.prof__icon__modal {
+  width: 80px
+}
+
+#dropdown-autoclose-inside {
+  border: none;
+}
+
+.dropdown-toggle::after {
+  font-size: 2rem;
 }
