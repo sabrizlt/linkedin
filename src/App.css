@@ -10,17 +10,19 @@ body {
 
 #myNav {
   background-color: var(--body_navbar) !important;
+
 }
 
 .myNav {
   background-color: var(--body_navbar) !important;
-  border-color: var(--body_border) !important;
+
 }
 
 #root,
 html {
   background-color: var(--body_background);
   color: var(--body_color);
+  border-color: rgb(29,34,38) !important;
   font-family: "Roboto", sans-serif;
 }
 
