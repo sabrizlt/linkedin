@@ -17,9 +17,7 @@
   --body_disponibile: rgb(164, 161, 161) !important;
 }
 
-*{
-  transition: all 0.1s ease-in-out;
-}
+
 
 body {
   margin: 0;

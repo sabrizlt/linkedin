@@ -43,7 +43,7 @@ function NavbarComponent() {
         id="myNav"
         bg="white"
         expand="lg"
-        className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top"
+        className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-top "
         style={{
           boxShadow: "1px 1px 5px grey",
         }}
