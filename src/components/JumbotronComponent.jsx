@@ -16,7 +16,7 @@ const JumbotronComponent = ({ profile, exp }) => {
         id="profileCoverImg"
         alt="Profile cover"
       />
-      <Card.Body className="position-relative" id="myNav">
+      <Card.Body className="position-relative"  id="myNav">
         <div className="d-flex">
           <Row>
             <Col xs={3}>
