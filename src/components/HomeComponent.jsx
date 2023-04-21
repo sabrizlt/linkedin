@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
 import NewPostContainer from "./NewPostContainer";
 import NavbarMobile from "./NavbarMobile";
-import SearchProfileComponent from "./SearchProfileComponent";
+
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
   const reversedPost = post;
@@ -44,7 +44,6 @@ const HomeComponent = () => {
         </Col>
 
         <Col xs={12} md={5}>
-          <SearchProfileComponent />
           <NewPostContainer getPosts={getPosts} />
           <hr className="text-black" />
           {reversedPost.slice(0, 50).map((p) => {

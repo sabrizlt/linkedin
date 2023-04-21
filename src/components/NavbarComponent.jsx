@@ -1,4 +1,4 @@
-import { Navbar, Form, Nav, NavDropdown, Image } from "react-bootstrap";
+import { Navbar, Form, Nav, NavDropdown, Image, Row, Card } from "react-bootstrap";
 import { FaHome, FaUserFriends, FaBell } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
@@ -7,11 +7,36 @@ import { CgMenuGridR } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import DarkMode from "./DarkModeButton";
+import { useState } from "react";
 import "../App.css";
 
 function NavbarComponent() {
   const profile = useSelector((state) => state.data.profile);
+  const allProfile = useSelector((state) => state.data.allProfiles);
+  const [query, setQuery] = useState("");
+  const [queryResult, setQueryResult] = useState([]);
 
+  const SearchFunction = () => {
+    setQueryResult(null);
+    let found = [];
+    console.log("Query: ", query);
+    allProfile &&
+      allProfile.filter((p) => {
+        if (
+          p.username.toLowerCase().includes(query.toLowerCase()) ||
+          (p.name && p.name.toLowerCase().includes(query.toLowerCase())) ||
+          (p.surname && p.surname.toLowerCase().includes(query.toLowerCase()))
+        ) {
+          found.push(p);
+        }
+
+        return found;
+      });
+    setQueryResult(found);
+    console.log("Risultati: ", found);
+    console.log("queryResult: ", queryResult);
+    document.querySelector("#queryResult").click();
+  };
   return (
     <>
       <Navbar
@@ -31,15 +56,52 @@ function NavbarComponent() {
             className="d-inline-block align-top linkedinImage"
             alt="logo"
           />
-          <Form className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 formSearch">
-            <Form.Control
-            value="Sabri"
-              type="search"
+          <NavDropdown title="" id="queryResult" className="text-icons m-0 p-0 youNav" style={{}}>
+            {queryResult.length > 0 &&
+              queryResult.map((p, i) => (
+                <NavDropdown.Item key={i} className="text-decoration-none bg-transparent ">
+                  <Link to={"/profile/" + p._id}>
+                    <Card className="fw-bold ">
+                      <Card.Body>
+                        <div className="d-flex align-item-center">
+                          <img
+                            src={p.image}
+                            alt="Profile pic"
+                            style={{ width: "30px", height: "30px" }}
+                            className="rounded-circle ms-0 me-2"
+                            onError={(e) => (e.currentTarget.src = "https://placedog.net/500")}
+                          />
+                          <h6>
+                            {p.name.charAt(0).toUpperCase() +
+                              p.name.slice(1) +
+                              " " +
+                              p.surname.charAt(0).toUpperCase() +
+                              p.surname.slice(1)}
+                          </h6>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </NavDropdown.Item>
+              ))}
+          </NavDropdown>
+          <Form
+            className="d-none ms-1 search d-flex  d-lg-flex me-3 align-items-center my-2 formSearch"
+            onSubmit={(e) => {
+              e.preventDefault();
+              SearchFunction();
+            }}
+          >
+            <input
+              value={query}
+              type="text"
               placeholder="Cerca"
               className="me-lg-5 ColorbackGrey"
-              aria-label="Search"
-              id="firstName"
-              name="firstName"
+              id="query"
+              name="query"
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
             />
           </Form>
         </div>
@@ -113,8 +175,9 @@ function NavbarComponent() {
             <NavDropdown.Item className="bg-transparent">Post e attività</NavDropdown.Item>
             <NavDropdown.Item className="bg-transparent">Account per la pubblicità</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item className=" bg-transparent"><Link to={"/"}>Esci</Link></NavDropdown.Item>
-            
+            <NavDropdown.Item className=" bg-transparent">
+              <Link to={"/"}>Esci</Link>
+            </NavDropdown.Item>
           </NavDropdown>
         </div>
         <DarkMode></DarkMode>

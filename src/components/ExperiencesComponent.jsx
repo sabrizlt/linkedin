@@ -136,11 +136,12 @@ function ExperiencesComponent({ exp }) {
                             year: "numeric",
                           })}{" "}
                           -{" "}
-                          {new Date(experience.endDate).toLocaleDateString("en-US", {
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                          })}
+                          {experience.endDate !== undefined &&
+                            new Date(experience.endDate).toLocaleDateString("en-US", {
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                            })}
                         </span>
                       </Col>
                       <Col xs={1} className="experienceEditIcon">

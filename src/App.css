@@ -68,7 +68,10 @@ li {
 }
 
 /******************************************Componente - Navbar***********************************/
-
+.dropdown-menu {
+  max-height: 600px;
+  overflow-y: scroll;
+}
 #icon {
   font-size: 1.2em;
   margin-right: 1em;
@@ -208,7 +211,7 @@ button:hover {
 #jumbotron,
 #lateral,
 #home {
-  margin-top: 75px;
+  padding-top: 75px;
 }
 
 .ColorbackGrey {
@@ -751,8 +754,7 @@ input:checked + .slider:before {
   box-shadow: inset 15px -4px 0px 15px #ffffff;
 }
 
-
-.login{
+.login {
   height: 500px !important;
   background-color: #28096b;
   margin-top: 10px;
