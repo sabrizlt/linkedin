@@ -52,11 +52,19 @@ const JumbotronComponent = ({ profile, exp }) => {
             <small className="text-secondary mx-2">{profile.area}</small>
           </Col>
           <Col xs={3}>
-            <img
-              id="logoLastExp"
-              src={exp.length > 0 ? exp[exp.length - 1].image : "https://placedog.net/500/280"}
-              alt="logo"
-            />
+            {exp.length > 0 ? (
+              <img
+                id="logoLastExp"
+                src={exp.length > 0 ? exp[exp.length - 1].image : ""}
+                alt="logo"
+                style={{ maxHeight: "30px" }}
+                onError={(e) => (
+                  (e.currentTarget.style = { maxHeight: "20px", maxWidth: "20px" }),
+                  (e.currentTarget.src =
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchljxu5aO_1P8DGCpCrDaIZ7Lf8on8SoZ2jjWKxlOJZeNhbrP1kvb-_ttZ7DqWHqeya8&usqp=CAU")
+                )}
+              />
+            ) : null}
           </Col>
         </Row>
         <Row className="my-2 cardBtns">
