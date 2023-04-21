@@ -12,7 +12,7 @@ import { useState } from "react";
 //import { useParams } from "react-router-dom";
 
 export const API_KEY = localStorage.getItem("APY_KEY");
- 
+
 function App() {
   //const params = useParams();
   //const profile = useSelector((state) => state.data.profile);
@@ -33,7 +33,7 @@ function App() {
         console.log(profile);
         fetchExp(profile._id);
       } else {
-        alert("errore nella chiamata (recupero profilo)");
+        //alert("errore nella chiamata (recupero profilo)");
       }
     } catch (error) {
       console.log(error);
@@ -53,7 +53,7 @@ function App() {
         console.log(exp);
         dispatch({ type: "GET_EXPS", payload: exp });
       } else {
-        alert("errore nella chiamata (recupero esperienze)");
+        //alert("errore nella chiamata (recupero esperienze)");
       }
     } catch (error) {
       console.log(error);
@@ -73,7 +73,7 @@ function App() {
         dispatch({ type: "GET_ALL_PROFILE", payload: profiles });
         console.log("Tutti i profili: ", profiles);
       } else {
-        alert("errore nella chiamata (recupero TUTTIprofilI)");
+        //alert("errore nella chiamata (recupero TUTTIprofilI)");
       }
     } catch (error) {
       console.log(error);
@@ -92,10 +92,34 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Welcome/>}></Route>
-          <Route path="/home" element={<><NavbarComponent/><HomeComponent/></>}></Route>
-          <Route path="/Profile" element={<><NavbarComponent></NavbarComponent><ProfileComponent/></>}></Route>
-          <Route path="/Profile/:id" element={<><NavbarComponent/><ProfileComponent/></>}></Route>
+          <Route path="/" element={<Welcome />}></Route>
+          <Route
+            path="/home"
+            element={
+              <>
+                <NavbarComponent />
+                <HomeComponent />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/Profile"
+            element={
+              <>
+                <NavbarComponent></NavbarComponent>
+                <ProfileComponent />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/Profile/:id"
+            element={
+              <>
+                <NavbarComponent />
+                <ProfileComponent />
+              </>
+            }
+          ></Route>
           <Route path="/*" element={<NotFoundComponent />}></Route>
         </Routes>
       </BrowserRouter>
