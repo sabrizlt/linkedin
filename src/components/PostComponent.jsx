@@ -51,7 +51,10 @@ const PostComponent = (props) => {
     }
     props.getPost();
   };
-
+  document.addEventListener('swiped', function(e) {
+    console.log(e.target); // the element that was swiped
+    console.log(e.detail.dir); // swiped direction
+});
   const profile = useSelector((state) => state.data.profile);
   return (
     <Card className="mb-2 pt-2">

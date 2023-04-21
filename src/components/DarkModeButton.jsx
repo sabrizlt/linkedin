@@ -16,7 +16,7 @@ else setLight();
 return(
     <div class="toggle-switch">
     <label class="switch-label">
-      <input type="checkbox" class="checkbox" onChange={toggletheme} defaultChecked/>
+      <input type="checkbox" class="checkbox" onChange={toggletheme} defaultChecked="true"/>
       <span class="slider"></span>
     </label>
   </div>  
