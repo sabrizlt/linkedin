@@ -208,12 +208,15 @@ button:hover {
   color: rgb(196, 133, 207);
 }
 
-#jumbotron,
+
 #lateral,
 #home {
   padding-top: 75px;
 }
 
+#jumbotron{
+  margin-top: 75px;
+}
 .ColorbackGrey {
   background-color: rgb(238, 243, 248) !important;
   border: none !important;
