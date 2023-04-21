@@ -45,7 +45,7 @@ function NavbarComponent() {
 
         <div id="icon" className="d-flex iconNavbar iconDesktop">
           <div className=" d-md-flex flex-column align-items-center justify-content-center text-secondary me-5">
-            <Link to="/" className="fs-5">
+            <Link to="/home" className="fs-5">
               <FaHome id="ico" className="icons-navbar " />
             </Link>
             <Nav.Link className="d-none d-lg-block text-icons">Home</Nav.Link>
@@ -112,7 +112,8 @@ function NavbarComponent() {
             <NavDropdown.Item className="bg-transparent">Post e attività</NavDropdown.Item>
             <NavDropdown.Item className="bg-transparent">Account per la pubblicità</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item className=" bg-transparent">Esci</NavDropdown.Item>
+            <NavDropdown.Item className=" bg-transparent"><Link to={"/"}>Esci</Link></NavDropdown.Item>
+            
           </NavDropdown>
         </div>
         <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
