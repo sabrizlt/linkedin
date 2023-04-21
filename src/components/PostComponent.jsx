@@ -57,9 +57,9 @@ const PostComponent = (props) => {
 });
   const profile = useSelector((state) => state.data.profile);
   return (
-    <Card className="mb-2 pt-2"  id="myNav">
-      <Row className=" align-items-center" >
-        <Col xs={2} className=" d-flex flex-row justify-content-end" >
+    <Card className="mb-3 pt-2">
+      <Row className=" align-items-center">
+        <Col xs={2} className=" d-flex flex-row justify-content-end">
           <Card.Img
             variant="top"
             src={props.post.user ? props.post.user.image : "https://placedog.net/500"}
@@ -91,14 +91,14 @@ const PostComponent = (props) => {
             {props.post.image && <img className="img-fluid m-0 p-0 imageRandom" src={props.post.image} alt="" />}
             <hr />
             <div className="d-flex justify-content-around justify-content-md-center iconPost">
-              <BiLike className="fs-3" />
-              <span className="mx-1 d-none d-md-flex">Consiglia</span>
-              <BiCommentDots className="fs-3 mx-4" />
-              <span className="mx-0 d-none d-md-flex">Commenta</span>
-              <BiShare className="fs-3 mx-4" />
-              <span className="mx-0 d-none d-md-flex">Diffondi il post</span>
-              <BsSend className="fs-3 mx-4" />
-              <span className="mx-0 d-none d-md-flex">Invia</span>
+              <BiLike className="" />
+              <span className="mx-1 d-none d-md-flex spanIcon text-secondary">Consiglia</span>
+              <BiCommentDots className=" mx-4" />
+              <span className="mx-0 d-none d-md-flex spanIcon text-secondary">Commenta</span>
+              <BiShare className=" mx-4" />
+              <span className="mx-0 d-none d-md-flex spanIcon text-secondary">Diffondi il post</span>
+              <BsSend className=" mx-4" />
+              <span className="mx-0 d-none d-md-flex spanIcon text-secondary">Invia</span>
             </div>
 
             <InputGroup className="mb-3">

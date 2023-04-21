@@ -324,7 +324,14 @@ p.NoticeText {
 }
 
 .iconPost {
-  margin: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1.4em;
+}
+
+.spanIcon {
+  font-size: 0.6em;
+  font-weight: bolder;
 }
 
 .dropdown-toggle::after {
@@ -346,6 +353,7 @@ p.NoticeText {
   color: antiquewhite;
   background-color: aqua !important;
 }
+
 /* mediaquery */
 
 @media screen and (max-width: 790px) {
@@ -395,9 +403,63 @@ p.NoticeText {
   .message {
     display: none;
   }
+
   .bg-light.border-dark.text-black.d-flex.align-items-center.dropdown-toggle.btn.btn-secondary {
     display: none !important;
   }
+
+  #footer {
+    display: none;
+  }
+
+  .rounded-3.mg-fluid.mb-3.w-100 {
+    margin-bottom: 100px !important;
+  }
+
+  #profile,
+  .col-md-3 {
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 0px !important;
+    border-color: 2px solid red !important;
+  }
+
+  .spanPost {
+    display: none;
+  }
+
+  .iconAddPost {
+    gap: 25px !important;
+  }
+
+  .modal-dialog {
+    width: 86% !important;
+  }
+
+  #myNav {
+    border: none !important;
+
+  }
+
+  .switch-label {
+    margin-top: -35px !important;
+    margin-left: 50px;
+
+  }
+
+  #jumbotron {
+    border: none !important;
+    margin-top: 13% !important;
+  }
+
+.me-2.fixed-top.bg-transparent.border-none.btn.btn-light {
+  width: 20px;
+  height: 25px;
+  background-color: black !important;
+  margin-left: 93%;
+  margin-top: 2%;
+}
+
 }
 
 @media screen and (min-width: 791px) {
@@ -408,6 +470,21 @@ p.NoticeText {
   .me-2.fixed-top.bg-transparent.border-none.btn.btn-light {
     display: none;
   }
+
+
+}
+
+@media screen and (min-width: 575px) {
+  .d-flex.align-items-center.mt-2.mb-2 {
+    font-size: 0.8em !important;
+    margin-top: 3% !important;
+  }
+
+  .spanIcon {
+    display: none;
+  }
+
+
 }
 
 /***********************************************LOADER********************************************/
@@ -572,12 +649,12 @@ div.wheel-and-hamster {
 .spoke {
   animation: spoke var(--dur) linear infinite;
   background: radial-gradient(100% 100% at center, hsl(0, 0%, 60%) 4.8%, hsla(0, 0%, 60%, 0) 5%),
-    linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99%
-      no-repeat;
+    linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
 }
 
 /* Animations */
 @keyframes hamster {
+
   from,
   to {
     transform: rotate(4deg) translate(-0.8em, 1.85em);
@@ -589,6 +666,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterHead {
+
   from,
   25%,
   50%,
@@ -606,6 +684,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterEye {
+
   from,
   90%,
   to {
@@ -618,6 +697,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterEar {
+
   from,
   25%,
   50%,
@@ -635,6 +715,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBody {
+
   from,
   25%,
   50%,
@@ -652,6 +733,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterFRLimb {
+
   from,
   25%,
   50%,
@@ -669,6 +751,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterFLLimb {
+
   from,
   25%,
   50%,
@@ -686,6 +769,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBRLimb {
+
   from,
   25%,
   50%,
@@ -703,6 +787,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBLLimb {
+
   from,
   25%,
   50%,
@@ -720,6 +805,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterTail {
+
   from,
   25%,
   50%,
@@ -789,11 +875,11 @@ div.wheel-and-hamster {
   transition: 0.5s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #737275;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(100%);
   box-shadow: inset 15px -4px 0px 15px #ffffff;
 }
@@ -857,7 +943,7 @@ input:checked + .slider:before {
   transition: 0.3s;
 }
 
-.checkbox:checked ~ .slider {
+.checkbox:checked~.slider {
   background-color: var(--light);
 }
 
@@ -876,7 +962,7 @@ input:checked + .slider:before {
   transition: 0.3s;
 }
 
-.checkbox:checked ~ .slider::before {
+.checkbox:checked~.slider::before {
   -webkit-transform: translateX(50px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
