@@ -9,7 +9,7 @@ import NewProfileImageComponent from "./NewProfileImageComponent";
 const JumbotronComponent = ({ profile, exp }) => {
   const params = useParams();
   return (
-    <Card id="jumbotron">
+    <Card id="jumbotron" >
       <Card.Img
         variant="top"
         src="https://placedog.net/900/400"
@@ -17,7 +17,7 @@ const JumbotronComponent = ({ profile, exp }) => {
         alt="Profile cover"
         style={{ width: "100%" }}
       />
-      <Card.Body className="position-relative">
+      <Card.Body className="position-relative" id="myNav">
         <div className="d-flex">
           <Row>
             <Col xs={3}>
@@ -77,8 +77,8 @@ const JumbotronComponent = ({ profile, exp }) => {
         </Row>
 
         <div className="">
-          <Row className="profileBanner w-75 rounded py-3 mx-2">
-            <Col xs={9} className="ms-2 ">
+          <Row className="profileBanner w-75 rounded py-3 mx-2" id="disponibile">
+            <Col xs={9} className="ms-2 " >
               <b>Disponibile a lavorare</b>
               <br />
               Ruoli di Sviluppatore Web, Sviluppatore front-end, Sviluppatore back-end e Sviluppatore Javascript

@@ -10,7 +10,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const ResourcesComponent = () => {
   return (
-    <Container className="border border-1 my-1 rounded bg-white mt-3 p-3" fluid>
+    <Container className="border border-1 my-1 rounded bg-white mt-3 p-3" id="myNav" fluid>
       <Container>
         <Row>
           <Col className="d-flex flex-column ">
