@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 
 const MeetProfileComponent = ({ profile }) => {
   return (
-    <Card className="fw-bold mt-3 ">
-      <Card.Body className="pb-0 fs-5"></Card.Body>
+    <Card className="fw-bold mt-3" id="myNav">
+      <Card.Body className="pb-0 fs-5" ></Card.Body>
       <Card.Body>
-        <div className="d-flex align-item-center">
+        <div className="d-flex align-item-center "  id="myNav">
           <img
             className="prof__icon rounded-circle"
             src={profile?.image ? profile?.image : profile.user?.image}
             alt=""
             style={{ width: "50px", height: "50px" }}
+            onError={(e)=>e.currentTarget.src = "https://www.comune.alzano.bg.it/export/sites/default/.galleries/immagini/foto/A-Barbagianni.jpg"}
           />
 
           <p className="ms-3">

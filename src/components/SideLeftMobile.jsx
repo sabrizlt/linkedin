@@ -13,16 +13,16 @@ function OffCanvasExample({ name, ...props }) {
   const handleShow = () => setShow(true);
 
   return (
-    <>
+    <div >
       <Button variant="light" onClick={handleShow} className="me-2 fixed-top bg-transparent border-none" style={{width: "20px"}}>
         {name}
       </Button>
-      <Offcanvas show={show} onHide={handleClose} {...props} className="w-75">
-        <Offcanvas.Header closeButton>
+      <Offcanvas show={show} onHide={handleClose} {...props} className="w-75" >
+        <Offcanvas.Header closeButton >
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-            <div>
+        <Offcanvas.Body  >
+            <div id="myNav">
           <h4>Sabri Zaltni</h4>
           <span className='text-secondary mt-0'>Visualizza profilo</span>
           </div>
@@ -47,7 +47,7 @@ function OffCanvasExample({ name, ...props }) {
           </div>
         </Offcanvas.Body>
       </Offcanvas>
-    </>
+    </div>
   );
 }
 

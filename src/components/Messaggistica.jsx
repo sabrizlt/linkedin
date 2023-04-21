@@ -10,12 +10,12 @@ const MessagingDropdown = () => {
   const profile = useSelector((state) => state.data.profile);
 
   return (
-    <Dropdown className="fixed-bottom dropMessage d-flex justify-content-end message">
+    <Dropdown className="fixed-bottom dropMessage d-flex justify-content-end message" >
       <Dropdown.Toggle
         variant="secondary"
         className="bg-light border-dark text-black d-flex align-items-center "
       >
-        <div>
+        <div >
           <img
             style={{ width: "27px" }}
             className="rounded-circle"
@@ -26,6 +26,7 @@ const MessagingDropdown = () => {
           <span
             className="mr-auto fw-bolder mx-2"
             style={{ fontSize: "0.9em" }}
+            
           >
             Messaggistica
           </span>
