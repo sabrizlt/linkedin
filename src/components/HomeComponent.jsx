@@ -10,10 +10,8 @@ import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
 import NewPostContainer from "./NewPostContainer";
 import NavbarMobile from "./NavbarMobile";
-import SearchProfileComponent from "./SearchProfileComponent";
 import Messaggistica from "./Messaggistica";
 import SideLeftMobile from "./SideLeftMobile";
-import { queryResult } from "./NavbarComponent";
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
@@ -44,7 +42,6 @@ const HomeComponent = () => {
     <Container id="home">
       <Row className="justify-content-center pt-4">
         <Col md={3}>
-        <SearchProfileComponent queryResult={queryResult} />
 
           <HomeLeftSide />
         </Col>
