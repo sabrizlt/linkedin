@@ -735,3 +735,10 @@ input:checked + .slider:before {
   transform: translateX(100%);
   box-shadow: inset 15px -4px 0px 15px #ffffff;
 }
+
+
+.login{
+  height: 500px !important;
+  background-color: #28096b;
+  margin-top: 10px;
+}
