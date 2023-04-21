@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -11,9 +12,12 @@ import {
 } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import { API_KEY } from "../App";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
 
 function AddPostComponent(props) {
+  const profile = useSelector((state) => state.data.profile);
   const [showPostModal, setShowPostModal] = useState(false);
   const [showPhotoModal, setShowPhotoModal] = useState(false);
   const [id, setId] = useState("");
@@ -92,7 +96,14 @@ function AddPostComponent(props) {
   };
 
   return (
-    <>
+    <div className="d-flex">
+      <Link to="/profile">
+        <img
+          className="rounded-circle mx-2 prof__icon"
+          src={profile.image ? profile.image : profile.user.image}
+          alt="Profile pic"
+        />
+      </Link>
       <Button
         variant="light"
         className="rounded-pill w-100 border-secondary fw-bolder text-secondary"
@@ -103,7 +114,30 @@ function AddPostComponent(props) {
 
       <Modal show={showPostModal} onHide={() => handleShowPostModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Crea un post</Modal.Title>
+          <Dropdown className="d-inline mx-2" autoClose="inside">
+            <Dropdown.Toggle
+              id="dropdown-autoclose-inside"
+              className="d-flex align-items-center bg-white text-dark"
+            >
+              <img
+                className="rounded-circle mx-2 prof__icon__modal"
+                src={profile.image ? profile.image : profile.user.image}
+                alt="Profile pic"
+              />
+              <div className="d-flex flex-column">
+                <h2>
+                  {profile.name} {profile.surname}
+                </h2>
+                <p className="me-5">Pubblica: Chiunque</p>
+              </div>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#">Chiunque</Dropdown.Item>
+              <Dropdown.Item href="#">Solo Collegamenti</Dropdown.Item>
+              <Dropdown.Item href="#">Gruppo</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -123,6 +157,7 @@ function AddPostComponent(props) {
               />
             </Form.Group>
           </Form>
+
           <div className="d-flex justify-content-between align-items-center">
             <div>
               <>
@@ -199,7 +234,7 @@ function AddPostComponent(props) {
           </div>
         </Modal.Body>
       </Modal>
-    </>
+    </div>
   );
 }
 

@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import DarkMode from './DarkModeButton';
 function Welcome() {
    
    const [password, setPassword] = useState(localStorage.getItem("APY_KEY"));
@@ -22,7 +23,23 @@ function Welcome() {
   
   };
 
+
+  const setDark= () =>{
+    document.getElementById("root").setAttribute("data-theme", "darkmode");
+  }
+ setDark()
+  const setLight= () =>{
+    document.getElementById("root").setAttribute("data-theme", "lightmode");
+  }
+
+  const toggletheme = (e) =>{
+if(e.target.checked) setDark();
+else setLight();
+  }
+ 
+
   return (
+    
     <div
     className="modal show my-5"
     style={{ display: 'block', position: 'initial' }}>
@@ -48,6 +65,7 @@ function Welcome() {
         <Link to="https://strive.school/linkedin-registration">
           <p className='btn btn-warning w-100'>Register and get your apikey!</p>
         </Link>
+      <DarkMode></DarkMode>
     </form>
 
       </Modal.Body>

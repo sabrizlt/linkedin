@@ -1,7 +1,15 @@
 import ModifyProfileComponent from "./RightSide/ModifyProfileComponent";
 import MeetProfileComponent from "./RightSide/MeetProfileComponent";
 import CoursesProfileComponent from "./RightSide/CoursesProfileComponent";
+import { useSelector } from "react-redux";
 const RightSideComponent = () => {
+  const profiles = useSelector((state) => state.data.allProfiles);
+
+  const getRandomAlbums = (profiles) => {
+    const shuffled = profiles?.sort(() => 0.5 - Math.random());
+    return shuffled?.slice(0, 4);
+  };
+
   return (
     <>
       {/*prima parte della lateral bar, */}
@@ -19,7 +27,12 @@ const RightSideComponent = () => {
       {/*seconda parte della lateral bar,contenente un banner ! */}
 
       {/*terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
-      <MeetProfileComponent />
+      <div className="border bg-white p-2 border border-1 rounded">
+        <h5>Persone che potresti conoscere</h5>
+        {getRandomAlbums(profiles)?.map((profile) => (
+          <MeetProfileComponent profile={profile} key={profile._id} />
+        ))}
+      </div>
 
       {/*fine terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
 

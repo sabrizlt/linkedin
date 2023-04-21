@@ -1,11 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
-  background-color: #f3f2ee;
+  background-color: var(--body_background);
+}
+
+#disponibile {
+  background-color: var(--body_disponibile);
+}
+
+#myNav {
+
+  background-color: var(--body_navbar) !important;
+}
+
+.myNav {
+  background-color: var(--body_navbar) !important;
+  border-color: var(--body_border) !important;
+
 }
 
 #root,
 html {
-  background-color: #f3f2ee;
+  background-color: var(--body_background);
+  color: var(--body_color);
   font-family: "Roboto", sans-serif;
 }
 
@@ -54,6 +71,10 @@ li {
 }
 
 /******************************************Componente - Navbar***********************************/
+.dropdown-menu {
+  max-height: 600px;
+  overflow-y: scroll;
+}
 
 #icon {
   font-size: 1.2em;
@@ -191,9 +212,13 @@ button:hover {
   color: rgb(196, 133, 207);
 }
 
-#jumbotron,
+
 #lateral,
 #home {
+  padding-top: 75px;
+}
+
+#jumbotron {
   margin-top: 75px;
 }
 
@@ -378,6 +403,7 @@ display: none !important;
   
   
 }
+
 @media screen and (min-width: 791px) {
   #navbarMobile {
     display: none;
@@ -392,6 +418,7 @@ display: none !important;
 div.wheel-and-hamster {
   margin: 0 auto;
 }
+
 .wheel-and-hamster {
   --dur: 1s;
   position: relative;
@@ -549,12 +576,12 @@ div.wheel-and-hamster {
 .spoke {
   animation: spoke var(--dur) linear infinite;
   background: radial-gradient(100% 100% at center, hsl(0, 0%, 60%) 4.8%, hsla(0, 0%, 60%, 0) 5%),
-    linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99%
-      no-repeat;
+    linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
 }
 
 /* Animations */
 @keyframes hamster {
+
   from,
   to {
     transform: rotate(4deg) translate(-0.8em, 1.85em);
@@ -566,6 +593,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterHead {
+
   from,
   25%,
   50%,
@@ -583,6 +611,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterEye {
+
   from,
   90%,
   to {
@@ -595,6 +624,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterEar {
+
   from,
   25%,
   50%,
@@ -612,6 +642,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBody {
+
   from,
   25%,
   50%,
@@ -629,6 +660,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterFRLimb {
+
   from,
   25%,
   50%,
@@ -646,6 +678,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterFLLimb {
+
   from,
   25%,
   50%,
@@ -663,6 +696,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBRLimb {
+
   from,
   25%,
   50%,
@@ -680,6 +714,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterBLLimb {
+
   from,
   25%,
   50%,
@@ -697,6 +732,7 @@ div.wheel-and-hamster {
 }
 
 @keyframes hamsterTail {
+
   from,
   25%,
   50%,
@@ -725,10 +761,11 @@ div.wheel-and-hamster {
 
 /* The switch - the box around the slider */
 .switch {
-  font-size: 17px;
+
+  font-size: 12px;
   position: relative;
   display: inline-block;
-  width: 3.5em;
+  width: 3em;
   height: 2em;
 }
 
@@ -741,7 +778,7 @@ div.wheel-and-hamster {
 
 /* The slider */
 .slider {
-  --background: #28096b;
+  --background: #ebf4fbbc;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -750,7 +787,7 @@ div.wheel-and-hamster {
   bottom: 0;
   background-color: var(--background);
   transition: 0.5s;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 .slider:before {
@@ -766,18 +803,109 @@ div.wheel-and-hamster {
   transition: 0.5s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #737275;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(100%);
   box-shadow: inset 15px -4px 0px 15px #ffffff;
 }
 
-
-.login{
+.login {
   height: 500px !important;
   background-color: #28096b;
   margin-top: 10px;
+}
+
+/****************** home modal icons **********************/
+.prof__icon {
+  width: 40px;
+}
+
+.prof__icon__modal {
+  width: 80px
+}
+
+#dropdown-autoclose-inside {
+  border: none;
+}
+
+.dropdown-toggle::after {
+  font-size: 2rem;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked~.slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked~.slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.lightmode {
+  background-color: rgb(253, 253, 253) !important;
+  color: rgb(0, 0, 0) !important;
+  border: rgb(0, 0, 0) !important;
+
+}
+
+.darkmode {
+  background-color: black !important;
+  color: white !important;
+  border: white !important;
 }
