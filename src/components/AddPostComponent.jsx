@@ -13,6 +13,7 @@ import {
 import { BsThreeDots } from "react-icons/bs";
 import { API_KEY } from "../App";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 export const API_POST_URL = `https://striveschool-api.herokuapp.com/api/posts/`;
 
 function AddPostComponent(props) {
@@ -96,11 +97,13 @@ function AddPostComponent(props) {
 
   return (
     <div className="d-flex">
-      <img
-        className="rounded-circle mx-2 prof__icon"
-        src={profile.image ? profile.image : profile.user.image}
-        alt="Profile pic"
-      />
+      <Link to="/profile">
+        <img
+          className="rounded-circle mx-2 prof__icon"
+          src={profile.image ? profile.image : profile.user.image}
+          alt="Profile pic"
+        />
+      </Link>
       <Button
         variant="light"
         className="rounded-pill w-100 border-secondary fw-bolder text-secondary"

@@ -8,7 +8,7 @@ import { GoSearch } from "react-icons/go";
 
 const AnalysisComponent = () => {
   return (
-    <Container className="border border-1 my-1 rounded bg-light mt-3 p-4" fluid>
+    <Container className="border border-1 my-1 rounded bg-white mt-3 p-4" fluid>
       <Row className="mx-auto">
         <Col className="d-flex flex-column ms-2">
           <h2 className="text-start mb-3">Analisi</h2>
