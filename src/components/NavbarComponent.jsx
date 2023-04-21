@@ -180,7 +180,7 @@ function NavbarComponent() {
             <NavDropdown.Item className="bg-transparent">Account per la pubblicità</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item className=" bg-transparent">
-              <Link to={"/"}>Esci</Link>
+              <Link to={"/"} onClick={()=>{localStorage.clear()}}>Esci</Link>
             </NavDropdown.Item>
           </NavDropdown>
         </div>
