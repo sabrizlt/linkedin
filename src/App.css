@@ -452,11 +452,15 @@ p.NoticeText {
     margin-top: 13% !important;
   }
 
-  /*    width: 20px;
-    height: 25px;
-    background-color: black !important;
-    margin-left: 93%;
-    margin-top: 2%;*/
+.me-2.fixed-top.bg-transparent.border-none.btn.btn-light {
+  width: 20px;
+  height: 25px;
+  background-color: black !important;
+  margin-left: 93%;
+  margin-top: 2%;
+}
+
+  /*    */
 
 }
 
