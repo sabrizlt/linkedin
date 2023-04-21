@@ -909,3 +909,7 @@ input:checked+.slider:before {
   color: white !important;
   border: white !important;
 }
+
+#lateral {
+  margin-top: 77px !important;
+}
