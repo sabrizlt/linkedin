@@ -87,14 +87,14 @@ const PostComponent = (props) => {
             <p className="postContentText mx-2">{props.post.text}</p>
             {props.post.image && <img className="img-fluid m-0 p-0 imageRandom" src={props.post.image} alt="" />}
             <hr />
-            <div className="d-flex justify-content-end justify-content-md-center">
-              <BiLike className="fs-4" />
+            <div className="d-flex justify-content-around justify-content-md-center iconPost">
+              <BiLike className="fs-3" />
               <span className="mx-1 d-none d-md-flex">Consiglia</span>
-              <BiCommentDots className="fs-4 mx-2" />
+              <BiCommentDots className="fs-3 mx-4" />
               <span className="mx-0 d-none d-md-flex">Commenta</span>
-              <BiShare className="fs-4 mx-2" />
+              <BiShare className="fs-3 mx-4" />
               <span className="mx-0 d-none d-md-flex">Diffondi il post</span>
-              <BsSend className="fs-4 mx-2" />
+              <BsSend className="fs-3 mx-4" />
               <span className="mx-0 d-none d-md-flex">Invia</span>
             </div>
 

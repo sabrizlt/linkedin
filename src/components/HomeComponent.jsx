@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
 import NewPostContainer from "./NewPostContainer";
 import NavbarMobile from "./NavbarMobile";
+import Messaggistica from "./Messaggistica";
+import SideLeftMobile from "./SideLeftMobile";
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
@@ -40,6 +42,7 @@ const HomeComponent = () => {
     <Container id="home">
       <Row className="justify-content-center pt-4">
         <Col md={3}>
+
           <HomeLeftSide />
         </Col>
 
@@ -52,9 +55,11 @@ const HomeComponent = () => {
         </Col>
         <Col md={3}>
           <LinkedinNotice />
+          <SideLeftMobile />
           <PosterProfileComponent />
           <ColFooter />
           <NavbarMobile />
+          <Messaggistica />
         </Col>
       </Row>
     </Container>
