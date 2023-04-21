@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
 import NewPostContainer from "./NewPostContainer";
 import NavbarMobile from "./NavbarMobile";
-import SearchProfileComponent from "./SearchProfileComponent";
-import { queryResult } from "./NavbarComponent";
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
@@ -46,7 +44,6 @@ const HomeComponent = () => {
         </Col>
 
         <Col xs={12} md={5}>
-          <SearchProfileComponent queryResult={queryResult} />
           <NewPostContainer getPosts={getPosts} />
           <hr className="text-black" />
           {reversedPost.slice(0, 50).map((p) => {

@@ -54,7 +54,10 @@ li {
 }
 
 /******************************************Componente - Navbar***********************************/
-
+.dropdown-menu {
+  max-height: 600px;
+  overflow-y: scroll;
+}
 #icon {
   font-size: 1.2em;
   margin-right: 1em;
@@ -736,8 +739,7 @@ input:checked + .slider:before {
   box-shadow: inset 15px -4px 0px 15px #ffffff;
 }
 
-
-.login{
+.login {
   height: 500px !important;
   background-color: #28096b;
   margin-top: 10px;
