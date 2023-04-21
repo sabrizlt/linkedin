@@ -5,7 +5,7 @@ const HomeLeftSide = () => {
   return (
     <>
       <HomeLsFirst />
-      <div className="my-4">
+      <div className="my-4  sticky-top stickynav">
         <HomeLsSecond />
       </div>
     </>
