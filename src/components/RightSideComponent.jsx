@@ -42,7 +42,7 @@ const RightSideComponent = () => {
       {/*fine 4 parte della lateral bar,contenente una lista di corsi da poter seguire! */}
 
       {/*inzio 5 parte della lateral bar,contenente la stesso banner al punto 2* */}
-      <div className="sticky-top top-50">
+      <div className="sticky-top top-50 mb-5">
         <img
           src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
           alt=""
