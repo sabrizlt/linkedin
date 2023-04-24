@@ -102,7 +102,7 @@ function NavbarComponent() {
               <NavDropdown.Item className="bg-transparent">Post e attività</NavDropdown.Item>
               <NavDropdown.Item className="bg-transparent">Account per la pubblicità</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item className=" bg-transparent">Esci</NavDropdown.Item>
+              <NavDropdown.Item className=" bg-transparent"  >Esci</NavDropdown.Item>
             </NavDropdown>
           </div>
           <div className="d-none d-md-flex flex-column align-items-center justify-content-center text-secondary me-4">
