@@ -27,7 +27,7 @@ const RightSideComponent = () => {
       {/*seconda parte della lateral bar,contenente un banner ! */}
 
       {/*terza parte della lateral bar,contenente una lista di persone che puoi conoscere ! */}
-      <div className="border bg-white p-2 border border-1 rounded">
+      <div className="border bg-white p-2 border border-1 rounded "  id="myNav">
         <h5>Persone che potresti conoscere</h5>
         {getRandomAlbums(profiles)?.map((profile) => (
           <MeetProfileComponent profile={profile} key={profile._id} />
@@ -42,7 +42,7 @@ const RightSideComponent = () => {
       {/*fine 4 parte della lateral bar,contenente una lista di corsi da poter seguire! */}
 
       {/*inzio 5 parte della lateral bar,contenente la stesso banner al punto 2* */}
-      <div className="sticky-top top-50">
+      <div className="sticky-top top-50 mb-5">
         <img
           src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
           alt=""

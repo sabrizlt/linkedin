@@ -13,8 +13,9 @@ function NavbarComponent() {
 
   return (
     <>
-      <Container id="navbarMobile">
+      <Container id="navbarMobile" >
         <Navbar
+        id="myNav"
           bg="white"
           expand="lg"
           className="d-flex justify-content-center p-0  flex-sm-nowrap fixed-bottom"
@@ -44,7 +45,7 @@ function NavbarComponent() {
 
           <div id="icon" className="d-flex align-items-center mt-2 mb-2">
             <div className=" d-md-flex flex-column text-center align-items-center justify-content-center text-secondary ms-5 mx-4">
-              <Link to="/" className="fs-5">
+              <Link to="/home" className="fs-5">
                 <FaHome id="ico" className="icons-navbar fs-1" />
               </Link>
               <Nav.Link className="d-none d-lg-block text-icons"></Nav.Link>

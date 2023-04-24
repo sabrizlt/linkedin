@@ -51,10 +51,13 @@ const PostComponent = (props) => {
     }
     props.getPost();
   };
-
+  document.addEventListener('swiped', function(e) {
+    console.log(e.target); // the element that was swiped
+    console.log(e.detail.dir); // swiped direction
+});
   const profile = useSelector((state) => state.data.profile);
   return (
-    <Card className="mb-2 pt-2">
+    <Card className="mb-3 pt-2">
       <Row className=" align-items-center">
         <Col xs={2} className=" d-flex flex-row justify-content-end">
           <Card.Img
@@ -67,7 +70,7 @@ const PostComponent = (props) => {
             onError={(e) => (e.currentTarget.src = "https://placedog.net/500")}
           />
         </Col>
-        <Col xs={8} className="justify-content-start ps-0 ms-0 ">
+        <Col xs={8} className="justify-content-start ps-0 ms-0 " >
           <Link to={"/Profile/" + props.post.user._id}>
             <h5 className="postUserName mx-2 mb-0 ms-0 fw-bold">
               {props.post.user ? props.post.user.name + " " + props.post.user.surname : props.post.username}
@@ -87,15 +90,15 @@ const PostComponent = (props) => {
             <p className="postContentText mx-2">{props.post.text}</p>
             {props.post.image && <img className="img-fluid m-0 p-0 imageRandom" src={props.post.image} alt="" />}
             <hr />
-            <div className="d-flex justify-content-end justify-content-md-center">
-              <BiLike className="fs-4" />
-              <span className="mx-1 d-none d-md-flex">Consiglia</span>
-              <BiCommentDots className="fs-4 mx-2" />
-              <span className="mx-0 d-none d-md-flex">Commenta</span>
-              <BiShare className="fs-4 mx-2" />
-              <span className="mx-0 d-none d-md-flex">Diffondi il post</span>
-              <BsSend className="fs-4 mx-2" />
-              <span className="mx-0 d-none d-md-flex">Invia</span>
+            <div className="d-flex justify-content-around justify-content-md-center iconPost">
+              <BiLike className="" />
+              <span className="mx-1 d-none d-md-flex spanIcon text-secondary">Consiglia</span>
+              <BiCommentDots className=" mx-4" />
+              <span className="mx-0 d-none d-md-flex spanIcon text-secondary">Commenta</span>
+              <BiShare className=" mx-4" />
+              <span className="mx-0 d-none d-md-flex spanIcon text-secondary">Diffondi il post</span>
+              <BsSend className=" mx-4" />
+              <span className="mx-0 d-none d-md-flex spanIcon text-secondary">Invia</span>
             </div>
 
             <InputGroup className="mb-3">

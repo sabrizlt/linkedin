@@ -9,15 +9,14 @@ import NewProfileImageComponent from "./NewProfileImageComponent";
 const JumbotronComponent = ({ profile, exp }) => {
   const params = useParams();
   return (
-    <Card id="jumbotron" >
+    <Card id="jumbotron">
       <Card.Img
         variant="top"
-        src="https://placedog.net/900/400"
+        src={`https://picsum.photos/seed/${Math.floor(Math.random() * 60)}/400`}
         id="profileCoverImg"
         alt="Profile cover"
-        style={{ width: "100%" }}
       />
-      <Card.Body className="position-relative" id="myNav">
+      <Card.Body className="position-relative"  id="myNav">
         <div className="d-flex">
           <Row>
             <Col xs={3}>
@@ -53,11 +52,19 @@ const JumbotronComponent = ({ profile, exp }) => {
             <small className="text-secondary mx-2">{profile.area}</small>
           </Col>
           <Col xs={3}>
-            <img
-              id="logoLastExp"
-              src={exp.length > 0 ? exp[exp.length - 1].image : "https://placedog.net/500/280"}
-              alt="logo"
-            />
+            {exp.length > 0 ? (
+              <img
+                id="logoLastExp"
+                src={exp.length > 0 ? exp[exp.length - 1].image : ""}
+                alt="logo"
+                style={{ maxHeight: "30px" }}
+                onError={(e) => (
+                  (e.currentTarget.style = { maxHeight: "20px", maxWidth: "20px" }),
+                  (e.currentTarget.src =
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchljxu5aO_1P8DGCpCrDaIZ7Lf8on8SoZ2jjWKxlOJZeNhbrP1kvb-_ttZ7DqWHqeya8&usqp=CAU")
+                )}
+              />
+            ) : null}
           </Col>
         </Row>
         <Row className="my-2 cardBtns">
@@ -78,7 +85,7 @@ const JumbotronComponent = ({ profile, exp }) => {
 
         <div className="">
           <Row className="profileBanner w-75 rounded py-3 mx-2" id="disponibile">
-            <Col xs={9} className="ms-2 " >
+            <Col xs={9} className="ms-2 ">
               <b>Disponibile a lavorare</b>
               <br />
               Ruoli di Sviluppatore Web, Sviluppatore front-end, Sviluppatore back-end e Sviluppatore Javascript

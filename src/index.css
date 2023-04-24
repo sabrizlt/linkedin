@@ -12,14 +12,12 @@
 [data-theme="darkmode"]{
   --body_background: black !important;
   --body_color:white !important;
-  --body_border: white !important;
-  --body_navbar:rgb(0, 0, 0) !important;
+  --body_border:none !important;
+  --body_navbar:rgb(29,34,38) !important;
   --body_disponibile: rgb(164, 161, 161) !important;
 }
 
-*{
-  transition: all 0.1s ease-in-out;
-}
+
 
 body {
   margin: 0;

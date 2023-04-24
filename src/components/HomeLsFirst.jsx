@@ -8,17 +8,17 @@ const HomeLsFirst = () => {
   const profile = useSelector((state) => state.data.profile);
 
   return (
-    <Container className="card__container leftSidebar">
+    <Container className="card__container leftSidebar" id="">
       <Row>
         <Col>
-          <Card style={{ width: "100%" }}>
-            <Row>
+          <Card style={{ width: "100%" }} id="myNav">
+            <Row >
               <Col>
                 <Card.Img
                   variant="top"
-                  src=" https://placedog.net/150/100"
-                  style={{ width: "100%" }}
-                  className="prof__img"
+                  src={`https://picsum.photos/seed/${Math.floor(Math.random() * 60)}/400`}
+                  id="profileCoverImg"
+                  alt="Profile cover"
                 />
               </Col>
             </Row>

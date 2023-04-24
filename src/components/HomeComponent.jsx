@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import PostComponent from "./PostComponent";
 import NewPostContainer from "./NewPostContainer";
 import NavbarMobile from "./NavbarMobile";
+import Messaggistica from "./Messaggistica";
+
 
 const HomeComponent = () => {
   const [post, setPost] = useState([]);
@@ -54,6 +56,8 @@ const HomeComponent = () => {
           <LinkedinNotice />
           <PosterProfileComponent />
           <ColFooter />
+          <Messaggistica />
+
           <NavbarMobile />
         </Col>
       </Row>
